@@ -1,34 +1,99 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Title</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+ <head>
+     <meta charset="utf-8">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+     <title>Title</title>
+     <meta name="description" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+     <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <noscript>
-    	Please Turn on Javascript to see this and many great pages on the web.
-    </noscript>
-    <div class="body--page">
-    	
+     <link rel="stylesheet" href="css/normalize.css">
+     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+ </head>
+ <body>
+ <!--[if lt IE 8]>
+     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+ <![endif]-->
+ <noscript>
+ 	Please Turn on Javascript to see this and many great pages on the web.
+ </noscript>
+<div class="screen__loading">
+	Loading ...
+</div>
 
+<header class="header__block">
+	<div class="header__branding">
+		<svg class="logo__block" width="64px" height="46px" viewBox="0 0 64 46">
+			<title>Chris Amador Logo</title>
+			<path d="M31.6049256,5.48592138 C32.7972229,7.21834548 35.0647062,4.83914972 34.2408088,3.06110512 C33.4169114,1.27497587 29.6534658,2.60316768 31.5955097,5.49054118 L31.6049256,5.48592138 Z M53.0221385,44.3043482 C56.5231139,45.2283077 56.481919,40.5865661 53.8454474,40.9099519 C51.2101527,41.2362251 51.1924977,43.8348613 53.016842,44.296841 L53.0221385,44.3043482 Z M63.8940531,12.9422747 C62.9059647,2.08344045 53.7471682,-3.5463604 48.250007,2.43108022 C40.9849975,10.3234269 43.4725791,29.7548731 32.434708,35.2316432 C21.3974254,40.7274699 9.04190693,34.0997928 9.04190693,24.0765644 C9.04190693,14.053336 16.7853655,9.36539642 19.2564692,8.55750931 C21.7275728,7.74846726 25.7140593,7.56540778 26.5038238,6.29380849 C27.2935883,5.0222092 27.4925006,1.28190556 18.9263217,1.92867723 C14.8527376,2.23589377 6.05586737,6.34347131 2.28712527,13.8922206 C-1.87179108,22.2211382 -0.469988514,34.334825 7.4070591,40.2250669 C21.7699447,51.0815913 35.0664717,44.2673898 40.025157,38.9321011 C44.9673644,33.5973898 47.4378796,25.8367073 52.5448665,26.8068648 C57.6524418,27.7885718 53.5453133,34.2562884 55.6639066,35.2379954 C57.7995664,36.2121952 64.9045044,23.7964892 63.9040576,12.9399648 L63.8940531,12.9422747 Z M52.7167079,22.8638675 C47.6597434,24.5962916 52.9421027,10.7496033 55.7421769,14.1815354 C58.5428395,17.6175099 55.6650836,21.8330752 52.7225929,22.8725297 L52.7167079,22.8638675 Z" id="Logo"></path>
+		</svg>
+		<div class="logo-text__block">
+			<span class="logo-text__first">Chris</span> <span class="logo-text__last">Amador</span>
+		</div>
+	</div>
+	<div class="header__nav">
+		<a href="#" class="nav-btn__block">
+			<span class="nav-btn__text">NAV</span>
+			<span class="nav-btn__btn">
+				<svg width="16px" height="14px" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg">
+				    <title>Nav Button</title>
+			        <g id="nav-btn" stroke="#951D1D" stroke-width="2">
+			           <path d="M0.179093567,1 L13.4368572,1" class="Line"></path>
+			           <path d="M0.179093567,7 L13.4368572,7" class="Line"></path>
+			           <path d="M0.179093567,13 L13.4368572,13" class="Line"></path>
+			        </g>
+				</svg>
 
+			</span>
+		</a>
+	</div>
+</header>
+<div class="page__block">
+	<section id="welcome" class="page-section__block welcome-screen__block">
+		<div class="page-section__inner">
+			<div class="container">
+					<div class="welcome-screen__logo">
+						<svg class="logo__block" width="107px" height="79px" viewBox="0 0 64 46">
+							<title>Chris Amador Logo</title>
+							<path d="M31.6049256,5.48592138 C32.7972229,7.21834548 35.0647062,4.83914972 34.2408088,3.06110512 C33.4169114,1.27497587 29.6534658,2.60316768 31.5955097,5.49054118 L31.6049256,5.48592138 Z M53.0221385,44.3043482 C56.5231139,45.2283077 56.481919,40.5865661 53.8454474,40.9099519 C51.2101527,41.2362251 51.1924977,43.8348613 53.016842,44.296841 L53.0221385,44.3043482 Z M63.8940531,12.9422747 C62.9059647,2.08344045 53.7471682,-3.5463604 48.250007,2.43108022 C40.9849975,10.3234269 43.4725791,29.7548731 32.434708,35.2316432 C21.3974254,40.7274699 9.04190693,34.0997928 9.04190693,24.0765644 C9.04190693,14.053336 16.7853655,9.36539642 19.2564692,8.55750931 C21.7275728,7.74846726 25.7140593,7.56540778 26.5038238,6.29380849 C27.2935883,5.0222092 27.4925006,1.28190556 18.9263217,1.92867723 C14.8527376,2.23589377 6.05586737,6.34347131 2.28712527,13.8922206 C-1.87179108,22.2211382 -0.469988514,34.334825 7.4070591,40.2250669 C21.7699447,51.0815913 35.0664717,44.2673898 40.025157,38.9321011 C44.9673644,33.5973898 47.4378796,25.8367073 52.5448665,26.8068648 C57.6524418,27.7885718 53.5453133,34.2562884 55.6639066,35.2379954 C57.7995664,36.2121952 64.9045044,23.7964892 63.9040576,12.9399648 L63.8940531,12.9422747 Z M52.7167079,22.8638675 C47.6597434,24.5962916 52.9421027,10.7496033 55.7421769,14.1815354 C58.5428395,17.6175099 55.6650836,21.8330752 52.7225929,22.8725297 L52.7167079,22.8638675 Z" id="Logo"></path>
+						</svg>
+						<div class="welcome-screen__logo-text">
+							Designs
+						</div>
+					</div>
+					<h1 class="welcome-title__block" >
+						<span class="welcome-title__line creative">
+							<span style="transition-delay: 100ms;">Creative</span>
+						</span>
+						<span class="welcome-title__line frontend">
+							<span style="transition-delay: 900ms;">Frontend </span>
+						</span>
+						<span class="welcome-title__line developer">
+							<span style="transition-delay: 400ms;">Developer</span>
+						</span>
+					</h1>
 
-    </div>
-    <!-- .body--page -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-    <script src="js/main.js"></script>
-    </body>
+					<a href="#intro" class="welcome-link__block" data-interalLink>
+						<h2 class="welcome-link__title">Good Evening!</h2>
+					</a>
+			</div>
+			<a href="#intro" class="welcome-arrow__block">
+				<svg class="arrow__block" width="24px" height="53px" viewBox="0 0 24 53" xmlns="http://www.w3.org/2000/svg">
+					<title>Arrow</title>
+					<path d="M11,48.1167658 L11,1.5 C11,0.94771525 11.4477153,0.5 12,0.5 C12.5522847,0.5 13,0.94771525 13,1.5 L13,48.0899297 L21.9217544,38.3254678 C22.2942883,37.9177461 22.9268104,37.8892207 23.3345321,38.2617546 C23.7422538,38.6342885 23.7707791,39.2668105 23.3982453,39.6745322 L12.7557706,51.3222456 L12.0302073,52.1163422 L11.2910386,51.3348941 L0.273513459,39.6871807 C-0.106005959,39.2859533 -0.0884081312,38.6530329 0.312819306,38.2735135 C0.714046744,37.893994 1.34696712,37.9115919 1.72648654,38.3128193 L11,48.1167658 Z M11.7344672,49.4749988 C11.8190252,49.4982289 11.9080638,49.5106354 12,49.5106354 C12.0974459,49.5106354 12.1916364,49.4966973 12.2806866,49.470706 L12.7440117,49.9605327 L11.2792798,49.9731811 L11.7344672,49.4749988 Z" id="arrow"></path>
+				</svg>
+			</a>
+		</div>
+	</section>
+	<section id="intro" class="page-section__block">
+		<div>Hi there</div>
+		<a href="#">Fat</a>
+	</section>
+</div>
+
+ <script src="js/main.js"></script>
+ </body>
 </html>

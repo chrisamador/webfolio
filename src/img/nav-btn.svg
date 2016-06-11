@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg">
+    <title>Nav Button</title>
+        <g id="nav-btn" stroke="#951D1D" stroke-width="2">
+
+           <path d="M0.179093567,1 L13.4368572,1" class="Line"></path>
+           <path d="M0.179093567,7 L13.4368572,7" class="Line"></path>
+           <path d="M0.179093567,13 L13.4368572,13" class="Line"></path>
+
+        </g>
+</svg>
