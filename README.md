@@ -1,4 +1,4 @@
-# {{Name of Project}} powered by FreshStart.
+# Webfolio powered by FreshStart.
 
 A fresh start for a new web(page,app,etc). Simple boilerplate gulp environment
 

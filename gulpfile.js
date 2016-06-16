@@ -8,16 +8,19 @@ var gulp = require('gulp'),
    // sass   = require('gulp-sass'),
    sourcemaps = require('gulp-sourcemaps'),
    autoprefixer = require('gulp-autoprefixer'),
-   rename = require('gulp-rename'),
    minifycss = require('gulp-minify-css'),
    concat = require('gulp-concat'),
    jshint = require('gulp-jshint'),
    uglify = require('gulp-uglify'),
-   bowerFiles = require('gulp-main-bower-files');
+   mainBowerFiles = require('gulp-main-bower-files'),
+   flatten = require('gulp-flatten'),
+   open = require('gulp-open'),
+   nunjucksRender = require('gulp-nunjucks-render'),
+   filter = require('gulp-filter');
 
 config ={
-	src : "./src",
-	dist : './dist'
+	src : 'src',
+	dest : 'public'
 }
 
 /**
@@ -26,7 +29,12 @@ config ={
  *
  */
 
-gulp.task('default', ['styles','bowerJs','bowerCss','server','watch']);
+gulp.task('default', ['html','styles', 'imgs', 'js' ,'bowerJs','bowerCss','server','watch']);
+
+gulp.task('open', ['default'], function(){
+	gulp.src(__filename)
+  .pipe(open({uri: 'http://localhost:4000'}));
+});
 
 /**
  *
@@ -36,7 +44,7 @@ gulp.task('default', ['styles','bowerJs','bowerCss','server','watch']);
 
 gulp.task('server',function(){
 	var app = express();
-	app.use(express.static(config.dist));
+	app.use(express.static(config.dest));
 	app.listen(4000);
 });
 
@@ -49,47 +57,87 @@ gulp.task('server',function(){
 gulp.task('watch', function(){
 	livereload.listen();
 
-	gulp.watch('src/js/*.js',['js']);
-	gulp.watch('src/*.html',['html']);
-	gulp.watch('src/less/*.less',['styles']);
+	gulp.watch(config.src + '/js/**/*.js',['js']);
+	gulp.watch(config.src + '/**/*.html',['html']);
+	gulp.watch(config.src + '/less/**/*.less',['styles']);
 })
 
 
 gulp.task('bowerJs', function(){
-	return gulp.src(bowerFiles())
-			.pipe(filter('*.js'))
-			.pipe(concat('vendor.js'))
+	var jsFilter = filter(['**/*.js','!**/backbone.js','!**/underscore.js','!**/require.js','!**/jquery.js'], {restore: true});
+
+	return gulp.src('./bower.json')
+			.pipe(mainBowerFiles({
+				overrides: {
+					flickity : {
+						main : [
+					    "js/index.js",
+						 "js/cell.js",
+						 "js/animate.js",
+						 "js/flickity.js",
+						 "js/drag.js",
+						 "js/prev-next-button.js",
+						 "js/page-dots.js",
+						 "js/player.js",
+						 "js/add-remove-cell'.js",
+						 "js/lazyload.js",
+					    "css/flickity.css"
+						]
+					},
+					async: {
+						main: "dist/async.js"
+					}
+				}
+			}))
+
+			.pipe(jsFilter)
+			// .pipe(flatten())
+			.pipe(concat('vendor.min.js'))
+			.pipe(jsFilter.restore)
+			.pipe(filter(['**/*.js']))
+			.pipe(flatten())
 			.pipe(uglify())
-			.pipe(gulp.dest(config.dist + '/js'));
+			.pipe(gulp.dest(config.dest + '/assets/js/libs'));
+
 });
 
 gulp.task('js', function(){
-	return gulp.src('src/js/*.js')
-			.pipe(gulp.dest(config.dist + '/js'))
+	return gulp.src(config.src + '/js/**/*.js')
+			.pipe(uglify())
+			.pipe(gulp.dest(config.dest + '/assets/js'))
 			.pipe(livereload());
 });
 
 gulp.task('html', function(){
-	return gulp.src('src/*.html')
+	return gulp.src(config.src + '/**/*.html')
+			.pipe(gulp.dest(config.dest + '/'))
 			.pipe(livereload());
 });
 
 gulp.task('bowerCss', function(){
-	return gulp.src(plugins.bowerFiles())
-			.pipe(plugins.filter('*.css'))
-			.pipe(plugins.concat('lib.css'))
-			.pipe(plugins.uglify())
-			.pipe(gulp.dest(config.dist + '/css'));
+		gulp.src('./bower.json')
+		.pipe(mainBowerFiles())
+		.pipe(filter('**/*.css'))
+		.pipe(minifycss())
+		.pipe(concat('lib.min.css'))
+		.pipe(gulp.dest(config.dest + '/assets/css'))
+
 });
 
 gulp.task('styles', function() {
-  return gulp.src('src/less/main.less')
+  return gulp.src(config.src + '/less/app.less')
+			.pipe(sourcemaps.init())
 			.pipe(less())
-			.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-			.pipe(gulp.dest('src/css'))
-			.pipe(rename({ suffix: '.min' }))
 			.pipe(minifycss())
-			.pipe(gulp.dest(config.dist + '/css'))
+			.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+			.pipe(sourcemaps.write('.'))
+			.pipe(gulp.dest(config.dest + '/assets/css'))
+			.pipe(livereload());
+});
+
+gulp.task('imgs', function() {
+  return gulp.src(config.src + '/img/**.**')
+			.pipe(gulp.dest(config.dest + '/assets/img'))
 			.pipe(livereload());
 });
 
@@ -100,6 +148,6 @@ gulp.task('styles', function() {
  */
 
 // gulp.task
-// gulp.src.pipe()
+// gulp.src().pipe()
 // gulp.watch
 // gulp.dest

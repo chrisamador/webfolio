@@ -1,0 +1,95 @@
+
+/**
+ *
+ * _header
+ *
+ */
+
+.header__block{
+	position: fixed;
+	top: 0em;
+	width: 100%;
+	color: @red;
+    z-index: 999;
+	//opacity: 0;
+
+}
+.header__branding,
+.header__nav{
+	position: fixed;
+	top: 1em;
+
+	@media @min-sm{
+		top: 2em;
+	}
+}
+
+.header__branding{
+	left: 1em;
+
+	@media @min-sm{
+		left: 2em;
+	}
+
+}
+.header__nav{
+	right: 1em;
+
+	@media @min-sm{
+		right: 2em;
+	}
+
+}
+.logo-text__block{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 1em;
+}
+
+.logo-text__first{
+
+}
+.logo-text__last{
+	font-weight: bold;
+}
+
+.nav-btn__block{
+	display: inline-block;
+	color: @red;
+	padding: .75em 1em .5em 1em;
+	text-decoration: none;
+	// border: 2px solid @red;
+	border-radius: 2em;
+	// background-color: @white;
+}
+.nav-btn__block:hover,
+.nav-btn__block:focus{
+	text-decoration: none;
+	color: @red;
+	border-color: @red;
+}
+.nav-btn__text{
+	font-weight: bold;
+	display: inline-block;
+	margin-right: .5em;
+	font-size: 16px;
+
+}
+.nav-btn__btn{
+	display: inline-block;
+	vertical-align: text-top;
+	// margin-top: -3px;
+}
+
+.logo__block{
+	vertical-align: middle;
+	fill: @red;
+}
+.arrow__block{
+	fill: @red;
+
+}
+.in-view
+.arrow__block{
+	/*opacity: 1;*/
+}
