@@ -20,6 +20,31 @@ require.config({
 
 require(['backbone','init','views','data/works'], function(Backbone,init,views,data){
 
+	var requestPageContent = function(url,cb){
+		console.log(url)
+		var request = new XMLHttpRequest(),
+			 markup;
+		request.open('GET', '/' + url , true)
+
+		request.onload = function(){
+			if (request.status >= 200 && request.status < 400) {
+				// Success!
+
+				var start = "<!-- ##Start## -->";
+				var end = "<!-- ##End## -->";
+				markup = request.responseText.substr(request.responseText.indexOf(start) + start.length);
+				markup = markup.substr(0, markup.indexOf(end));
+
+				cb(false,markup)
+			} else {
+				// We reached our target server, but it returned an error
+				cb(true,markup)
+			}
+
+		}
+		request.send();
+	}
+
 
 	var APP = {
 		Stage: {},
@@ -29,29 +54,42 @@ require(['backbone','init','views','data/works'], function(Backbone,init,views,d
 		Router: {}
 	}
 
-
 	APP.View.Main = Backbone.View.extend({
 		el: $('body'),
 		events: {
-			'click .nav-btn__block' : 'navClick',
+			'click .nav-btn__block' : 'navBtnClick',
 			'click .nav-links a': 'navClick'
+		},
+		initialize: function(){
+			APP.Stage.on('pageTransStart', this.pageTransitionStart, this);
+			APP.Stage.on('pageTransEnd', this.pageTransitionEnd, this);
+		},
+		navBtnClick: function(e){
+			e.preventDefault();
+			content.log('nav btn clicked');
 		},
 		navClick: function(e){
 			e.preventDefault();
 			var loc = e.target.dataset.href;
-			console.log(loc);
-			Backbone.history.navigate(loc, { trigger: true });
+			Backbone.history.navigate(loc , { trigger: true });
+		},
+		pageTransitionStart: function(){
+			console.log('start trans')
+		},
+		pageTransitionEnd: function(){
+			console.log('end trans')
 		}
 	})
 
 	APP.View.SinglePage = Backbone.View.extend({
 		initialize: function(options){
-			this.name = options.name
+			this.href = options.href;
+			this.html = options.html;
 		},
 		className: 'page__block__inner',
 		render: function(){
-			this.el.innerHTML = "<h1>This: " + this.name + "</h1>";
-			return this
+			this.el.innerHTML = this.html;
+			return this;
 		}
 	})
 
@@ -71,33 +109,44 @@ require(['backbone','init','views','data/works'], function(Backbone,init,views,d
 	  	this.el = $('.page__block');
 	  },
 	  routes: {
-	    '': 'home',
-	    'about': 'about',
-	    'works': 'works',
-	    'orphans': 'orphans',
-	    'contact': 'contact'
+	    '': 'homePage',
+	    ':name': 'loadPage'
 	  },
-	  home: function () {
-	  		console.log('home yo');
+	  homePage: function(){
+	  		if(!APP.Stage.initLoad){
+	  			this.loadPage('');
+	  		}else{
+	  			APP.Stage.initLoad = false
+	  		}
+	  },
+	  loadPage: function (name) {
+	  		var self = this;
 
-	  		this.el.empty()
-	  		.append(new APP.View.SinglePage({name:'home'}).render().el);
+	  		//# Trigger page change
+	  		APP.Stage.trigger('pageTransStart');
 
-	  		//Backbone.history.navigate('contacts', { trigger: true });
-	  },
-	  about: function(){
-	  		this.el.empty()
-	  		.append('<h1>about</h1>');
-	  },
-	  works: function(){
-	  		this.el.empty()
-	  		.append('<h1>works</h1>');
-	  },
-	  orphans: function(){
-	  		this.el.empty()
-	  		.append('<h1>orphans</h1>');
+	  		requestPageContent(name,function(err,html){
+				if(!err){
+					var pageInView = new APP.View.SinglePage({href:name,html:html});
+
+					document.body.scrollTop = 0;
+
+					self.el.empty()
+			  		.append(pageInView.render().el);
+
+			  		// pageInView.
+				}else{
+					//# show 404 page
+				}
+				APP.Stage.trigger('pageTransEnd');
+	  		});
 	  }
 	});
+
+
+	_.extend(APP.Stage, Backbone.Events);
+
+	APP.Stage.initLoad = (document.location.pathname == '/');
 
 	APP.Stage.projectsList = new APP.Collection.Works(data);
 

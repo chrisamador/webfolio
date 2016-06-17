@@ -109,9 +109,14 @@ gulp.task('js', function(){
 });
 
 gulp.task('html', function(){
-	return gulp.src(config.src + '/**/*.html')
-			.pipe(gulp.dest(config.dest + '/'))
-			.pipe(livereload());
+
+  return gulp.src('src/pages/**/*.+(html|nunjucks)')
+  .pipe(nunjucksRender({
+      path: ['src/templates']
+    }))
+  .pipe(gulp.dest(config.dest + '/'))
+  .pipe(livereload());
+
 });
 
 gulp.task('bowerCss', function(){

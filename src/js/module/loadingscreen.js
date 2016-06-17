@@ -7,7 +7,6 @@ define(function () {
 		self.duration = 1000; //
 
 		self.closeScreen = function(){
-			console.log('closing');
 
 			// replace hidden with open
 			self.loadScreen.className = self.loadScreen.className.replace(/is-hidden/g, 'is-open');
@@ -26,7 +25,6 @@ define(function () {
 
 			// Removes the element from the dom
 			setTimeout(function(){
-				console.log('go');
 				self.loadScreen.className = self.loadScreen.className.replace(/is-open/g, 'is-hidden');
 				self.loadScreen.remove();
 			}, self.duration)
