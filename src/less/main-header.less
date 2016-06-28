@@ -26,10 +26,26 @@
 
 .header__branding{
 	left: 1em;
+	opacity: 1;
+	transition: opacity 500ms @trans;
 
 	@media @min-sm{
 		left: 2em;
 	}
+
+	a{
+		display: block;
+		text-decoration: none;
+
+		&:hover,&:focus{
+			text-decoration: none;
+		}
+	}
+
+	.page-home &{
+		opacity: 0;
+	}
+
 
 }
 .header__nav{
@@ -67,23 +83,39 @@
 	text-decoration: none;
 	color: @red;
 	border-color: @red;
+
+	.Line1{
+		transform: translateY(-.25em);
+	}
+	.Line4{
+		transform: translateY(.25em);
+	}
+
 }
 .nav-btn__text{
 	font-weight: bold;
 	display: inline-block;
-	margin-right: .5em;
-	font-size: 16px;
+	//font-size: 16px;
 
 }
 .nav-btn__btn{
 	display: inline-block;
 	vertical-align: text-top;
 	// margin-top: -3px;
+	.Line1,.Line4,.Line2,.Line3{
+		transition: transform 500ms ease;
+	}
+	.Line2,.Line3{
+		transform-origin: center;
+	   transform: rotate(0deg);
+	}
+
 }
 
 .logo__block{
 	vertical-align: middle;
 	fill: @red;
+	transition: fill 1s ease, opacity 1s ease;
 }
 .arrow__block{
 	fill: @red;

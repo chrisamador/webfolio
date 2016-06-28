@@ -1,0 +1,9 @@
+{% macro printSingleWork(data) %}
+
+	<div class="single-work__inner">
+		<div class="slide__block">
+			<h6 class="single-work__title">{{data.name}}</h6>
+		</div>
+	</div>
+
+{% endmacro %}

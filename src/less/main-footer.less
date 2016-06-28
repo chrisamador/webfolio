@@ -7,6 +7,7 @@
  */
 
 
+
 .main-footer__block{
 	background-color: white;
 	position:fixed;
@@ -15,21 +16,40 @@
 	left: 0;
 	right: 0;
 	//height: 13em;
-	padding: 2em 0;
 
 	.container{
 		max-width: 90%;
 		padding: 0;
 	}
 	.logo__block{
-		fill: @white-dark;
+		fill: @iron-light;
 	}
 }
+
+.main-footer__brandnav{
+	padding: 3em 0;
+}
+
+.main-footer__logo{
+	text-align: center;
+   margin-bottom: 2em;
+
+   @media @min-sm{
+   	text-align: left;
+   }
+}
+
 .main-footer__actions{
-	text-align: right;
+	text-align: center;
+
+   @media @min-sm{
+   	text-align: right;
+   }
+
 }
 .main-footer__nav{
 	text-align: center;
+	margin-bottom: 2em;
 }
 
 .main-footer__links{
@@ -72,14 +92,40 @@
 
 
 .main-footer__options{
-
+	background-color: @iron-dark;
+	color: white;
+	padding: 2em 0;
 }
 .footer-option__block{
 
 }
 .footer-option__title{
+	margin-bottom: 1em;
 
+	a{
+		color: inherit;
+		text-decoration: underline;
+
+		&:hover{
+			color: @iron-light;
+		}
+	}
 }
 .footer-options__options{
+	.mx-ul-brand-line();
+
+	&:before{
+		background-color: @iron;
+	}
+
+	a{
+		color: white;
+		text-transform: none;
+		font-weight: 400;
+
+		&:hover{
+			color: @iron-light;
+		}
+	}
 
 }

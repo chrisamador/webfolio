@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="/assets/css/lib.min.css">
      <link rel="stylesheet" href="/assets/css/app.css">
  </head>
- <body id="body">
+ <body id="body" class="page-{{pageName}}">
  <!--[if lt IE 9]>
      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
  <![endif]-->
@@ -37,6 +37,22 @@
 {% include "partials/main-footer.html" %}
 
 </div> <!-- end of body__block -->
+	<nav class="main-nav__block">
+		<div class="main-nav__inner">
+			<h2>Whats up</h2>
+				<div class="main-nav__nav" id="nav-links__main-output">
+					<ul class="main-nav__links nav-links">
+						<li class="active"><a data-href="/" href="/">Home</a></li>
+						<li><a data-href="works" href="/works">Works</a></li>
+						<!-- <li><a data-href="thoughts" href="thoughts">Thoughts</a></li> -->
+						<li><a data-href="orphans" href="/orphans">Orphans</a></li>
+						<li><a data-href="about" href="/about">About</a></li>
+						<li><a data-href="contact" href="#contact">Contact</a></li>
+					</ul>
+				</div>
+		</div>
+	</nav>
+
 	<div id="loading-screen" class="loading-screen__block is-closed">
 		<div class="loading-screen__inner">
 			<div class="loading-screen__logo">

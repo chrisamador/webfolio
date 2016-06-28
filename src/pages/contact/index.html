@@ -1,10 +1,20 @@
 {% extends "layout.nunjucks" %}
-
+{% set pageName = 'contact' %}
 {% block content %}
-<section id="welcome" class="page-section__block">
+<section class="page-section__block">
 	<div class="page-section__inner">
 		<div class="container">
-				<h1>Contact Me Fool</h1>
+			<div class="row">
+				<div class="col-sm-offset-1 col-sm-4">
+					<h1>Contact</h1>
+					<div class="brand-line__block">
+						<h4 class="brand-line__content" >2008 - 2016</h4>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					{% include "partials/contact-form.html" %}
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

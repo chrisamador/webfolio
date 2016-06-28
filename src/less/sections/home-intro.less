@@ -1,5 +1,7 @@
 //
-
+.home-intro__block{
+	overflow: hidden;
+}
 .home-intro__subtitle{
 	margin: 0;
 	margin-bottom: 1em;
@@ -7,53 +9,24 @@
 }
 
 .home-intro__title{
-	font-weight: bold;
-	font-style: italic;
 	margin: 0;
 	margin-bottom: .5em;
 	line-height: 1;
 }
 
+.home-intro__type{
+	position: absolute;
+	font-size: 43em;
+	top: 0;
+	font-weight: bold;
+	z-index: -1;
+	color: #F1F1F1;
+	letter-spacing: -33px;
+}
+
+
 .home-intro__services{
-	margin: 0;
-	margin-bottom: 2em;
-	padding: 0;
-	font-size: 1.14em;
-	padding-left: 6em;
-	position: relative;
-
-	&:before{
-		content: '';
-		position: absolute;
-		display: block;
-		width: 5em;
-		top: 1em;
-		left: 0;
-		height: 3px;
-		background-color: @red;
-
-	}
-
-	li{
-		display: inline-block;
-		list-style: none;
-		margin: .5em 0;
-	}
-
-	a{
-		text-decoration: none;
-		padding: .75em;
-		text-transform: uppercase;
-		font-weight: bold;
-		color: @iron;
-
-		&:hover{
-			color: @red;
-		}
-	}
-	.active a{
-		color: @red;
-	}
+	.mx-ul-brand-line();
 }
 
 .service-descriptions__block{

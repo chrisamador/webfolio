@@ -1,13 +1,18 @@
 {% extends "layout.nunjucks" %}
-
+{% set pageName = 'about' %}
 {% block content %}
-
-<section id="welcome" class="page-section__block">
+<section class="page-section__block">
 	<div class="page-section__inner">
 		<div class="container">
-				<h1>About me fool</h1>
+			<div class="row">
+				<div class="col-sm-offset-1 col-sm-11">
+					<h1>About</h1>
+					<div class="brand-line__block">
+						<h4 class="brand-line__content" >Chris Amador</h4>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
-
 {% endblock %}
