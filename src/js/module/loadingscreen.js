@@ -1,6 +1,6 @@
 define(function () {
 
-	var pageloader = function(){
+	var pageloadingScreen = function(){
 
 		var self = this;
 		self.loadScreen = document.getElementById( 'loading-screen' );
@@ -17,7 +17,8 @@ define(function () {
 			},100)
 
 		}
-		self.openScreen = function(cb){
+		self.openScreen = function(cb, duration){
+			var d = duration || self.duration;
 
 			// replace close with open
 			self.loadScreen.className = self.loadScreen.className.replace(/is-closed/g, 'is-open');
@@ -27,12 +28,12 @@ define(function () {
 			setTimeout(function(){
 				self.loadScreen.className = self.loadScreen.className.replace(/is-open/g, 'is-hidden');
 				self.loadScreen.remove();
-			}, self.duration)
+			}, d)
 
 			// Runs callback
 			setTimeout(function(){
 				cb();
-			},self.duration - 500)
+			}, d - 500);
 
 		}
 		self.addScreen = function(){
@@ -50,7 +51,7 @@ define(function () {
 		}
 	}
 
-	var loadingScreen = new pageloader();
+	var loadingScreen = new pageloadingScreen();
 
 	return loadingScreen;
 

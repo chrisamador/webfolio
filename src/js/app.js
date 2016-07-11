@@ -14,14 +14,19 @@ require.config({
 	paths: {
 		backbone: 'libs/backbone',
 		jquery: 'libs/jquery',
-		underscore: 'libs/underscore'
+		underscore: 'libs/underscore',
+		fullscreen : 'module/fullscreen',
+		dReady: 'module/domready'
+
 	}
 })
 
 require(['backbone','init','page'], function(Backbone,init,page){
 
+	document.documentElement.className = document.documentElement.className.replace(/no-js/g, 'js-on');
+
 	var requestPageContent = function(url,cb){
-		console.log(url)
+		//console.log("loaded: " + url);
 		var request = new XMLHttpRequest(),
 			 markup;
 		request.open('GET', '/' + url , true)
@@ -62,9 +67,11 @@ require(['backbone','init','page'], function(Backbone,init,page){
 			'click .nav-btn__block' : 'navBtnClick',
 			'mouseenter .nav-btn__block': 'navBtnHover',
 			'mouseleave .nav-btn__block': 'navBtnHover',
-			'click .nav-links a': 'navClick'
+			'click a': 'anchorClick'
 		},
 		initialize: function(){
+			this.updateNavActive();
+
 			APP.Stage.on('pageTransStart', this.pageTransitionStart, this);
 			APP.Stage.on('pageTransEnd', this.pageTransitionEnd, this);
 			APP.Stage.on('updateNav', this.updateNavActive, this);
@@ -74,12 +81,13 @@ require(['backbone','init','page'], function(Backbone,init,page){
 			this.$el.removeClass('hover-nav').removeClass('hover-off-nav');
 	   	this.$el.toggleClass('active-nav');
 		},
-		navClick: function(e){
-			e.preventDefault();
-			console.log(e);
-			var loc = e.currentTarget.dataset.href;
-
-			Backbone.history.navigate(loc , { trigger: true });
+		anchorClick: function(e){
+			//console.dir(e.currentTarget);
+			var hrefLink = e.currentTarget.dataset.href;
+			if(hrefLink){
+				e.preventDefault();
+				Backbone.history.navigate(hrefLink , { trigger: true });
+			}
 		},
 		navBtnHover: function(e){
 			if(e.type == "mouseenter"){
@@ -89,12 +97,20 @@ require(['backbone','init','page'], function(Backbone,init,page){
 			}
 		},
 		pageTransitionStart: function(){
-			console.log('start trans')
+			var self = this;
+
 			// Turns off the active nav if there is one
-			this.$el.removeClass('active-nav');
+			self.$el.removeClass('active-nav');
+
+			this.$el.addClass('transition-start');
 		},
 		pageTransitionEnd: function(){
-			console.log('end trans');
+			var self = this;
+
+			this.$el.removeClass('transition-start').addClass('transition-end');
+			setTimeout(function(){
+				self.$el.removeClass('transition-end')
+			},1000)
 			this.updateNavActive();
 		},
 		updateNavActive: function(){
@@ -102,15 +118,15 @@ require(['backbone','init','page'], function(Backbone,init,page){
 				 footerNav = $('#nav-links__footer-output'),
 				 currentPos = document.location.pathname;
 
-				 // "/works/sso"
-				 //  "/works"
-
 			mainNav.find('li').removeClass('active'),
 			footerNav.find('li').removeClass('active');
 
 			var check = function(el){
-				//console.log(currentPos.indexOf(el.dataset.href));
-				if(currentPos.indexOf(el.dataset.href,1) == 1){
+				if(currentPos.length == 1 && el.dataset.href.length == 1){
+					$(el).parent().addClass('active');
+					return;
+				}
+				if(currentPos.indexOf(el.dataset.href, 1) === 1){
 					$(el).parent().addClass('active');
 				}
 			}
@@ -122,7 +138,6 @@ require(['backbone','init','page'], function(Backbone,init,page){
 
 	APP.View.SinglePage = Backbone.View.extend({
 		initialize: function(options){
-			this.href = options.href;
 			this.html = options.html;
 		},
 		className: 'page__block__inner',
@@ -150,29 +165,32 @@ require(['backbone','init','page'], function(Backbone,init,page){
 	  },
 	  routes: {
 	    '': 'homePage',
+	    ':name/': 'loadPage',
 	    ':name': 'loadPage',
+	    'works/:workName/': 'workPage',
 	    'works/:workName': 'workPage'
 	  },
 	  homePage: function(){
-	  		if(!APP.Stage.initIsHome){
-	  			this.loadPage('');
-	  		}else{
-	  			// Run the homepage init
-	  			page.run('');
-	  			APP.Stage.initIsHome = false
-	  		}
+	  		this.loadPage('');
 	  },
 	  workPage: function(workName){
 	  		this.loadPage(workName, 'works/');
 	  },
 	  loadPage: function (name, prefix) {
 	  		var self = this,
-	  			 pageName = (prefix ? prefix : '') + name;
+	  			 pageName = (prefix ? prefix : '') + name,
+	  			 pageInView;
+
+	  		if(APP.Stage.isInitLoaded){
+	  			APP.Stage.isInitLoaded = false;
+	  			page.run(name);
+	  			return;
+	  		}
 
 	  		//# Trigger page change
 	  		APP.Stage.trigger('pageTransStart');
 
-	  		requestPageContent(pageName,function(err,html){
+	  		requestPageContent(pageName, function(err,html){
 				if(!err){
 					// Page content has been received!
 
@@ -181,8 +199,15 @@ require(['backbone','init','page'], function(Backbone,init,page){
 						oldClass = $('body').attr('class').match(/page-\w+/g).toString();
 					body.removeClass(oldClass).addClass('page-' + (name == ""? "home": name));
 
-					var pageInView = new APP.View.SinglePage({href:name, html:html});
+					pageInView = new APP.View.SinglePage({html:html});
 
+			  		// pageInView.
+				}else{
+					//# show 404 page
+					pageInView = new APP.View.SinglePage({html:"error"});
+				}
+
+				setTimeout(function(){
 					document.body.scrollTop = 0;
 
 					self.el.empty()
@@ -191,11 +216,9 @@ require(['backbone','init','page'], function(Backbone,init,page){
 			  		// Run page functions
 			  		page.run(name);
 
-			  		// pageInView.
-				}else{
-					//# show 404 page
-				}
-				APP.Stage.trigger('pageTransEnd');
+					APP.Stage.trigger('pageTransEnd');
+				},500)
+
 	  		});
 	  }
 	});
@@ -203,7 +226,7 @@ require(['backbone','init','page'], function(Backbone,init,page){
 
 	_.extend(APP.Stage, Backbone.Events);
 
-	APP.Stage.initIsHome = (document.location.pathname == '/');
+	APP.Stage.isInitLoaded = true;
 
 	APP.Stage.projectsList = new APP.Collection.Works();
 

@@ -16,7 +16,9 @@ var gulp = require('gulp'),
    flatten = require('gulp-flatten'),
    open = require('gulp-open'),
    nunjucksRender = require('gulp-nunjucks-render'),
-   filter = require('gulp-filter');
+   filter = require('gulp-filter'),
+   svgmin = require('gulp-svgmin'),
+   data = require('gulp-data');
 
 config ={
 	src : 'src',
@@ -29,7 +31,7 @@ config ={
  *
  */
 
-gulp.task('default', ['html','styles', 'imgs', 'js' ,'bowerJs','bowerCss','server','watch']);
+gulp.task('default', ['svg','html','styles', 'imgs', 'js' ,'bowerJs','bowerCss','server','watch']);
 
 gulp.task('open', ['default'], function(){
 	gulp.src(__filename)
@@ -59,12 +61,13 @@ gulp.task('watch', function(){
 
 	gulp.watch(config.src + '/js/**/*.js',['js']);
 	gulp.watch(config.src + '/**/*.html',['html']);
+	gulp.watch(config.src + '/pages/works/works.json',['html']);
 	gulp.watch(config.src + '/less/**/*.less',['styles']);
 })
 
 
 gulp.task('bowerJs', function(){
-	var jsFilter = filter(['**/*.js','!**/backbone.js','!**/underscore.js','!**/require.js','!**/jquery.js'], {restore: true});
+	var jsFilter = filter(['**/*.js','!**/backbone.js','!**/underscore.js','!**/require.js','!**/jquery.js','!**/jquery.fullpage.js'], {restore: true});
 
 	return gulp.src('./bower.json')
 			.pipe(mainBowerFiles({
@@ -86,6 +89,11 @@ gulp.task('bowerJs', function(){
 					},
 					async: {
 						main: "dist/async.js"
+					},
+					"fullpage.js" : {
+						main: [
+						 "dist/jquery.fullpage.js"
+						],
 					}
 				}
 			}))
@@ -111,6 +119,9 @@ gulp.task('js', function(){
 gulp.task('html', function(){
 
   return gulp.src('src/pages/**/*.+(html|nunjucks)')
+	.pipe(data(function() {
+	  return require('./src/pages/works/works.json')
+	}))
   .pipe(nunjucksRender({
       path: ['src/templates']
     }))
@@ -141,9 +152,15 @@ gulp.task('styles', function() {
 });
 
 gulp.task('imgs', function() {
-  return gulp.src(config.src + '/img/**.**')
+  return gulp.src(config.src + '/img/**/*.**')
 			.pipe(gulp.dest(config.dest + '/assets/img'))
 			.pipe(livereload());
+});
+
+gulp.task('svg', function () {
+    return gulp.src(config.src + '/img/svg-pre/*.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest(config.src + '/img/svg'));
 });
 
 /**

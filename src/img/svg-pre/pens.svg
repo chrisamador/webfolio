@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="41px" height="112px" viewBox="0 0 41 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>pens</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pens" transform="translate(1.000000, 1.000000)" stroke="#898884" stroke-width="2">
+            <polygon id="Stroke-1" points="0.326 101.3994 14.46 11.7564 19.893 12.6134 5.759 102.2564"></polygon>
+            <polygon id="Stroke-3" stroke-linecap="round" stroke-linejoin="round" points="19.3507 0 14.4597 11.757 19.8927 12.613"></polygon>
+            <path d="M0.326,101.3994 L0.022,103.3264 C-0.133,104.3074 0.538,105.2294 1.519,105.3834 L3.397,105.6804 C4.379,105.8344 5.3,105.1644 5.455,104.1824 L5.759,102.2564 L0.326,101.3994 L0.326,101.3994 Z" id="Stroke-5"></path>
+            <polygon id="Stroke-7" points="12.5123 104.735 33.0703 16.344 38.4273 17.59 17.8693 105.981"></polygon>
+            <polygon id="Stroke-9" stroke-linecap="round" stroke-linejoin="round" points="38.796 4.9706 33.071 16.3446 38.428 17.5906"></polygon>
+            <path d="M12.5123,104.735 L12.0703,106.635 C11.8453,107.603 12.4473,108.57 13.4153,108.795 L15.2673,109.226 C16.2353,109.451 17.2023,108.849 17.4273,107.881 L17.8693,105.981 L12.5123,104.735 L12.5123,104.735 Z" id="Stroke-11"></path>
+        </g>
+    </g>
+</svg>

@@ -1,10 +1,10 @@
 //
 .home-intro__block{
-	overflow: hidden;
+	padding-top: inherit;
 }
 .home-intro__subtitle{
-	margin: 0;
-	margin-bottom: 1em;
+	//margin: 0;
+	margin-bottom: .5em;
 	// font-weight: bold;
 }
 
@@ -20,13 +20,14 @@
 	top: 0;
 	font-weight: bold;
 	z-index: -1;
-	color: #F1F1F1;
+	color: #F9F9F9;
 	letter-spacing: -33px;
 }
 
 
 .home-intro__services{
 	.mx-ul-brand-line();
+	font-size: 1em;
 }
 
 .service-descriptions__block{
@@ -37,29 +38,56 @@
 	}
 }
 
-.intro-examples__block{
-	padding-top: 3em;
-	padding-right: 3em;
+// .intro-examples__block{
+// 	padding-top: 3em;
+// 	padding-right: 3em;
+// }
+
+// .intro-examples__large{
+// 	position: absolute;
+// 	width: 30%;
+// 	// height: 100%;
+// 	right: 2em;
+// 	top: 2em;
+// 	bottom: 2em;
+// 	background-color: @white-dark;
+// 	z-index: -1;
+// 	//background-image: url(http://hassler.io/assets/medias/home/juergen-hasssler.jpg);
+// 	background-size: cover;
+// 	background-position: center;
+// }
+// .intro-examples__small{
+// 	width: 100%;
+// 	height: 30em;
+// 	background-color: @iron-light;
+// }
+// .intro-examples__controls{
+// 	text-align: right;
+// }
+
+.intro-previews__block{
+	position: relative;
+	transform: translateY(-55vh);
+	transition: transform 500ms ease;
+
+	.in-view &{
+		transform: translateY(0vh);
+	}
+}
+.intro-previews__item{
+	position: absolute;
+   top: -1em;
+   left: -4em;
 }
 
-.intro-examples__large{
-	position: absolute;
-	width: 30%;
-	// height: 100%;
-	right: 2em;
-	top: 2em;
-	bottom: 2em;
-	background-color: @white-dark;
-	z-index: -1;
-	//background-image: url(http://hassler.io/assets/medias/home/juergen-hasssler.jpg);
-	background-size: cover;
-	background-position: center;
-}
-.intro-examples__small{
-	width: 100%;
-	height: 30em;
-	background-color: @iron-light;
-}
-.intro-examples__controls{
-	text-align: right;
+.intro-previews__laptop{
+
+	.screen{
+		position: absolute;
+		top: 51px;
+		left: 99px;
+		right: 99px;
+		bottom: 81px;
+		background-color: aqua;
+	}
 }

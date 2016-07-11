@@ -8,7 +8,10 @@
 	_mixins
 	_setup
 	_type
+	_page__block
+	_pager
 	_helpers
+	_spacer
 
 */
 
@@ -67,7 +70,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #FAFAFA;
+@body-bg:               #FFFFFF;
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
@@ -83,20 +86,21 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "museo-sans",sans-serif;
+// @font-family-sans-serif:  "freight-sans-pro", sans-serif;
+@font-family-sans-serif:  "proxima-nova", sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h1:            64px;
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h4:            @font-size-base;
 @font-size-h5:            @font-size-base;
 @font-size-h6:            16px;
 
@@ -108,7 +112,7 @@
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    "adelle-sans",sans-serif;
 @headings-font-weight:    500;
-@headings-line-height:    1.5;
+@headings-line-height:    1.15;
 @headings-color:          inherit;
 
 
@@ -121,7 +125,6 @@
 
 h1{
 	font-weight: 100;
-	font-size: 64px;
 	font-weight: bold;
 	font-style: italic;
 }
@@ -132,7 +135,7 @@ h2{
 
 h4{
 	//font-weight: bold;
-	font-size: 1em;
+
 }
 
 h6{
@@ -276,20 +279,118 @@ body{
 .container{
 	width: 100%;
 }
+.body__block{
+	//transform: opacity 1000ms ease;
+}
+
+// _page__block
 
 .page__block{
-	margin-bottom: 27.5em;
+	position: relative;
+	transition: transform 300ms ease, opacity 300ms ease;
+	overflow: hidden;
+
 	// box-shadow: 0 12px 16px rgba(0, 0, 0, 0.25);
+
+	// &:after{
+	// 	content: '';
+	// 	background-color: green;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	right: 0;
+	// 	z-index: 1;
+	// }
 }
 img{
 	max-width: 100%;
 }
+
+
+// _pager
+
+.pager__block {
+	display: none;
+   position: fixed;
+   z-index: 98;
+   right: 1em;
+   padding: 0 1em;
+   top: 50%;
+   list-style: none;
+   margin: 0;
+   transform: translateY(-50%);
+   width: 34px;
+   transition: width 500ms ease;
+
+   &:hover{
+   	width: 38px;
+   }
+
+   @media @min-sm{
+   	display: block;
+   }
+}
+
+.pager__block li {
+   width: 100%;
+   height: 16px;
+   background-color: #CCCCCC;
+   transition: background-color 500ms @trans;
+   margin: 8px 0;
+   padding: 0;
+   /* border-radius: 100%; */
+   position: relative;
+   cursor: pointer;
+
+   &:before{
+		background-color: #951d1d;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 100%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: top 500ms @trans;
+   }
+
+   &:hover{
+		background-color: darken(#CCCCCC, 20%);
+
+		span{
+			transform: translateX(-1em);
+			opacity: 1;
+		}
+   }
+
+   &.active:before{
+   	top: 0%;
+   }
+
+	span{
+		position: absolute;
+		right: 8px;
+		color: @red;
+		top: 0;
+		font-size: 14px;
+		line-height: 1em;
+		transform: translateX(0);
+		opacity: 0;
+		transition: transform 800ms @trans, opacity 800ms ease 200ms;
+		text-transform: capitalize;
+		white-space: nowrap;
+	}
+
+}
+
 
 /**
  *
  * _helpers
  *
  */
+
 
 .btn{
 	.button-variant(@red; transparent; @red);
@@ -304,6 +405,8 @@ img{
 	> span{
 		display: inline-block;
 		transition: transform 500ms ease;
+		position: relative;
+		z-index: 2;
 	}
 
 	&:after,&:before{
@@ -337,8 +440,8 @@ img{
 		margin-top: -6px;
 		right: 1.40em;
 		opacity: 1;
-		transform: translateX(-10px);
-		z-index: -1;
+		transform: translateX(-5px);
+		z-index: 1;
 	}
 
 
@@ -354,18 +457,21 @@ img{
 		margin-top: -6px;
 		right: 1.25em;
 		opacity: 0;
-		transform: translateX(-10px);
-		z-index: -2;
+		transform: translateX(-5px);
+		z-index: 0;
 	}
 
 	&:hover,&:focus,&:active{
+		border-color: inherit;
+
 		> span{
-			transform: translateX(-10px);
+			transform: translateX(-5px);
 		}
 		&:before,&:after{
 			opacity: 1;
 			transform: translateX(0px);
 		}
+
 	}
 }
 
@@ -381,6 +487,25 @@ img{
 
 	&:hover,&:focus,&:active{
 	}
+}
+
+.btn-solid{
+	background-color: @red;
+	color: white;
+
+	&:hover,&:focus{
+		color: white;
+		background-color: @red;
+		border-color: @red;
+	}
+
+	&:after{
+		border-left: 5px solid @red;
+	}
+	&:before{
+		border-left: 6px solid white;
+	}
+
 }
 
 .btn-circle{
@@ -445,12 +570,14 @@ p > a{
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	background-size: cover;
+	background-position: center;
 }
 
 
-.page-section__block:first-child{
+.page-section__block{
 
-		padding-top: 5em;
+		padding-top: 6em;
 
 }
 
@@ -494,17 +621,26 @@ p > a{
 	color: @red;
 
 	&:before{
-		top: .75em;
+		top: .5em;
 	}
 }
 
+// _spacer
 
+.spacer__block{
+	min-height: auto;
+	background-color: transparent;
+}
 
 @import 'partials/loading-screen';
+@import 'partials/transition-screen';
+
 
 @import 'main-header';
 @import 'main-footer';
 @import 'main-nav';
+
+@import 'sections/contents';
 
 @import 'sections/home-welcome';
 @import 'sections/home-intro';
@@ -514,3 +650,4 @@ p > a{
 @import 'sections/work-listing';
 @import 'sections/work-single';
 
+@import 'sections/orphans';

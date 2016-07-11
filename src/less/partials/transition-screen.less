@@ -1,0 +1,37 @@
+body.transition-start{
+
+	.transition-screen__block{
+		right: 0%;
+	}
+
+	.page__block{
+
+	}
+
+}
+
+body.transition-end{
+
+	.transition-screen__block{
+		left: 100%;
+		right: 0%;
+	}
+
+}
+
+.transition-screen__block{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 100%;
+	z-index: 99;
+	background-color: @red;
+	//background-image: url(../img/bg.png);
+	transition: right 500ms @trans, left 1000ms @trans;
+	//background-attachment: fixed;
+}
+
+.transition-screen__inner{
+
+}

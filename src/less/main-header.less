@@ -11,30 +11,31 @@
 	width: 100%;
 	color: @red;
     z-index: 999;
+    font-family: @headings-font-family;
 	//opacity: 0;
 
 }
 .header__branding,
 .header__nav{
 	position: fixed;
-	top: 1em;
+	top: 2em;
 
 	@media @min-sm{
-		top: 2em;
+		//top: 2em;
 	}
 }
 
 .header__branding{
-	left: 1em;
+	left: 2em;
 	opacity: 1;
 	transition: opacity 500ms @trans;
 
 	@media @min-sm{
-		left: 2em;
+		//left: 2em;
 	}
 
 	a{
-		display: block;
+		display: inline-block;
 		text-decoration: none;
 
 		&:hover,&:focus{
@@ -46,20 +47,24 @@
 		opacity: 0;
 	}
 
-
 }
 .header__nav{
-	right: 1em;
+	right: 2em;
 
 	@media @min-sm{
-		right: 2em;
+		//right: 2em;
 	}
 
 }
 .logo-text__block{
-	display: inline-block;
+	display: none;
 	vertical-align: middle;
 	margin-left: 1em;
+	transition: color 500ms @trans;
+
+	@media (min-width: 350px){
+		display: inline-block;
+	}
 }
 
 .logo-text__first{
@@ -95,13 +100,16 @@
 .nav-btn__text{
 	font-weight: bold;
 	display: inline-block;
+	transition: color 500ms ease;
+
 	//font-size: 16px;
 
 }
 .nav-btn__btn{
 	display: inline-block;
-	vertical-align: text-top;
-	// margin-top: -3px;
+	vertical-align: middle;
+   line-height: 1em;
+
 	.Line1,.Line4,.Line2,.Line3{
 		transition: transform 500ms ease;
 	}
@@ -110,6 +118,9 @@
 	   transform: rotate(0deg);
 	}
 
+	#nav-btn{
+		transition: stroke 500ms ease;
+	}
 }
 
 .logo__block{

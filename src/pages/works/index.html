@@ -1,14 +1,6 @@
 {% set pageName = 'works' %}
 
-{% set data = [
-	{
-		name: 'chris'
-	},{
-		name: 'bob'
-	}
-]%}
-
-{% import 'macros/works-marco.nunjucks' as work %}
+{% import 'macros/works-marco.html' as workMarco %}
 
 {% extends "layout.nunjucks" %}
 
@@ -34,11 +26,11 @@
 	</div>
 </section>
 
-{% for workData in data %}
-<section class="page-section__block single-work__block single-work__{{workData.name}}">
+{% for work in worksData %}
+<section class="page-section__block single-work__block single-work__{{work.name}}">
 	<div class="page-section__inner">
 		<div class="container">
-			 {{work.printSingleWork(workData)}}
+			 {{workMarco.printSingleWork(work)}}
 		</div>
 	<div>
 </section>

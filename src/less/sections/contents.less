@@ -1,0 +1,32 @@
+.row-content{
+	margin-bottom: 2em;
+
+	&:first-child{
+		//margin-top: 0;
+	}
+	&:last-child{
+		//margin-bottom: 0;
+	}
+}
+
+.row-content-lg{
+	margin-bottom: 10em;
+	margin-bottom: 25vh;
+}
+
+img{
+	&.full-width{
+		width: 100%;
+	}
+}
+
+.slide-in{
+	transform: translate3d(0,25%,0);
+	opacity: 0;
+	transition: transform 500ms ease, opacity 500ms ease;
+
+	&.in-view{
+		transform: translate3d(0%,0,0);
+		opacity: 1;
+	}
+}

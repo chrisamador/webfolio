@@ -1,0 +1,35 @@
+{
+	"worksData": [
+		{
+			"name": "christopher amador",
+			"url": "/works/chi",
+			"tags": [
+				"pink",
+				"red",
+				"blue"
+			],
+			"img": "chi.jpg"
+		},
+		{
+			"name": "bob",
+			"url": "/works/chi",
+			"tags": [
+				"green",
+				"red"
+			]
+		},
+		{
+			"name": "john",
+			"url": "/works/chi"
+		},
+		{
+			"name": "frank",
+			"url": "/works/chi"
+		},
+		{
+			"name": "king",
+			"url": "/works/chi"
+		}
+	]
+}
+

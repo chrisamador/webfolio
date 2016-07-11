@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="694px" height="399px" viewBox="0 0 694 399" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>laptop-full</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 398.121 693.238 398.121 693.238 0 0 0"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="laptop-full">
+            <path d="M66.6965,374.9881 L66.6965,16.8631 C66.6965,8.1391 73.8345,1.0001 82.5595,1.0001 L609.7575,1.0001 C618.4825,1.0001 625.6205,8.1391 625.6205,16.8631 L625.6205,374.9881 L66.6965,374.9881 L66.6965,374.9881 Z" id="Stroke-1" stroke="#898884" stroke-width="2"></path>
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Clip-4"></g>
+            <polygon id="Stroke-3" stroke="#898884" stroke-width="2" mask="url(#mask-2)" points="85.94 352.803 607.298 352.803 607.298 25.344 85.94 25.344"></polygon>
+            <polygon id="Stroke-5" stroke="#898884" stroke-width="2" mask="url(#mask-2)" points="1 386.779 692.238 386.779 692.238 374.988 1 374.988"></polygon>
+            <path d="M607.1539,397.121 C607.1539,397.121 692.0939,396.912 692.0939,386.779 L0.9999,386.779 C0.9999,396.912 85.9399,397.121 85.9399,397.121 L607.1539,397.121 L607.1539,397.121 Z" id="Stroke-6" stroke="#898884" stroke-width="2" mask="url(#mask-2)"></path>
+            <path d="M411.1141,381.2284 L281.9801,381.2284 C279.3191,381.2284 277.1631,379.0714 277.1631,376.4114 L277.1631,374.9884 L415.9311,374.9884 L415.9311,376.4114 C415.9311,379.0714 413.7751,381.2284 411.1141,381.2284 L411.1141,381.2284 Z" id="Stroke-7" stroke="#898884" stroke-width="2" mask="url(#mask-2)"></path>
+            <path d="M342.8557,367.2851 L350.2387,359.9021" id="Stroke-8" stroke="#898884" stroke-width="2" mask="url(#mask-2)"></path>
+            <path d="M342.8557,359.9023 L350.2387,367.2853" id="Stroke-9" stroke="#898884" stroke-width="2" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

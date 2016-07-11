@@ -1,11 +1,28 @@
 {% extends "layout.nunjucks" %}
 {% set pageName = 'orphans' %}
+
+{% set orphans = [
+	'1.jpg',
+	'2.jpg',
+	'6.jpg',
+	'9.jpg',
+	'10.jpg',
+	'20.jpg',
+	'23.jpg',
+	'bg1.jpg',
+	'bg2.png'
+] %}
+
+{% set amountInLi = (orphans.length / 3) | round(0, 'ceil') %}
+
+{% set count = 1 %}
+
 {% block content %}
 <section class="page-section__block">
 	<div class="page-section__inner">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-offset-1 col-sm-6">
+				<div class="col-sm-offset-1 col-sm-11">
 					<h1>Orphan Work</h1>
 					<div class="brand-line__block">
 						<h4 class="brand-line__content" >Projects that lack a proper home.
@@ -20,6 +37,47 @@
 					<path d="M11,48.1167658 L11,1.5 C11,0.94771525 11.4477153,0.5 12,0.5 C12.5522847,0.5 13,0.94771525 13,1.5 L13,48.0899297 L21.9217544,38.3254678 C22.2942883,37.9177461 22.9268104,37.8892207 23.3345321,38.2617546 C23.7422538,38.6342885 23.7707791,39.2668105 23.3982453,39.6745322 L12.7557706,51.3222456 L12.0302073,52.1163422 L11.2910386,51.3348941 L0.273513459,39.6871807 C-0.106005959,39.2859533 -0.0884081312,38.6530329 0.312819306,38.2735135 C0.714046744,37.893994 1.34696712,37.9115919 1.72648654,38.3128193 L11,48.1167658 Z M11.7344672,49.4749988 C11.8190252,49.4982289 11.9080638,49.5106354 12,49.5106354 C12.0974459,49.5106354 12.1916364,49.4966973 12.2806866,49.470706 L12.7440117,49.9605327 L11.2792798,49.9731811 L11.7344672,49.4749988 Z" id="arrow"></path>
 				</svg>
 			</a>
+		</div>
+	</div>
+</section>
+<section class="page-section__block">
+	<div class="page-section__inner">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="orphans-listing__block">
+
+						{% for orphan in orphans %}
+
+							{% if count == 1 %}
+								<li>
+							{% endif %}
+
+							{% set count = count + 1 %}
+
+							<div class="orphans-single__block">
+								<img class="slide-in" data-view-scroll src="/assets/img/orphans/{{orphan}}" alt="">
+							</div>
+
+							{% if count > amountInLi%}
+								</li>
+								{% set count = 1 %}
+							{% endif %}
+
+						{% endfor %}
+
+					</ul>
+					<div class="orphans-quote__block">
+						<div class="orphans-quote__inner">
+							<h6 class="orphans-quote__quote">
+								“Victory has 100 fathers and defeat is an orphan”
+							</h6>
+							<small class="orphans-quote__byline">- John F. Kennedy </small>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </section>

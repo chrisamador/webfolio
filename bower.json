@@ -23,6 +23,7 @@
     "flickity": "^1.2.1",
     "async": "^1.5.2",
     "requirejs": "^2.2.0",
-    "jquery": "^3.0.0"
+    "jquery": "^3.0.0",
+    "fullpage.js": "^2.8.1"
   }
 }
