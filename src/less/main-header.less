@@ -19,9 +19,17 @@
 .header__nav{
 	position: fixed;
 	top: 2em;
+	transition: top 750ms @trans;
 
 	@media @min-sm{
 		//top: 2em;
+	}
+	.scrolled-down &{
+		top: -2em;
+	}
+	.scrolled-up &{
+		top: 2em;
+		transition-delay: 500ms
 	}
 }
 
@@ -44,10 +52,42 @@
 	}
 
 	.page-home &{
-		opacity: 0;
+		//opacity: 0;
 	}
 
 }
+
+.header__links {
+	display: none;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   transition: opacity 750ms ease;
+
+	@media @min-sm{
+		display: inline-block;
+	}
+
+	li {
+	    display: inline-block;
+	}
+
+	a {
+	    padding: 0 .5em;
+	    color: @white-dark;
+	    transition: color 500ms ease;
+
+	    &:hover,&:focus{
+	    	text-decoration: none;
+	    	color: @iron;
+	    }
+	}
+	.active a{
+		color: @red;
+	}
+}
+
+
 .header__nav{
 	right: 2em;
 
@@ -62,7 +102,7 @@
 	margin-left: 1em;
 	transition: color 500ms @trans;
 
-	@media (min-width: 350px){
+	@media @min-sm{
 		display: inline-block;
 	}
 }

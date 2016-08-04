@@ -33,16 +33,25 @@ define(['jquery'],function ($) {
 	}
 
 	var pagerClick = function(e){
+		var $li;
+
+		console.log(e);
 
 		if(stage.jsScrolling){
 			return;
 		}
 
-		var i = parseInt( $(e.target).attr('data-index') );
+		if(e.target.tagName == "SPAN"){
+			$li = $(e.target).parent();
+		}else{
+			$li = $(e.target);
+		}
+
+		var index = parseInt( $li.attr('data-index') );
 
 		stage.jsScrolling = true;
 
-		moveToEl( stage.$sections.eq(i) );
+		moveToEl( stage.$sections.eq(index) );
 	}
 
 	var pagerUpdate = function(){
@@ -56,7 +65,7 @@ define(['jquery'],function ($) {
 	}
 
 	var moveToEl = function($el){
-		console.log('moveToEl')
+		//console.log('moveToEl')
 		stage.moving = true;
 
 		$('html, body').animate({
@@ -69,6 +78,7 @@ define(['jquery'],function ($) {
 	}
 
 	var sectionUpdate = function(index){
+		console.log('sectionUpdate');
 		var oldSection = currentSection(),
 			 newSection;
 
@@ -76,18 +86,19 @@ define(['jquery'],function ($) {
 
 		newSection = currentSection();
 
-		console.log(oldSection);
-		console.log(newSection);
+		// console.log(oldSection);
+		// console.log(newSection);
 
 		// Making sure it's a new sections in view
 		if(oldSection.attr('data-index') !== newSection.attr('data-index') || stage.initLoad){
-			console.log('new section!')
+			console.log('new section found');
+
 			stage.initLoad = false;
 			oldSection.removeClass('in-view');
 			newSection.addClass('in-view').addClass('view-loaded');
 
 			if(!stage.moving && !stage.jsScrolling){
-				//moveToEl(newSection);
+				moveToEl(newSection);
 			}
 			pagerUpdate();
 		}
@@ -95,24 +106,28 @@ define(['jquery'],function ($) {
 	}
 
 	var checkCurrentPos = function(){
-		var padding = Math.floor(window.innerHeight / 2);
+		var padding = Math.floor(window.innerHeight / 3),
+			 windowScrollTop = $(window).scrollTop();
 
 		stage.$sections.each(function(i,el){
-			if(el.offsetTop - padding <= document.body.scrollTop && el.offsetTop + el.offsetHeight - padding > document.body.scrollTop){
+			if(el.offsetTop - padding <= windowScrollTop && el.offsetTop + el.offsetHeight - padding > windowScrollTop){
 				stage.currentPosition = i;
 			}
 		});
 	}
 
+
 	var scrolling = function(e){
+		console.log('scrolling...');
 		if(stage.moving){
 			e.preventDefault();
-			return;
 		}
 
 		sectionUpdate();
 	}
 
+
+	console.log('beep boop scroll config');
 	$(window).on('scroll mousewheel touchMove', scrolling);
 
 	var init = function(){

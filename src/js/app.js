@@ -116,10 +116,12 @@ require(['backbone','init','page'], function(Backbone,init,page){
 		updateNavActive: function(){
 			var mainNav = $('#nav-links__main-output'),
 				 footerNav = $('#nav-links__footer-output'),
+				 headerNav = $('.header__links'),
 				 currentPos = document.location.pathname;
 
-			mainNav.find('li').removeClass('active'),
+			mainNav.find('li').removeClass('active');
 			footerNav.find('li').removeClass('active');
+			headerNav.find('li').removeClass('active');
 
 			var check = function(el){
 				if(currentPos.length == 1 && el.dataset.href.length == 1){
@@ -133,6 +135,7 @@ require(['backbone','init','page'], function(Backbone,init,page){
 
 			_.each(mainNav.find('a'), check);
 			_.each(footerNav.find('a'), check);
+			_.each(headerNav.find('a'), check);
 		}
 	})
 
