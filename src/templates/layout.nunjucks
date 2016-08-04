@@ -15,8 +15,9 @@
 			var b = document.getElementById('body');
 			b.className = b.className + ' typekit-loaded';
 		} });}catch(e){}</script>
-	<link rel="stylesheet" href="/assets/css/lib.min.css">
+	  <link rel="stylesheet" href="/assets/css/lib.min.css">
      <link rel="stylesheet" href="/assets/css/app.css">
+     {% block head %} {% endblock %}
  </head>
  <body id="body" class="page-{{pageName}}">
  <!--[if lt IE 9]>
@@ -26,41 +27,20 @@
  	Please Turn on Javascript to see this and many great pages on the web.
  </noscript>
 
-<nav class="main-nav__block">
-	<div class="main-nav__inner">
-			<div class="main-nav__nav" id="nav-links__main-output">
-				<ul class="main-nav__links nav-links">
-					<li class="active"><a data-href="/" href="/">Home</a></li>
-					<li><a data-href="works" href="/works">Works <span class="num">8</span> </a></li>
-					<!-- <li><a data-href="thoughts" href="thoughts">Thoughts</a></li> -->
-					<li><a data-href="orphans" href="/orphans">Orphans <span class="num">16</span>  </a></li>
-					<li><a data-href="about" href="/about">About</a></li>
-					<li><a data-href="contact" href="#contact">Contact</a></li>
-				</ul>
-			</div>
-	</div>
-</nav>
+<div class="body">
 
-<div class="transition-screen__block">
-	<div class="transition-screen__inner">
+{% include "partials/header.html" %}
 
-	</div>
-</div>
-
-<div class="body__block">
-
-{% include "partials/main-header.html" %}
-
-	<div class="page__block" id="page__block">
+	<div class="page" id="page">
 		<!-- ##Start## -->
 			{% block content %} {% endblock %}
 		<!-- ##End## -->
-	</div> <!-- end of page__block -->
+	</div> <!-- end of page -->
 
-{% include "partials/main-footer.html" %}
-<div id="footerNav"></div>
+{% include "partials/footer.html" %}
+<div id="footer-nav"></div>
 
-</div> <!-- end of body__block -->
+</div> <!-- end of body -->
 
 
 <div id="loading-screen" class="loading-screen__block is-closed">
@@ -79,9 +59,8 @@
 	</div>
 </div>
 
-<ul class="pager__block" id="pager"></ul>
 
-<script src="/assets/js/libs/vendor.min.js"></script>
-	<script data-main="/assets/js/app" src="/assets/js/libs/require.js"></script>
- </body>
+  <script src="/assets/js/libs/vendor.min.js"></script>
+	<!-- <script data-main="/assets/js/app" src="/assets/js/libs/require.js"></script> -->
+</body>
 </html>

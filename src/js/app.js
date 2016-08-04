@@ -16,8 +16,7 @@ require.config({
 		jquery: 'libs/jquery',
 		underscore: 'libs/underscore',
 		fullscreen : 'module/fullscreen',
-		dReady: 'module/domready'
-
+		domReady: 'module/domready'
 	}
 })
 
