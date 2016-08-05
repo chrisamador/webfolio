@@ -61,10 +61,14 @@
 .home-intro{
   text-align: center;
   background-color: @black;
-  padding: 6em 0 22em 0;
+  padding: 6em 0 19em 0;
   overflow: hidden;
   user-select: none;
   cursor: url(../img/png/chalk.png) 0 45, auto;
+
+  @media @min-sm{
+    padding-bottom: 22em;
+  }
 
   & > .container{
     position: relative;
@@ -78,10 +82,10 @@
 
   h1{
     color: white;
-  }
-
-  .brand-line:before{
-    background-color: @gold;
+    font-size: 3.75em;
+    @media @min-sm{
+      font-size: @font-size-h1;
+    }
   }
 }
 
@@ -176,15 +180,23 @@
 }
 
 .work-types-listing{
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  .mx-ul-brand-line();
+  // margin: 0;
+  // padding: 0;
+  display: inline-block;
+  text-align: left;
   color: @gold;
   font-size: @font-size-h4;
 
+  &:before{
+    background-color: @gold;
+  }
+
   li{
-    display: inline-block;
-    margin: 0 .75em;
+    @media @min-sm{
+      display: inline-block;
+      margin: 0 .75em;
+    }
   }
 
   a{

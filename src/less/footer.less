@@ -4,22 +4,34 @@
  * _footer
  *
  */
+
+.footer{
+  .brand-logo{
+
+  }
+}
+
+
 .footer__options{
   background-color: @red;
   background-image: url(../img/bg-footer-options.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  //background-attachment: fixed;
   color: white;
   padding: 4em 0;
-
-  a{
-    color: white;
-  }
 }
 
 .footer-options__options{
   .mx-ul-brand-line();
+  a{
+    color: white;
+
+    &:hover,&:focus{
+      color: white;
+      text-decoration: underline;
+    }
+  }
 }
 
 
@@ -34,11 +46,66 @@
 }
 
 .nav-links--footer{
+  margin-bottom: 2em;
   li{
     margin-right: 1em;
+    margin-bottom: 1em;
   }
   a{
     color: white;
     font-weight: bold;
   }
 }
+
+//
+
+.social-links{
+  .mx-ul-reset();
+  margin-bottom: 2em;
+
+  li{
+    padding-left: 2em;
+    margin-bottom: .5em;
+    position: relative;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  li:before{
+    content: '';
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    left: 0;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  a{
+    .small();
+    font-weight: bold;
+  }
+
+  .fb:before{
+    background-image: url(../img/svg/facebook.svg);
+  }
+  .tw:before{
+    background-image: url(../img/svg/twitter.svg);
+  }
+}
+
+//
+
+.copyright{
+  text-align: center;
+  display: block;
+  font-size: 0.625em;
+
+  @media @min-sm{
+    text-align: inherit;
+  }
+}
+
+//

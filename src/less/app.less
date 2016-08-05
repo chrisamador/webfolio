@@ -124,21 +124,24 @@
 // @line-height-computed:;
 @text-color: @iron-dark;
 
-
-h1{
+h1,.h1{
 	font-weight: bold;
-}
-h2{
 
 }
-h3{
-	font-weight: bold;
+h2,.h2{
+
 }
-h4{
+h3,.h3{
+	font-weight: bold;
+
+}
+h4,.h4{
 	//font-weight: bold;
 }
+h5, .h5{
 
-h6{
+}
+h6, .h6{
 	text-transform: uppercase;
 	max-width: 10em;
 	font-weight: bold;
@@ -231,15 +234,15 @@ h6{
 	margin: 0;
 	padding: 0;
 	// font-size: 1.14em;
-	padding-left: 4em;
+	padding-left: 64px;
 	position: relative;
 
 	&:before{
 		content: '';
 		position: absolute;
 		display: block;
-		width: 3em;
-		top: 1em;
+		width: 48px;
+		top: .70em;
 		left: 0;
 		height: 2px;
 		background-color: white;
@@ -247,9 +250,12 @@ h6{
 	}
 
 	li{
-		display: inline-block;
 		list-style: none;
-		margin: .5em 0;
+		margin-bottom: .5em;
+
+		@media @min-sm{
+			display: inline-block;
+		}
 	}
 
 	a{
@@ -292,7 +298,6 @@ body{
 }
 
 
-
 /**
  *
  * _helpers
@@ -303,7 +308,30 @@ body{
 	white-space: nowrap;
 }
 
+.col-right{
+	@media @min-sm{
+		text-align: right;
+	}
+}
+.col-left{
+	@media @min-sm{
+		text-align: left;
+	}
+}
 
+.brand-logo{
+	path{
+		fill: white;
+	}
+}
+
+.btn-circle{
+	border-radius: 100%;
+	border: 1px solid;
+  padding: 6px 10px 0 10px;
+  height: 36px;
+  width: 36px;
+}
 
 @import 'sections/loading-screen';
 @import 'sections/transition-screen';
