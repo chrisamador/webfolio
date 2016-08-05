@@ -1,12 +1,8 @@
-define(['jquery','domReady','module/loadingscreen','module/slidein'], function ($,domReady,loadingScreen,slidein) {
+define(['jquery'], function ($) {
 
 
-	// }
-
-   /*
-
-		Footer margin
-
-   */
+  return function initRun() {
+    console.log('Init Run!!');
+  }
 
 });

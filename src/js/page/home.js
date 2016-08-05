@@ -1,23 +1,100 @@
-define(function () {
-return function(){
+define(['jquery'],function () {
+	return function(){
 
-	// var sec = document.getElementsByTagName('section')[0];
+		var clickX = [],
+				clickY = [],
+				clickDrag = [],
+				paint;
 
-	// setTimeout(function(){
-	// 	sec.className += ' in-view';
-	// },500)
+		var context = document.getElementById('canvas').getContext('2d'),
+				homeIntro = document.getElementById('home-intro'),
+				$homeIntro = $(homeIntro),
+				$btn = $homeIntro.find('.home-canvas__button'),
+				$canvas = $(context.canvas);
 
-	var flkty = new Flickity( '.work-slider__wrapper', {
-		wrapAround : true,
-		arrowShape: "M12.9980337,40.3819871 L100.707107,40.3819871 L100.707107,46.7220851 L12.7478899,46.7220851 L48.4336888,82.4078841 L43.9505625,86.8910104 L5.21978644,48.1602343 L5.11462323,48.2653975 L0.631496898,43.7822712 L0.736660116,43.677108 L0.631496898,43.5719448 L5.11462323,39.0888185 L5.21978644,39.1939817 L43.9505625,0.463205617 L48.4336888,4.94633194 L12.9980337,40.3819871 Z"
-	});
+		$canvas.attr('height',  $homeIntro.outerHeight() + 'px');
+  	$canvas.attr('width',  $homeIntro.width() + 'px');
 
-	$('#btn-selected-works').on('click', function(e){
-   	e.preventDefault();
+		$(window).on('load resize', function () {
+			$canvas.attr('height',  $homeIntro.outerHeight() + 'px');
+    	$canvas.attr('width',  $homeIntro.width() + 'px');
+		})
 
-   	$('html, body').animate({
-		   scrollTop: $('#selected-works').offset().top
-		}, 600, 'swing')
-	})
-}
+		function addPosition(x, y, dragging){
+		  clickX.push(x);
+		  clickY.push(y);
+		  clickDrag.push(dragging);
+		}
+
+		function canvasDraw(){
+		  //clearCanvas();
+
+		  context.strokeStyle = "#737067";
+		  context.lineJoin = "round";
+		  context.lineWidth = 2;
+
+		 for(var i=0; i < clickX.length; i++) {
+		    context.beginPath();
+		    if(clickDrag[i] && i){
+		      context.moveTo(clickX[i-1], clickY[i-1]);
+		    }else{
+		       context.moveTo(clickX[i]-1, clickY[i]);
+		    }
+		    context.lineTo(clickX[i], clickY[i]);
+		    context.closePath();
+		    context.stroke();
+		  }
+
+			if(clickX.length > 100){
+				clickX = [];
+				clickY = [];
+				clickDrag = [];
+			}
+
+		}
+
+		function clearCanvas() {
+			context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+		}
+
+		context.strokeStyle = "#737067";
+		context.lineJoin = "round";
+		context.lineWidth = 2;
+
+		$canvas.on('mousedown', function(e){
+			var mouseX = e.pageX - homeIntro.offsetLeft,
+					mouseY = e.pageY - homeIntro.offsetTop;
+
+		  paint = true;
+
+		  addPosition(e.pageX - homeIntro.offsetLeft, e.pageY - homeIntro.offsetTop);
+		  canvasDraw();
+		});
+
+		$canvas.on('mousemove', function(e){
+		  if(paint){
+				$btn.removeClass('hidden');
+		    addPosition(e.pageX - homeIntro.offsetLeft, e.pageY - homeIntro.offsetTop, true);
+		    canvasDraw();
+		  }
+		});
+
+		$btn.on('click', function(e) {
+			e.preventDefault();
+			clearCanvas();
+			clickX = [];
+			clickY = [];
+			clickDrag = [];
+			$(this).animate({
+				opacity: 0
+			}, 500, function () {
+				$(this).css('opacity', 1).addClass('hidden');
+			});
+		})
+
+		$canvas.on('mouseup mouseleave', function(e){
+		  paint = false;
+
+		});
+	}
 });
