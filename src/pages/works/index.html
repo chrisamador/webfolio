@@ -5,36 +5,133 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-<section class="page-section__block">
-	<div class="page-section__inner">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-offset-1 col-sm-11">
-					<h1>Selected Projects</h1>
-					<div class="brand-line__block">
-						<h4 class="brand-line__content" >2008 - 2016</h4>
-					</div>
-				</div>
-			</div>
-			<a href="#intro" class="welcome-arrow__block">
-				<svg class="arrow__block" width="24px" height="53px" viewBox="0 0 24 53" xmlns="http://www.w3.org/2000/svg">
-					<title>Arrow</title>
-					<path d="M11,48.1167658 L11,1.5 C11,0.94771525 11.4477153,0.5 12,0.5 C12.5522847,0.5 13,0.94771525 13,1.5 L13,48.0899297 L21.9217544,38.3254678 C22.2942883,37.9177461 22.9268104,37.8892207 23.3345321,38.2617546 C23.7422538,38.6342885 23.7707791,39.2668105 23.3982453,39.6745322 L12.7557706,51.3222456 L12.0302073,52.1163422 L11.2910386,51.3348941 L0.273513459,39.6871807 C-0.106005959,39.2859533 -0.0884081312,38.6530329 0.312819306,38.2735135 C0.714046744,37.893994 1.34696712,37.9115919 1.72648654,38.3128193 L11,48.1167658 Z M11.7344672,49.4749988 C11.8190252,49.4982289 11.9080638,49.5106354 12,49.5106354 C12.0974459,49.5106354 12.1916364,49.4966973 12.2806866,49.470706 L12.7440117,49.9605327 L11.2792798,49.9731811 L11.7344672,49.4749988 Z" id="arrow"></path>
-				</svg>
-			</a>
+<section class="section works-intro section--intro">
+  <div class="container">
+		<div class="section__inner">
+	    <div class="nav-brand__text">
+	      <h6>Creative Frontend Developer</h6>
+	    </div>
+	    <h1 class="title">Works</h1>
+	    <div class="below-title">
+	      <div class="row">
+	        <div class="col-sm-8">
+	          <h4 class="brand-line"> c. 2013 - 2014</h4>
+	        </div>
+	        <div class="col-sm-4">
+	          <h6>Is it really work if you enjoy it?</h6>
+	        </div>
+	      </div>
+	    </div>
 		</div>
-	</div>
+  </div>
 </section>
 
-{% for work in worksData %}
-<section class="page-section__block single-work__block single-work__{{work.name}}">
-	<div class="page-section__inner">
-		<div class="container">
-			 {{workMarco.printSingleWork(work)}}
-		</div>
-	<div>
+<section class="section works-listing">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="work-listing">
+          <div class="works-listing__types-selectors">
+            <ul class="work-types-selectors-listing">
+              <li class="active"> <a href="#"> All </a> </li>
+              <li> <a href="#"> Websites </a> </li>
+              <li> <a href="#"> Brands </a> </li>
+              <li> <a href="#"> Apps </a> </li>
+              <li> <a href="#"> Prints <span class="item-count">6</span> </a> </li>
+            </ul>
+          </div>
+          <div class="work-listing__col">
+            <a href="#" class="single-work single-work--mobridge">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  Mobridge Regional Hospital and Clinics
+                </h3>
+            </a>
+            <a href="#" class="single-work single-work--chi">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  CHI St. Alexuis Landing Redesign
+                </h3>
+            </a>
+            <a href="#" class="single-work single-work--mobridge">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  Mobridge Regional Hospital and Clinics
+                </h3>
+            </a>
+            <a href="#" class="single-work single-work--chi">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  CHI St. Alexuis Landing Redesign
+                </h3>
+            </a>
+          </div>
+          <div class="work-listing__col">
+            <a href="#" class="single-work single-work--chi">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  CHI St. Alexuis Landing Redesign
+                </h3>
+            </a>
+            <a href="#" class="single-work single-work--mobridge">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  Mobridge Regional Hospital and Clinics
+                </h3>
+            </a>
+            <a href="#" class="single-work single-work--mobridge">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  Mobridge Regional Hospital and Clinics
+                </h3>
+            </a>
+            <a href="#" class="single-work single-work--chi">
+                <ul class="single-work__tags">
+                  <li>#Website</li>
+                  <li>#HTML5</li>
+                  <li>#CSS3</li>
+                </ul>
+                <h3 class="single-work__title">
+                  CHI St. Alexuis Landing Redesign
+                </h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-{% endfor %}
+
+
 
 
 {% endblock %}

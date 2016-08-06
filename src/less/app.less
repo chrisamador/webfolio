@@ -118,7 +118,7 @@
 // @headings-font-family:    "adelle-sans",sans-serif;
 @headings-font-weight:    400;
 @headings-line-height:    1.15;
-@headings-color:          inherit;
+@headings-color:       inherit;
 
 @grid-gutter-width: 60px;
 // @line-height-computed:;
@@ -139,7 +139,8 @@ h4,.h4{
 	//font-weight: bold;
 }
 h5, .h5{
-
+	font-weight: bold;
+	font-style: italic;
 }
 h6, .h6{
 	text-transform: uppercase;
@@ -283,7 +284,7 @@ h6, .h6{
  *
  */
 body{
-
+	//color: @black-light;
 	&.is-loaded{
 		overflow: initial;
 	}
@@ -303,6 +304,7 @@ body{
  * _helpers
  *
  */
+
 
 .text-no-break{
 	white-space: nowrap;
@@ -325,12 +327,27 @@ body{
 	}
 }
 
+.item-count{
+	font-size: @font-size-h6;
+	display: inline-block;
+	vertical-align: super;
+	opacity: .6;
+}
+.btn{
+	padding: .5em 2.5em;
+}
+
 .btn-circle{
 	border-radius: 100%;
 	border: 1px solid;
   padding: 6px 10px 0 10px;
   height: 36px;
   width: 36px;
+}
+
+label{
+	color: @gold-dark;
+	padding: .75em .25em;
 }
 
 @import 'sections/loading-screen';
@@ -344,7 +361,8 @@ body{
 
 @import 'sections/content';
 
-@import 'sections/work-listing';
+@import 'sections/works';
 @import 'sections/work-single';
 
 @import 'sections/orphans';
+@import 'sections/about';

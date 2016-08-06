@@ -1,10 +1,26 @@
 //
 
-.orphans-listing__block{
+
+.orphans-intro{
+	background-color: @black-light;
+	background-image: url(../img/pattern-black.png);
+	color: white;
+
+	.nav-brand__text,h6{
+		color: @gold;
+	}
+	.brand-line:before{
+		background-color: @gold;
+	}
+}
+
+
+.orphans-listing{
 	.clearfix();
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-top: -6em;
 	text-align: center;
 
 	@media @min-sm{
@@ -17,28 +33,33 @@
 	}
 }
 
-.orphans-single__block{
-	// display: inline-block;
-	// padding: 1em;
-	// width: 33%;
-	// float: left;
+.single-orphan{
 	padding: .5em;
+
+
+	 img{
+		 max-width: 100%;
+	 }
 }
 
+.single-orphan__inner{
+	//border: 2px solid black;
 
-.orphans-quote__block{
+}
+
+.quote{
 	text-align: center;
 	margin: 8em 0;
 	color: @iron-light;
 }
-.orphans-quote__inner{
+.quote__inner{
 	max-width: 40em;
 	display: inline-block;
 }
-.orphans-quote__quote{
+.quote__quote{
 	font-style: italic;
 }
-.orphans-quote__byline{
+.quote__byline{
 	text-align: right;
 	font-weight: bold;
 	display: block;

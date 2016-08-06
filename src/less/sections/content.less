@@ -5,16 +5,48 @@
 .section--dark-bg{
 	color: white;
 }
+.section--intro{
+	height: 100vh;
+	min-height: 700px;
+
+	h6{
+		display: inline-block;
+		vertical-align: bottom;
+		margin-right: 1.5em;
+	}
+	.section__inner{
+    position: relative;
+    padding-bottom: 6em;
+    padding-top: 15em;
+  	padding-top: 33vh;
+  }
+}
+
 .section__arrow{
 	position: absolute;
 	right: 2em;
 	bottom: 2em;
+	cursor: pointer;
+	animation: arrowHover 2s @trans infinite;
 
 	@media @min-sm{
 		right: 4em;
-		bottom: 4em;	
+		bottom: 4em;
 	}
 }
+
+@keyframes arrowHover {
+	0%{
+		transform: translateY(0px);
+	}
+	50%{
+		transform: translateY(-50px);
+	}
+	100%{
+		transform: translateY(0px);
+	}
+}
+
 .row-content{
 	margin-bottom: 2em;
 

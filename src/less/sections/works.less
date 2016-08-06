@@ -1,0 +1,49 @@
+/**
+ *
+ * Works
+ *
+ */
+
+
+ .works-intro{
+   background-color: @red;
+   background-image: url(../img/pattern-red.png);
+   color: white;
+
+   h6{
+     color: @red-light;
+   }
+   .brand-line:before{
+     background-color: @red-light;
+   }
+ }
+
+.works-listing{
+  margin-bottom: 6em;
+}
+
+/* Selector listings */
+.works-listing__types-selectors{
+  padding: 1em;
+}
+.work-types-selectors-listing{
+  .mx-ul-reset();
+  color: white;
+
+  li{
+    display: inline-block;
+    margin-right: 1em;
+
+    &.active,&:hover{
+      border-bottom: 2px solid;
+    }
+  }
+
+  a{
+    color: white;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}

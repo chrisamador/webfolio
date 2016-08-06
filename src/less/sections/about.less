@@ -1,0 +1,130 @@
+/**
+ *
+ * About + Contact Styles
+ *
+ */
+
+.about-intro{
+  background-color: @red;
+  color: white;
+
+  h6{
+    color: @red-light;
+  }
+  .brand-line:before{
+    background-color: @red-light;
+  }
+
+}
+
+.about-content{
+  padding: (@grid-gutter-width / 3);
+  background-color: white;
+  margin-top: -12em;
+
+  @media (min-width: 350px){
+    padding: (@grid-gutter-width / 2);
+  }
+
+  .row{
+    position: relative;
+  }
+
+}
+
+.title--about{
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: @font-size-h3 / 1.2;
+
+  @media @min-sm{
+    font-size: @font-size-h3;
+  }
+}
+.profile{
+  position: relative;
+}
+.profile__image{
+  margin-top: -5em;
+
+
+  @media @min-sm{
+    padding-right: 2.5em;
+  }
+
+  img{
+    width: 100%;
+  }
+}
+
+.profile__image__img{
+  width: 100%;
+  min-height: 450px;
+  background-color: @black;
+  background-image: url(../img/about/profile.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.profile__connects{
+
+  @media @min-sm{
+    position: absolute;
+    right: -.35em;
+    top: 4em;
+  }
+}
+.connect-listing{
+  .mx-ul-reset();
+  margin-bottom: 1em;
+
+
+  li{
+    display: inline-block;
+    margin: 1em 1em 0 0;
+
+    @media @min-sm{
+      margin: 1em 0;
+      display: block;
+    }
+  }
+  path{
+    fill: @gold;
+  }
+
+  a:hover{
+    path{
+      fill: @gold-dark;
+    }
+  }
+}
+
+.contact-form{
+  padding: (@grid-gutter-width / 3);
+  background-color: #EAEAEA;
+  margin-bottom: 6em;
+
+  @media (min-width: 350px){
+    padding: (@grid-gutter-width / 2);
+  }
+}
+
+.contact-form__form{
+  // padding-top: 1em;
+}
+
+.form-group--name {
+
+  @media @min-md{
+    margin-right: 1.5em;
+  }
+}
+
+.form-group--name,
+.form-group--email {
+
+  @media @min-md{
+    display: inline-block;
+    width: 46.5%;
+  }
+}
