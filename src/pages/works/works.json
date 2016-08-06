@@ -1,35 +1,53 @@
 {
 	"worksData": [
 		{
-			"name": "christopher amador",
-			"url": "/works/chi",
-			"tags": [
-				"pink",
-				"red",
-				"blue"
-			],
-			"img": "chi.jpg"
+	  	"id": "chi",
+	  	"name": "CHI St. Alexius",
+	  	"tags": [ "tag", "tag", "tag"],
+	  	"imgName": "chi.jpg",
+	  	"extraImg": ""
+	  },
+		{
+	  	"id": "dmvlambdas",
+	  	"name": "VAS1 Lambda Theta Phi Latin Fraternity",
+	  	"tags": [ "tag", "tag", "tag"],
+	  	"imgName": "lambda.jpg",
+	  	"extraImg": ""
+	  },
+		{
+			"id": "heartandstroke",
+			"name": "ND Heart and Stroke",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "chi.jpg",
+			"extraImg": ""
 		},
 		{
-			"name": "bob",
-			"url": "/works/chi",
-			"tags": [
-				"green",
-				"red"
-			]
+			"id": "menhairco",
+			"name": "Men Hair Co.",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "chi.jpg",
+			"extraImg": ""
 		},
 		{
-			"name": "john",
-			"url": "/works/chi"
+			"id": "niea",
+			"name": "NIEA",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "chi.jpg",
+			"extraImg": ""
 		},
 		{
-			"name": "frank",
-			"url": "/works/chi"
+			"id": "plnr",
+			"name": "PLNR App",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "chi.jpg",
+			"extraImg": ""
 		},
 		{
-			"name": "king",
-			"url": "/works/chi"
+			"id": "sgce",
+			"name": "SGCE",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "chi.jpg",
+			"extraImg": ""
 		}
 	]
 }
-

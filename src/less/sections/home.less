@@ -46,6 +46,10 @@
 	color: @red-light;
 }
 
+.home-welcome__sfx{
+  position: fixed;
+}
+
 //
 
 .home-intro{
@@ -167,93 +171,4 @@
     margin: 0;
     display: inline-block;
   }
-}
-
-.work-types-listing{
-  .mx-ul-brand-line();
-  // margin: 0;
-  // padding: 0;
-  display: inline-block;
-  text-align: left;
-  color: @gold;
-  font-size: @font-size-h4;
-
-  &:before{
-    background-color: @gold;
-  }
-
-  li{
-    @media @min-sm{
-      display: inline-block;
-      margin: 0 .75em;
-    }
-  }
-
-  a{
-    .btn();
-    color: inherit;
-    font-size: inherit;
-    padding: 0;
-
-    &:hover{
-      color: @red;
-    }
-  }
-}
-
-//
-.work-listing{
-  // .mx-ul-reset();
-  // .row();
-
-  .clearfix();
-  margin-top: -16em;
-  position: relative;
-  z-index: 1;
-
-}
-.work-listing__col{
-  .make-sm-column(6);
-  padding: 0;
-}
-
-.single-work{
-  background-color: teal;
-  padding: 2em;
-  padding-top: 8em;
-  color: white;
-  display: block;
-
-  &:hover{
-    color: white;
-    text-decoration: none;
-  }
-
-  ul{
-    .mx-ul-reset();
-  }
-}
-
-
-
-.single-work__title{
-  margin: 0;
-  margin-top: .5em;
-}
-.single-work__tags{
-  .mx-ul-reset();
-  opacity: .5;
-  li{
-    display: inline-block;
-    margin-right: .5em;
-  }
-}
-
-.single-work--chi{
-  background-color: #B8E986;
-}
-.single-work--mobridge{
-  background-color: #4772B3;
-  padding-top: 16em;
-
 }
