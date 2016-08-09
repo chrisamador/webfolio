@@ -103,7 +103,24 @@
   color: white;
   display: block;
 
-  &:hover{
+  ul{
+    .mx-ul-reset();
+  }
+
+}
+
+.single-work__link{
+  display: block;
+  position: relative;
+  z-index: 2;
+  min-height: 20em;
+  color: inherit;
+  text-decoration: none;
+
+
+  &:hover, &:focus{
+    color: inherit;
+
     .single-work__tags,
     .single-work__title{
       transform: translateY(-1rem);
@@ -113,27 +130,15 @@
       transform: scale(1.15);
     }
   }
-
-  ul{
-    .mx-ul-reset();
-  }
-
-}
-
-.single-work__link{
-  display: block;
-  min-height: 20em;
-  display: block;
-  color: inherit;
-  text-decoration: none;
 }
 
 .single-work__inner{
-  left: 1em;
-  right: 1em;
-  bottom: 1em;
+  left: 2em;
+  right: 2em;
+  bottom: 2em;
   position: absolute;;
   z-index: 2;
+  max-width: 22em;
 }
 
 .single-work__bg{
@@ -146,21 +151,26 @@
   background-color: @black-light;
   background-image: url(../img/pattern-black.png);
   background-position: center;
+  background-size: cover;
   transition: transform 2s ease;
 }
 
 .single-work__title{
   margin: 0;
-  margin-top: .5em;
+  margin-top: .25em;
   transition: transform 500ms @trans;
 }
 .single-work__tags{
   .mx-ul-reset();
-  transition: transform 500ms @trans;
+  transition: transform 800ms @trans;
   opacity: .5;
+
   li{
+    .h6();
     display: inline-block;
     margin-right: .5em;
+    margin-bottom: 0;
+
   }
 }
 
@@ -169,28 +179,26 @@
 
 
   &.chi{
-    background-color: #4992ff;
-    background-image: none;
+    .single-work__bg{
+      background-color: #4992ff;
+    }
   }
 
+
   /*----------- Mobridge -----------*/
-
   &.mobridge{
-    background-color: #4772B3;
-
-    .single-work__inner{
-        padding-top: 16em;
+    .single-work__bg{
+      background-color: rgb(97, 56, 27);
     }
   }
 
   /*----------- dmvlambdas -----------*/
 
   &.dmvlambdas{
-    color: @black-light;
+    // color: @black-light;
 
     .single-work__bg{
       background-color: rgb(97, 56, 27);
-      background-image: url(../img/works/dmvlambdas.jpg);
     }
 
     .single-work__inner{
@@ -198,5 +206,6 @@
     }
   }
   /*----------- end of parent -----------*/
+
 
 }

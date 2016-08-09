@@ -1,0 +1,178 @@
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+<div class="single-work-page">
+
+  {% set prevId = "" %}
+  {% set prevName = "" %}
+  {% set prevTags = "" %}
+  {% set prevImgFull = "" %}
+
+
+  {% set nextId = "" %}
+  {% set nextName = "" %}
+  {% set nextTags = "" %}
+  {% set nextImgFull = ""%}
+
+
+  {% set currentId = "" %}
+  {% set currentName = "" %}
+  {% set currentMeta = "" %}
+  {% set currentImg = "" %}
+
+  {% for work in worksData %}
+
+    {% if (pageName == work.id) %}
+
+      {% if loop.first %}
+        {% set prevIndex = loop.length - 1 %}
+      {% else %}
+        {% set prevIndex = loop.index0 - 1  %}
+      {% endif %}
+
+      {% if loop.last %}
+        {% set nextIndex = 0 %}
+      {% else %}
+        {% set nextIndex = loop.index %}
+      {% endif %}
+
+      {% if work.imgName %}
+        {% set currentImg = "style=background-image:url(/assets/img/works/" + work.imgName + ")" %}
+      {% endif %}
+
+      {% set currentId = work.id %}
+      {% set currentName = work.name %}
+      {% set currentMeta = work.meta %}
+
+
+      {% set prevId =  worksData[prevIndex].id %}
+      {% set prevName = worksData[prevIndex].name %}
+      {% set prevTags = worksData[prevIndex].tags %}
+      {% set prevImg = worksData[prevIndex].imgName %}
+
+      {% set nextId =  worksData[nextIndex].id %}
+      {% set nextName = worksData[nextIndex].name %}
+      {% set nextTags = worksData[nextIndex].tags %}
+      {% set nextImg = worksData[nextIndex].imgName %}
+
+      {% if prevImg %}
+        {% set prevImgFull = "style=background-image:url(/assets/img/works/" + prevImg + ")" %}
+      {% endif %}
+
+      {% if nextImg %}
+        {% set nextImgFull = "style=background-image:url(/assets/img/works/" + nextImg + ")" %}
+      {% endif %}
+
+
+    {% endif %}
+
+  {% endfor %}
+
+
+  <section class="section work-intro {{currentId}}-intro section--intro" {{currentImg}}>
+    <div class="container">
+  		<div class="section__inner">
+  	    <div class="nav-brand__text">
+  	      <h6>Creative Frontend Developer</h6>
+  	    </div>
+        <div class="section__content">
+    	    <h1 class="title">{{currentName}}</h1>
+    	    <div class="below-title">
+    	      <div class="row">
+    	        <div class="col-xs-6 col-md-3">
+                <div class="work-meta-col">
+                  <h6>Role</h6>
+      	          <h5>{{currentMeta.role}}</h5>
+                </div>
+    	        </div>
+    					<div class="col-xs-6 col-md-3">
+                <div class="work-meta-col">
+                  <h6>Release Date</h6>
+      	          <h5>{{currentMeta.date}}</h5>
+                </div>
+    	        </div>
+    					<div class="col-xs-6 col-md-3">
+                <div class="work-meta-col">
+                  <h6>Client</h6>
+      	          <h5>{{currentMeta.client}}</h5>
+                </div>
+    	        </div>
+    					<div class="col-xs-6 col-md-3">
+                <div class="work-meta-col">
+                  <h6>Scope</h6>
+      	          <h5>{{currentMeta.scope}}</h5>
+                </div>
+    	        </div>
+    	      </div>
+    	    </div>
+        </div>
+  		</div>
+    </div>
+  </section>
+
+  {% block workcontent %}
+
+  {% endblock %}
+
+<section class="section nav-works">
+  <div class="container container--nav-works">
+    <div class="row">
+      <div class="col-sm-6 col--nav-works">
+        <aside class="single-work {{prevId}}">
+          <a href="/works/{{prevId}}" data-whref="/works/{{prevId}}" class="single-work__link">
+            <div class="single-work__inner">
+              {# Tags #}
+              {% if prevTags %}
+                <ul class="single-work__tags">
+
+                  {% for tag in prevTags %}
+                  <li>#{{tag}}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+                <h3 class="single-work__title">
+                  {{prevName}}
+                </h3>
+            </div>
+
+            <div class="single-work__bg" {{prevImgFull}}></div>
+          </a>
+        </aside>
+      </div>
+      <div class="col-sm-6 col--nav-works">
+        <aside class="single-work {{nextId}}">
+          <a href="/works/{{nextId}}" data-whref="/works/{{nextId}}" class="single-work__link">
+            <div class="single-work__inner">
+              {# Tags #}
+              {% if nextTags %}
+                <ul class="single-work__tags">
+
+                  {% for tag in nextTags %}
+                  <li>#{{tag}}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+                <h3 class="single-work__title">
+                  {{nextName}}
+                </h3>
+            </div>
+            <div class="single-work__bg" {{nextImgFull}}></div>
+          </a>
+        </aside>
+      </div>
+      <!-- <div class="col-sm-12 col--nav-works nav-works__viewall">
+        <a href="/works" class="btn btn-primary">  View All </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+</div>
+{% endblock %}

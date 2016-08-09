@@ -60,7 +60,7 @@ gulp.task('watch', function(){
 	livereload.listen();
 
 	gulp.watch(config.src + '/js/**/*.js',['js']);
-	gulp.watch(config.src + '/**/*.html',['html']);
+	gulp.watch(config.src + '/**/*.+(html|nunjucks)',['html']);
 	gulp.watch(config.src + '/pages/works/works.json',['html']);
 	gulp.watch(config.src + '/less/**/*.less',['styles']);
 })

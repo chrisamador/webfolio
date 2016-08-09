@@ -1,9 +1,16 @@
+
+{% for work in worksData %}
+  {% if (pageName == work.id) %}
+    {% set pageTitle = work.name + " | " %}
+  {% endif %}
+{% endfor %}
+
 <!doctype html>
 <html class="no-js" lang="en">
  <head>
      <meta charset="utf-8">
      <meta http-equiv="x-ua-compatible" content="ie=edge">
-     <title>Chris Amador </> Creative Frontend Developer</title>
+     <title>{{pageTitle}}Chris Amador </> Creative Frontend Developer</title>
      <meta name="description" content="">
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -52,7 +59,7 @@
 		<!-- ##Start## -->
 			{% block content %} {% endblock %}
 		<!-- ##End## -->
-	</div> <!-- end of page -->
+	</div>
 
 {% include "partials/footer.html" %}
 

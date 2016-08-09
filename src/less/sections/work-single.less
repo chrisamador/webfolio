@@ -1,6 +1,89 @@
 /*
 	table of contents
 
-	_chi
+	_global
+	_mobridge
 
 */
+
+
+/**
+ *
+ * _global
+ *
+ */
+.nav-works{
+	& > .container{
+		padding-left: @grid-gutter-width / 2 ;
+		padding-right: @grid-gutter-width / 2 ;
+	}
+}
+.container--nav-works{
+	max-width: 100%;
+}
+.col--nav-works{
+	padding: 0;
+}
+
+.nav-works__viewall{
+	padding: 1em;
+	background-color: white;
+	a{
+		width: 100%;
+		font-size: @font-size-h4
+	}
+}
+
+.single-work-page{
+	.nav-brand__text{
+		color: white;
+	}
+	img{
+		max-width: 100%;
+	}
+
+	.title{
+		font-size: @font-size-h2;
+
+		@media @min-sm{
+			font-size: @font-size-h1;
+		}
+	}
+}
+
+.work-intro{
+	color: white;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+
+	h5{
+		font-weight: normal;
+	}
+}
+
+.work-content-intro{
+	// margin-top: -6em;
+}
+/**
+ *
+ * _mobridge
+ *
+ */
+
+.mobridge-intro{
+	color: white;
+}
+.mobridge-content-intro{
+	background: white;
+}
+
+.mobridge-intro-preview{
+	margin-top: -12em;
+}
+
+/**
+ *
+ * _dmvlambdas
+ *
+ */

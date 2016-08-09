@@ -5,49 +5,117 @@
 	  	"name": "CHI St. Alexius",
 	  	"tags": [ "tag", "tag", "tag"],
 	  	"imgName": "chi.jpg",
-	  	"extraImg": ""
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
 	  },
+		{
+			"id": "civilianmedicaljobs",
+			"name": "U.S. Army Medicine Civilian Corps",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "medcom.jpg",
+			"extraImg": "",
+			"meta": {
+				"role" : "Lead Developer",
+				"date" : "March 2015",
+				"client" : "Agency Work",
+				"scope" : "Website Design, Branding"
+			}
+		},
 		{
 	  	"id": "dmvlambdas",
 	  	"name": "VAS1 Lambda Theta Phi Latin Fraternity",
 	  	"tags": [ "tag", "tag", "tag"],
-	  	"imgName": "lambda.jpg",
-	  	"extraImg": ""
+	  	"imgName": "dmvlambdas.jpg",
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
 	  },
 		{
-			"id": "heartandstroke",
-			"name": "ND Heart and Stroke",
-			"tags": [ "tag", "tag", "tag"],
+	  	"id": "mobridge",
+	  	"name": "Mobridge Regional Hospital and Clinics",
+	  	"tags": [ "tag", "tag", "tag"],
+	  	"imgName": "mobridge-bg.jpg",
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
+	  },
+		{
+			"id": "ndquits",
+			"name": "ND Quits - Cessation Programs",
+			"tags": [ "tag", "tag", "tag", "tag", "tag", "tag"],
 			"imgName": "chi.jpg",
-			"extraImg": ""
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
 		},
 		{
 			"id": "menhairco",
 			"name": "Men Hair Co.",
 			"tags": [ "tag", "tag", "tag"],
 			"imgName": "chi.jpg",
-			"extraImg": ""
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
 		},
 		{
 			"id": "niea",
 			"name": "NIEA",
 			"tags": [ "tag", "tag", "tag"],
 			"imgName": "chi.jpg",
-			"extraImg": ""
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
 		},
 		{
 			"id": "plnr",
 			"name": "PLNR App",
 			"tags": [ "tag", "tag", "tag"],
 			"imgName": "chi.jpg",
-			"extraImg": ""
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
 		},
 		{
 			"id": "sgce",
 			"name": "SGCE",
-			"tags": [ "tag", "tag", "tag"],
+			"tags": [ "Print", "Website", "tag"],
 			"imgName": "chi.jpg",
-			"extraImg": ""
+			"extraImg": "",
+	    "meta": {
+	      "role" : "Lead Designer, Lead Developer",
+	      "date" : "2015 - 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Print, Website Design"
+	    }
 		}
 	]
 }

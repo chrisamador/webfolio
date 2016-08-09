@@ -1,11 +1,17 @@
-{% extends "layout.nunjucks" %}
+{% extends "singlework.nunjucks" %}
+{% set pageName = 'mobridge' %}
 
-{% block content %}
-<section id="welcome" class="page-section__block">
-	<div class="page-section__inner">
-		<div class="container">
-			<h1>It's works man</h1>
-		</div>
-	</div>
+{% block workcontent %}
+
+<section class="section work-content-intro mobridge-content-intro">
+  <div class="container">
+    <div class="row">
+      <div class="mobridge-intro-preview">
+        <img src="/assets/img/works/mobridge-preview-01.png" alt="">
+        <img src="/assets/img/works/mobridge-preview-02.png" alt="">
+      </div>
+
+    </div>
+  </div>
 </section>
 {% endblock %}
