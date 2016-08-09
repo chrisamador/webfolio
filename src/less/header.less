@@ -7,23 +7,40 @@
 
 .header{
 	position: fixed;
-	top: 2em;
+	top: 1em;
 	width: 100%;
 	color: @red;
 	z-index: 999;
 	font-family: @headings-font-family;
+	// overflow-x: hidden;
+	// min-height: 52px;
 
 	& > .container{
 		position: relative;
+	}
+
+	@media @min-sm{
+		top: 2em;
+		// position: fixed;
 	}
 }
 
 
 .header__logo{
 	position: absolute;
+  left: 1em;
 	display: inline-block;
+	transition: transform 500ms ease;
 	path{
 		fill: white;
+	}
+
+	.scrolled-view & {
+		transform: scale(.8);
+	}
+
+	a{
+		display: block;
 	}
 }
 
@@ -41,20 +58,44 @@
 	position: absolute;
 	right: 1em;
 	// opacity: .0;
-}
-.nav-links--header{
-  display: inline-block;
-  background: @black;
 
 	&:after{
 		content: '';
 		position: absolute;
 		width: 300%;
-		height: 100%;
+		height: 50px;
 		top:0;
 		left: 100%;
 		background-color: @black;
 		display: block;
+	}
+}
+
+.nav-brand__text{
+	position: absolute;
+	top: .75em;
+	left: 4em;
+	color: @red-light;
+
+	@media @min-sm{
+		top: 1.5em;
+		left: -.5em;
+	}
+}
+
+
+.nav-links--header{
+  display: inline-block;
+  background: @black;
+	position: relative;
+	z-index: 3;
+	transition: all 750ms @trans;
+	transform: translateX(110%);
+	// opacity: 0;
+
+	@media @min-sm{
+		transform: translateX(0%);
+		opacity: 1;
 	}
 
   a{
@@ -69,10 +110,97 @@
 			background-color: @gold-dark;
 		}
   }
+	li{
+		transform: scaleY(0);
+		transition: transform 500ms ease;
+
+		@media @min-sm{
+			transform: scaleY(1);
+		}
+	}
+
+	.scrolled-view &{
+		transform: translateX(110%);
+
+		li{
+			transform: scaleY(0);
+		}
+	}
 }
 
 .page-home .nav-links{
 	li:first-child{
 		display: none;
+	}
+}
+
+
+.mobile-nav{
+	position: absolute;
+	top: 0;
+	right: -3px;
+	max-height: 50px;
+  overflow: hidden;
+	z-index: 2;
+	background-color: @black;
+	text-align: center;
+	padding-right: 1em;
+	transition: all 750ms @trans;
+	transform: translateX(0%);
+	opacity: 1;
+
+	@media @min-sm{
+
+	}
+
+	.scrolled-view &{
+		svg{
+			opacity: 1;
+			transform: scale(1);
+			transition: all 500ms ease 550ms;
+		}
+	}
+
+	a{
+		min-height: 50px;
+    min-width: 50px;
+    display: block;
+
+		&:hover, &:focus{
+			color: white;
+			background-color: @gold-dark;
+
+			circle{
+				transform: translateY(-5px);
+			}
+		}
+	}
+	svg{
+		display: inline-block;
+    margin-top: 14px;
+		opacity: 1;
+		transform: scale(1);
+		transition: all 500ms ease 550ms;
+
+		@media @min-sm{
+			opacity: 0;
+			transform: scale(.75);
+			transition-delay: 0ms;
+		}
+	}
+
+	circle{
+		transition: transform 500ms ease;
+
+
+		&:nth-child(1){
+			transition-delay: 0ms;
+		}
+		&:nth-child(2){
+			transition-delay: 150ms;
+		}
+		&:nth-child(3){
+			transition-delay: 300ms;
+		}
 	}
 }

@@ -150,15 +150,19 @@ h6, .h6{
 }
 
 .brand-line{
+	position: relative;
+	padding-left: 3em;
+
 	&:before{
 		content: "";
     width: 2em;
     height: 2px;
     margin-right: .5em;
     background-color: @black;
-    display: inline-block;
-    vertical-align: middle;
-}
+		position: absolute;
+		left: 0;
+		top: .5em;
+	}
 }
 
 //
@@ -298,6 +302,14 @@ body{
 	max-width: 1140px;
 }
 
+.container, .container-fluid {
+
+	@media @min-sm{
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+
+}
 
 /**
  *
