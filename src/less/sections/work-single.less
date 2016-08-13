@@ -26,15 +26,36 @@
 }
 
 .nav-works__viewall{
-	padding: 1em;
-	background-color: white;
+
 	a{
 		width: 100%;
-		font-size: @font-size-h4
+		padding: 2em;
+		background-color: @gold-dark;
+		transition: background 500ms ease;
+
+		&:hover,&:focus{
+			background-color: @gold;
+
+			.icon--display-all{
+				transform: scale(1.1);
+			}
+		}
 	}
+
+
+}
+
+.icon--display-all{
+	display: block;
+	width: 2em;
+	height: 2em;
+	margin: 0 auto;
+	transition: transform 500ms ease;
 }
 
 .single-work-page{
+	background-color: white;
+
 	.nav-brand__text{
 		color: white;
 	}
@@ -43,11 +64,14 @@
 	}
 
 	.title{
-		font-size: @font-size-h2;
+		font-size: @font-size-h1 * .75;
 
 		@media @min-sm{
 			font-size: @font-size-h1;
 		}
+	}
+	.below-title{
+		opacity: .6;
 	}
 }
 
@@ -65,6 +89,63 @@
 .work-content-intro{
 	// margin-top: -6em;
 }
+.mockup{
+	display: inline-block;
+	position: relative;
+}
+
+.mockup--laptop{
+	.mockup__preview{
+		top: 7%;
+    bottom: 15.25%;
+    right: 13.25%;
+    left: 13.25%;
+	}
+}
+
+.mockup--iphone{
+	max-width: 200px;
+
+	.mockup__preview{
+		top: 36px;
+    bottom: 40px;
+    right: 36px;
+    left: 35px;
+	}
+}
+
+.mockup__preview{
+	position: absolute;
+	animation: previewScroll 10s ease 2s 1;
+}
+
+@keyframes previewScroll {
+	0%{
+		background-position-y: 0%;
+	}
+	50%{
+		background-position-y: 90%;
+	}
+	100%{
+		background-position-y: 0%;
+	}
+}
+
+.workbg(@img){
+	background-position: top center;
+	background-size: cover;
+	background-image: url('../img/works/@{img}');
+}
+
+.img-preview{
+	padding: 6em 0 3em 0;
+	// background-color: #dddddd;
+
+	&:last-child{
+		padding-bottom: 6em;
+	}
+}
+
 /**
  *
  * _mobridge
@@ -79,11 +160,55 @@
 }
 
 .mobridge-intro-preview{
-	margin-top: -12em;
+	margin-top: -6em;
+	text-align: center;
+	position: relative;
+	margin-bottom: 6em;
+
+	@media @min-md{
+		margin-top: -8em;
+	}
+
+	.mockup--iphone{
+		margin-top: 4em;
+		@media @min-sm{
+			position: absolute;
+			bottom: 0em;
+			right: 8em;
+		}
+	}
+
+	&.in-view .mockup__preview{
+		animation: previewScroll 10s ease 2s infinite;
+	}
+}
+
+.mockup__preview--mobridge-01{
+	.workbg('mobridge-preview-01.jpg');
+}
+.mockup__preview--mobridge-02{
+	.workbg('mobridge-preview-02.jpg');
 }
 
 /**
  *
+ * _chi
+ *
+ */
+
+ .mockup__preview--chi-01{
+ 	.workbg('chi-01.jpg');
+ }
+
+/**
+ *
  * _dmvlambdas
+ *
+ */
+
+
+/**
+ *
+ * _ndquits
  *
  */

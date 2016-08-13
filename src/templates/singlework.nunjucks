@@ -162,9 +162,9 @@
           </a>
         </aside>
       </div>
-      <!-- <div class="col-sm-12 col--nav-works nav-works__viewall">
-        <a href="/works" class="btn btn-primary">  View All </a>
-      </div> -->
+      <div class="col-sm-12 col--nav-works nav-works__viewall">
+        <a href="/works" class="btn"> <svg class="icon--display-all" width="68" height="68" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><title>Display All</title><g fill="#FFF" fill-rule="evenodd"><path d="M52 52h16v16H52zM26 52h16v16H26zM0 52h16v16H0zM52 26h16v16H52zM26 26h16v16H26zM0 26h16v16H0zM52 0h16v16H52zM26 0h16v16H26zM0 0h16v16H0z"/></g></svg> </a>
+      </div>
     </div>
   </div>
 </section>

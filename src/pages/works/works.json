@@ -14,7 +14,7 @@
 	    }
 	  },
 		{
-			"id": "civilianmedicaljobs",
+			"id": "medcom",
 			"name": "U.S. Army Medicine Civilian Corps",
 			"tags": [ "tag", "tag", "tag"],
 			"imgName": "medcom.jpg",
@@ -27,36 +27,23 @@
 			}
 		},
 		{
-	  	"id": "dmvlambdas",
-	  	"name": "VAS1 Lambda Theta Phi Latin Fraternity",
-	  	"tags": [ "tag", "tag", "tag"],
-	  	"imgName": "dmvlambdas.jpg",
+			"id": "dmvlambdas",
+			"name": "VAS1 Lambda Theta Phi Latin Fraternity, Inc.",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "dmvlambdas.jpg",
 			"extraImg": "",
-	    "meta": {
-	      "role" : "Lead Designer",
-	      "date" : "Feb 2016",
-	      "client" : "Agency Work",
-	      "scope" : "Website Design, Branding"
-	    }
-	  },
-		{
-	  	"id": "mobridge",
-	  	"name": "Mobridge Regional Hospital and Clinics",
-	  	"tags": [ "tag", "tag", "tag"],
-	  	"imgName": "mobridge-bg.jpg",
-			"extraImg": "",
-	    "meta": {
-	      "role" : "Lead Designer",
-	      "date" : "Feb 2016",
-	      "client" : "Agency Work",
-	      "scope" : "Website Design, Branding"
-	    }
-	  },
+			"meta": {
+				"role" : "Lead Designer",
+				"date" : "Feb 2016",
+				"client" : "Agency Work",
+				"scope" : "Website Design, Branding"
+			}
+		},
 		{
 			"id": "ndquits",
 			"name": "ND Quits - Cessation Programs",
 			"tags": [ "tag", "tag", "tag", "tag", "tag", "tag"],
-			"imgName": "chi.jpg",
+			"imgName": "ndquits.jpg",
 			"extraImg": "",
 	    "meta": {
 	      "role" : "Lead Designer",
@@ -69,7 +56,7 @@
 			"id": "menhairco",
 			"name": "Men Hair Co.",
 			"tags": [ "tag", "tag", "tag"],
-			"imgName": "chi.jpg",
+			"imgName": "menhairco.jpg",
 			"extraImg": "",
 	    "meta": {
 	      "role" : "Lead Designer",
@@ -82,7 +69,7 @@
 			"id": "niea",
 			"name": "NIEA",
 			"tags": [ "tag", "tag", "tag"],
-			"imgName": "chi.jpg",
+			"imgName": "niea.jpg",
 			"extraImg": "",
 	    "meta": {
 	      "role" : "Lead Designer",
@@ -92,10 +79,23 @@
 	    }
 		},
 		{
+			"id": "mobridge",
+			"name": "Mobridge Regional Hospital and Clinics",
+			"tags": [ "tag", "tag", "tag"],
+			"imgName": "mobridge.jpg",
+			"extraImg": "",
+			"meta": {
+				"role" : "Lead Designer",
+				"date" : "Feb 2016",
+				"client" : "Agency Work",
+				"scope" : "Website Design, Branding"
+			}
+		},
+		{
 			"id": "plnr",
 			"name": "PLNR App",
 			"tags": [ "tag", "tag", "tag"],
-			"imgName": "chi.jpg",
+			"imgName": "plnr.jpg",
 			"extraImg": "",
 	    "meta": {
 	      "role" : "Lead Designer",
@@ -108,7 +108,7 @@
 			"id": "sgce",
 			"name": "SGCE",
 			"tags": [ "Print", "Website", "tag"],
-			"imgName": "chi.jpg",
+			"imgName": "sgce.jpg",
 			"extraImg": "",
 	    "meta": {
 	      "role" : "Lead Designer, Lead Developer",

@@ -127,7 +127,7 @@
     }
 
     .single-work__bg{
-      transform: scale(1.15);
+      transform: scale(1.1);
     }
   }
 }
@@ -205,7 +205,52 @@
 
     }
   }
+
+  /*----------- sgce -----------*/
+  &.sgce{
+    // color: @black-light;
+  }
+
+  /*----------- ndquits -----------*/
+
+  &.ndquits{
+    // color: @black-light;
+  }
+
+  /*----------- menhairco -----------*/
+
+  &.menhairco{
+    .single-work__bg{
+      background-position: 75% center;
+    }
+  }
+
+  /*----------- medcom -----------*/
+
+  &.medcom{
+    .single-work__bg{
+      background-position: 65% center;
+    }
+  }
+
   /*----------- end of parent -----------*/
 
+
+}
+
+.work-listing{
+  .menhairco,
+  .medcom,
+  .mobridge,
+  .plnr,
+  .niea {
+    .single-work__link{
+      min-height: 30em;
+
+      @media @min-sm{
+        min-height: 40em;
+      }
+    }
+  }
 
 }
