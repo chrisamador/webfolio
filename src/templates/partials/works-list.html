@@ -20,7 +20,7 @@
         {% set bgImg = "style=background-image:url(/assets/img/works/" + work.imgName + ")" %}
       {% endif %}
 
-      <aside class="single-work {{work.id}}"
+      <aside data-view-scroll class="single-work single-work--listing {{work.id}}"
       {# data-tags #}
       {% if work.tags %}
         data-tag="{{ work.tags|join(',') }}"

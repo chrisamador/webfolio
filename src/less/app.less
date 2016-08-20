@@ -287,6 +287,18 @@ h6, .h6{
   list-style: none;
 }
 
+.mx-slide-in{
+	transform: translateY(25%);
+	opacity: 0;
+	transition: transform 1000ms ease-out, opacity 1000ms ease 100ms;
+
+	&.in-view{
+		transform: translateY(0%);
+		opacity: 1;
+	}
+
+}
+
 /**
  *
  * _setup

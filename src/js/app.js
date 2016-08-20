@@ -15,13 +15,19 @@ require.config({
 		backbone: 'libs/backbone',
 		jquery: 'libs/jquery',
 		underscore: 'libs/underscore',
-		fullscreen : 'module/fullscreen',
+		slideIn : 'module/slideIn',
 		domReady: 'module/domready'
 	}
 })
 
-require(['backbone','init','page'], function(Backbone,init,page){
-	init();
+require(['backbone','init','page', 'domReady'], function(Backbone,init,page,domReady){
+
+
+	domReady(function(){
+		init();
+	})
+
+
 	document.documentElement.className = document.documentElement.className.replace(/no-js/g, 'js-on');
 
 	if (location.pathname === '/') {
@@ -29,35 +35,34 @@ require(['backbone','init','page'], function(Backbone,init,page){
 	}
 
 
-function cloner($ele){
+	function cloner($ele){
 
-var $body = $('.body'),
-    eleTop = $ele.offset().top - $(window).scrollTop(),
-    eleLeft = $ele.offset().left,
-    eleRight = $(window).width() - (eleLeft + $ele.outerWidth()),
-    $transEle = $ele.clone();
+		var $body = $('.body'),
+		    eleTop = $ele.offset().top - $(window).scrollTop(),
+		    eleLeft = $ele.offset().left,
+		    eleRight = $(window).width() - (eleLeft + $ele.outerWidth()),
+		    $transEle = $ele.clone();
 
-$transEle.css({
-  position: 'fixed',
-  zIndex: 9,
-  left: eleLeft + 'px',
-  top: eleTop + 'px',
-  right: eleRight + 'px',
-});
+		$transEle.css({
+		  position: 'fixed',
+		  zIndex: 9,
+		  left: eleLeft + 'px',
+		  top: eleTop + 'px',
+		  right: eleRight + 'px',
+		});
 
-$body.append($transEle);
+		$body.append($transEle);
 
-$transEle.animate({
+		$transEle.animate({
 
-left: 0,
-right: 0,
-bottom: 0,
-top: 0
+		left: 0,
+		right: 0,
+		bottom: 0,
+		top: 0
 
-}, 1000)
+		}, 1000)
 
-
-}
+	}
 
 
 });

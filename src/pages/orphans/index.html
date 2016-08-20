@@ -14,7 +14,7 @@
 	'bg2.png'
 ] %}
 
-{% set amountInLi = (orphans.length / 3) | round(0, 'ceil') %}
+{% set amountInLi = (orphans.length / 2) | round(0, 'ceil') %}
 
 {% set count = 1 %}
 
@@ -51,7 +51,7 @@
 
 				{% set count = count + 1 %}
 
-				<div class="single-orphan">
+				<div data-view-scroll class="single-orphan">
 					<div class="single-orphan__inner">
 						<img class="slide-in" data-view-scroll src="/assets/img/orphans/{{orphan}}" alt="">
 					</div>

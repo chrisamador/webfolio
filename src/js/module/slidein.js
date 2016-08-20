@@ -6,6 +6,8 @@ define(['jquery'],function ($) {
 			 breakpoint = scrollTop + windowHeight,
 			 delay = 300;
 
+		// $("[data-view-scroll]").not(".in-view").each(function() {
+
 		$("[data-view-scroll]").not(".in-view").each(function() {
 			var $this = $(this);
 
@@ -20,9 +22,5 @@ define(['jquery'],function ($) {
 		});
 	};
 
-	$(window).on("load scroll resize", function() {
-		slideInEffect();
-	});
-
-	return {}
+	return slideInEffect;
 })

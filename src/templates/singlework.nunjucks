@@ -69,7 +69,7 @@
   {% endfor %}
 
 
-  <section class="section work-intro {{currentId}}-intro section--intro" {{currentImg}}>
+	<section class="section work-intro {{currentId}}-intro section--intro" {{currentImg}}>
     <div class="container">
   		<div class="section__inner">
   	    <div class="nav-brand__text">
@@ -81,26 +81,26 @@
     	      <div class="row">
     	        <div class="col-xs-6 col-md-3">
                 <div class="work-meta-col">
-                  <h6>Role</h6>
-      	          <h5>{{currentMeta.role}}</h5>
+                  	<h6>Role</h6>
+      	         	<h5>{{currentMeta.role}}</h5>
                 </div>
     	        </div>
     					<div class="col-xs-6 col-md-3">
                 <div class="work-meta-col">
-                  <h6>Release Date</h6>
-      	          <h5>{{currentMeta.date}}</h5>
+                  	<h6>Release Date</h6>
+      	         	<h5>{{currentMeta.date}}</h5>
                 </div>
     	        </div>
     					<div class="col-xs-6 col-md-3">
                 <div class="work-meta-col">
-                  <h6>Client</h6>
-      	          <h5>{{currentMeta.client}}</h5>
+                 		<h6>Client</h6>
+      	         	<h5>{{currentMeta.client}}</h5>
                 </div>
     	        </div>
     					<div class="col-xs-6 col-md-3">
                 <div class="work-meta-col">
-                  <h6>Scope</h6>
-      	          <h5>{{currentMeta.scope}}</h5>
+                  	<h6>Scope</h6>
+      	         	<h5>{{currentMeta.scope}}</h5>
                 </div>
     	        </div>
     	      </div>
@@ -108,70 +108,66 @@
         </div>
   		</div>
     </div>
-  </section>
+	</section>
 
   {% block workcontent %}
 
   {% endblock %}
 
-<section class="section nav-works">
-  <div class="container container--nav-works">
-    <div class="row">
-      <div class="col-sm-6 col--nav-works">
-        <aside class="single-work {{prevId}}">
-          <a href="/works/{{prevId}}" data-whref="/works/{{prevId}}" class="single-work__link">
-            <div class="single-work__inner">
-              {# Tags #}
-              {% if prevTags %}
-                <ul class="single-work__tags">
+	<section class="section nav-works">
+	  <div class="container container--nav-works">
+	    <div class="row">
+	      <div class="col-sm-6 col--nav-works">
+	        <aside class="single-work {{prevId}}">
+	          <a href="/works/{{prevId}}" data-whref="/works/{{prevId}}" class="single-work__link">
+	            <div class="single-work__inner">
+	              {# Tags #}
+	              {% if prevTags %}
+	                <ul class="single-work__tags">
 
-                  {% for tag in prevTags %}
-                  <li>#{{tag}}</li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
+	                  {% for tag in prevTags %}
+	                  <li>#{{tag}}</li>
+	                  {% endfor %}
+	                </ul>
+	              {% endif %}
 
-                <h3 class="single-work__title">
-                  {{prevName}}
-                </h3>
-            </div>
+	                <h3 class="single-work__title">
+	                  {{prevName}}
+	                </h3>
+	            </div>
 
-            <div class="single-work__bg" {{prevImgFull}}></div>
-          </a>
-        </aside>
-      </div>
-      <div class="col-sm-6 col--nav-works">
-        <aside class="single-work {{nextId}}">
-          <a href="/works/{{nextId}}" data-whref="/works/{{nextId}}" class="single-work__link">
-            <div class="single-work__inner">
-              {# Tags #}
-              {% if nextTags %}
-                <ul class="single-work__tags">
+	            <div class="single-work__bg" {{prevImgFull}}></div>
+	          </a>
+	        </aside>
+	      </div>
+	      <div class="col-sm-6 col--nav-works">
+	        <aside class="single-work {{nextId}}">
+	          <a href="/works/{{nextId}}" data-whref="/works/{{nextId}}" class="single-work__link">
+	            <div class="single-work__inner">
+	              {# Tags #}
+	              {% if nextTags %}
+	                <ul class="single-work__tags">
 
-                  {% for tag in nextTags %}
-                  <li>#{{tag}}</li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
+	                  {% for tag in nextTags %}
+	                  <li>#{{tag}}</li>
+	                  {% endfor %}
+	                </ul>
+	              {% endif %}
 
-                <h3 class="single-work__title">
-                  {{nextName}}
-                </h3>
-            </div>
-            <div class="single-work__bg" {{nextImgFull}}></div>
-          </a>
-        </aside>
-      </div>
-      <div class="col-sm-12 col--nav-works nav-works__viewall">
-        <a href="/works" class="btn"> <svg class="icon--display-all" width="68" height="68" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><title>Display All</title><g fill="#FFF" fill-rule="evenodd"><path d="M52 52h16v16H52zM26 52h16v16H26zM0 52h16v16H0zM52 26h16v16H52zM26 26h16v16H26zM0 26h16v16H0zM52 0h16v16H52zM26 0h16v16H26zM0 0h16v16H0z"/></g></svg> </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
+	                <h3 class="single-work__title">
+	                  {{nextName}}
+	                </h3>
+	            </div>
+	            <div class="single-work__bg" {{nextImgFull}}></div>
+	          </a>
+	        </aside>
+	      </div>
+	      <div class="col-sm-12 col--nav-works nav-works__viewall">
+	        <a href="/works" class="btn"> <svg class="icon--display-all" width="68" height="68" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><title>Display All</title><g fill="#FFF" fill-rule="evenodd"><path d="M52 52h16v16H52zM26 52h16v16H26zM0 52h16v16H0zM52 26h16v16H52zM26 26h16v16H26zM0 26h16v16H0zM52 0h16v16H52zM26 0h16v16H26zM0 0h16v16H0z"/></g></svg> </a>
+	      </div>
+	    </div>
+	  </div>
+	</section>
 
 
 </div>
