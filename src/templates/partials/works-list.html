@@ -20,13 +20,13 @@
         {% set bgImg = "style=background-image:url(/assets/img/works/" + work.imgName + ")" %}
       {% endif %}
 
-      <aside class="single-work {{work.id}}"
+      <aside data-view-scroll class="single-work single-work--listing {{work.id}}"
       {# data-tags #}
       {% if work.tags %}
         data-tag="{{ work.tags|join(',') }}"
       {% endif %}
       >
-        <a href="/works/{{work.id}}" data-whref="/works/{{work.id}}" class="single-work__link">
+        <a href="/works/{{work.id}}" class="single-work__link">
           <div class="single-work__inner">
             {# Tags #}
             {% if work.tags %}

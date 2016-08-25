@@ -1,16 +1,15 @@
 //
 
-define(['jquery','page/home','page/about','page/contact','page/works'],
-	function ($,homepage,about,contact,works) {
+define(['jquery','page/home','page/works','page/about','page/orphans'],
+	function ($,home,works,about,orphans) {
 
-	var run = function(href){
+	return function(){
 		// Run the page functions
-		switch (href) {
-		    case '': 			homepage(); break;
-		    case 'about': 	about(); break;
-		    case 'contact': 	contact(); break;
-		    case 'works': 	works(); break;
+		switch (location.pathname) {
+		    case '/': 			home(); break;
+		    case '/works/': 	works(); break;
+		    case '/about-contact/': 	about(); break;
+		    case '/orphans/': 	orphans(); break;
 		}
 	}
-	return {run: run};
 })

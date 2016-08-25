@@ -19,7 +19,7 @@
  }
 
 .works-listing{
-  margin-bottom: 6em;
+  padding-bottom: 6em;
 }
 
 /* Selector listings */
@@ -35,7 +35,7 @@
     margin-right: 1em;
 
     &.active,&:hover{
-      border-bottom: 2px solid;
+      //border-bottom: 2px solid;
     }
   }
 
@@ -95,13 +95,19 @@
 .work-listing__col{
   .make-sm-column(6);
   padding: 0;
+
+
+}
+
+.single-work--listing{
+	.slide-in();
 }
 
 .single-work{
-  position: relative;
-  overflow: hidden;
-  color: white;
-  display: block;
+	position: relative;
+	overflow: hidden;
+	color: white;
+	display: block;
 
   ul{
     .mx-ul-reset();
@@ -114,7 +120,7 @@
   position: relative;
   z-index: 2;
   min-height: 20em;
-  color: inherit;
+  color: white;
   text-decoration: none;
 
 
@@ -132,13 +138,41 @@
   }
 }
 
+.single-work__link--full-page{
+
+    .single-work__inner{
+    	transform: translateY(25%);
+		opacity: 0;
+		transition: transform 1000ms ease-out, opacity 1000ms ease 100ms;
+    }
+
+  &:hover, &:focus{
+    color: inherit;
+
+    .single-work__tags,
+    .single-work__title{
+      transform: translateY(0rem);
+    }
+
+    .single-work__bg{
+      transform: scale(1);
+    }
+  }
+}
+
 .single-work__inner{
-  left: 2em;
-  right: 2em;
-  bottom: 2em;
+  left: 1em;
+  right: 1em;
+  bottom: 1em;
   position: absolute;;
   z-index: 2;
   max-width: 22em;
+
+  @media @min-sm{
+	  left: 2em;
+	  right: 2em;
+	  bottom: 2em;
+  }
 }
 
 .single-work__bg{
@@ -158,11 +192,11 @@
 .single-work__title{
   margin: 0;
   margin-top: .25em;
-  transition: transform 500ms @trans;
+  transition: transform 500ms @trans, opacity 500ms ease;
 }
 .single-work__tags{
   .mx-ul-reset();
-  transition: transform 800ms @trans;
+  transition: transform 800ms @trans, opacity 500ms ease;
   opacity: .5;
 
   li{
@@ -172,6 +206,14 @@
     margin-bottom: 0;
 
   }
+}
+
+.single-work__next,
+.single-work__prev{
+	position: absolute;
+	top: -2em;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .single-work{
@@ -245,10 +287,10 @@
   .plnr,
   .niea {
     .single-work__link{
-      min-height: 30em;
+      // min-height: 30em;
 
       @media @min-sm{
-        min-height: 40em;
+        // min-height: 40em;
       }
     }
   }

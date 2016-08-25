@@ -5,14 +5,14 @@
 {% extends "layout.nunjucks" %}
 
 {% block content %}
-<section class="section section--intro home-welcome">
+<section class="section section--intro home-welcome" >
   <div class="container">
     <div class="section__inner">
       <div class="nav-brand__text">
         <h6>Creative Frontend Developer</h6>
       </div>
-      <h1 class="title title--home-welcome">Hello</h1>
-      <div class="below-title">
+      <h1 data-view-scroll class="title title--home-welcome slide-in">Hello</h1>
+      <div data-view-scroll class="below-title slide-in">
         <div class="row">
           <div class="col-sm-8">
             <h4 class="brand-line">I'm <a href="/about-contact" data-href="about-contact">Chris Amador</a>...</h4>
@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <div class="section__arrow">
+  <div data-view-scroll class="section__arrow slide-in">
     <svg width="40" height="67" viewBox="0 0 40 67" xmlns="http://www.w3.org/2000/svg"><title>arrow-down</title><g stroke="#DAB0B6" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square"><path d="M1.5 46.5l18.507 18.507M38.5 46.5L19.993 65.007M20 63.5V1"/></g></svg>
   </div>
   <div class="home-welcome__sfx">
