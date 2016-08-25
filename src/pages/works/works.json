@@ -1,29 +1,16 @@
 {
 	"worksData": [
 		{
-	  	"id": "chi",
-	  	"name": "CHI St. Alexius",
-	  	"tags": [ "tag", "tag", "tag"],
-	  	"imgName": "chi.jpg",
-			"extraImg": "",
-	    "meta": {
-	      "role" : "Lead Designer",
-	      "date" : "Feb 2016",
-	      "client" : "Agency Work",
-	      "scope" : "Website Design, Branding"
-	    }
-	  },
-		{
 			"id": "medcom",
 			"name": "U.S. Army Medicine Civilian Corps",
-			"tags": [ "tag", "tag", "tag"],
+			"tags": [ "Website Dev", "Branding", "Prints", "Ads"],
 			"imgName": "medcom.jpg",
 			"extraImg": "",
 			"meta": {
 				"role" : "Lead Developer",
-				"date" : "March 2015",
+				"date" : "Aug 2014 - Aug 2016",
 				"client" : "Agency Work",
-				"scope" : "Website Design, Branding"
+				"scope" : "Website Dev, Branding, Prints, Ads"
 			}
 		},
 		{
@@ -105,16 +92,16 @@
 	    }
 		},
 		{
-			"id": "sgce",
-			"name": "SGCE",
-			"tags": [ "Print", "Website", "tag"],
+			"id": "misc",
+			"name": "Misc. Projects",
+			"tags": [ "Print", "Website"],
 			"imgName": "sgce.jpg",
 			"extraImg": "",
 	    "meta": {
 	      "role" : "Lead Designer, Lead Developer",
-	      "date" : "2015 - 2016",
+	      "date" : "2014 - 2016",
 	      "client" : "Agency Work",
-	      "scope" : "Print, Website Design"
+	      "scope" : "Print, Website Design, Ads"
 	    }
 		}
 	]

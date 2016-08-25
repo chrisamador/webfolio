@@ -55,7 +55,7 @@
 
 {% include "partials/header.html" %}
 
-	<div class="page" id="page">
+	<div class="page page--active">
 		<!-- ##Start## -->
 			{% block content %} {% endblock %}
 		<!-- ##End## -->

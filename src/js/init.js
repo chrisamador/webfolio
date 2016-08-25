@@ -1,14 +1,20 @@
-define(['jquery','slideIn'], function ($,slideIn) {
+define(['scrollView','utls'], function (scrollView,u_) {
   return function init() {
 
 
 
-   var $header = $(document.getElementById('header')),
-   	$window = $(window),
-   	$mobileBtn = $(document.getElementById('mobile-btn')),
-   	$body = $('body'),
- 		$screen = $('#loading-screen');
 
+   var u_header = u_(document.getElementById('header')),
+   	u_window = u_(window),
+   	u_document = u_(document),
+   	u_html = u_(document.documentElement),
+   	u_mobileBtn = u_(document.getElementById('mobile-btn')),
+   	u_body = u_(document.body),
+ 		u_screen = u_(document.getElementById('loading-screen'));
+ 		u_footerBtn = u_(document.getElementById('btnToTop'));
+
+
+  	u_html.replaceClass('no-js','js-on');
 
    /**
     *
@@ -18,10 +24,10 @@ define(['jquery','slideIn'], function ($,slideIn) {
 
 
    function headerScroll() {
-   	if($window.scrollTop() > 40){
-        $header.addClass('scrolled-view');
+   	if(u_window.scrollTop() > 40){
+        u_header.addClass('scrolled-view');
       }else{
-        $header.removeClass('scrolled-view');
+        u_header.removeClass('scrolled-view');
       }
    };
 
@@ -36,17 +42,15 @@ define(['jquery','slideIn'], function ($,slideIn) {
     */
 
 
-   $mobileBtn.on('click', function $mobileBtnClick(e) {
-     e.preventDefault();
-     alert('cool');
+   u_mobileBtn.on('click', function(e) {
+		e.preventDefault();
+		alert('cool');
    });
 
-
-   /**
-    *
-    * scroll event
-    *
-    */
+   u_footerBtn.on('click', function(e){
+   	e.preventDefault();
+   	u_body.animateScrollTop(0);
+   })
 
 
    /**
@@ -55,20 +59,26 @@ define(['jquery','slideIn'], function ($,slideIn) {
     *
     */
 
-    $body.addClass('is-loaded');
+    u_body.addClass('is-loaded');
 
     setTimeout(function(){
 
-    	$screen.remove();
-    	slideIn();
+    	u_screen.remove();
+    	scrollView();
 
-    	$(window).on('scroll touchMove resize', function(e){
-		  	slideIn();
-		  	headerScroll(e);
+
+    	u_document.on('scroll touchMove', function(e){
+		  	headerScroll();
+		  	scrollView();
 		});
 
+    	u_window.on('resize', function(e){
+		  	headerScroll();
+		  	scrollView();
+    	});
 
-    }, 1900);
+    }, 1680);
+
 
   }
 });

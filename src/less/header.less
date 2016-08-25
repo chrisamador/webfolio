@@ -12,18 +12,30 @@
 	color: @red;
 	z-index: 999;
 	font-family: @headings-font-family;
-	// overflow-x: hidden;
-	// min-height: 52px;
+	transition: top 500ms ease, background 500ms ease;
 
 	& > .container{
 		position: relative;
+	}
+	&.scrolled-view{
+		top: 0;
+		height: 3.1em;
+    	background-color: rgba(133, 24, 38, 0.8);
+
+    	@media @min-sm{
+    		top: 2em;
+    		height: auto;
+    		background-color: transparent;
+    	}
 	}
 
 	@media @min-sm{
 		top: 2em;
 		// position: fixed;
 	}
+
 }
+
 
 
 .header__logo{
@@ -45,13 +57,22 @@
 }
 
 .nav-links{
+	.clearfix();
   margin: 0;
   padding: 0;
   list-style: none;
 
+
   li{
-    display: inline-block;
+   	float: left;
   }
+
+}
+
+.nav-links--header .active{
+  	a{
+  		background-color: @gold-dark;
+  	}
 }
 
 .header__nav{
@@ -128,11 +149,11 @@
 	}
 }
 
-.page-home .nav-links{
-	li:first-child{
-		display: none;
-	}
-}
+// .page-home .nav-links{
+// 	li:first-child{
+// 		display: none;
+// 	}
+// }
 
 
 .mobile-nav{

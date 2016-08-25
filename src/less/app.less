@@ -8,10 +8,8 @@
 	_mixins
 	_setup
 	_type
-	_page__block
-	_pager
+	_page
 	_helpers
-	_spacer
 
 */
 
@@ -60,7 +58,7 @@
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
-@gray-light:             lighten(@gray-base, 46.7%); // #777
+@gray-light:             #B3B3B3;
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary:         @red;
@@ -75,7 +73,7 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               @gold;
+@body-bg:               white;
 //** Global text color on `<body>`.
 @text-color:            @black-light;
 
@@ -234,6 +232,8 @@ h6, .h6{
  */
 @trans : cubic-bezier(0.82, 0, 0.26, 1);
 
+@border-radius: 4px;
+
 /**
  *
  * _mixins
@@ -287,7 +287,7 @@ h6, .h6{
   list-style: none;
 }
 
-.mx-slide-in{
+.slide-in{
 	transform: translateY(25%);
 	opacity: 0;
 	transition: transform 1000ms ease-out, opacity 1000ms ease 100ms;
@@ -299,6 +299,15 @@ h6, .h6{
 
 }
 
+.fade-in{
+	opacity: 0;
+	transition: opacity 1000ms ease 100ms;
+
+	&.in-view{
+		opacity: 1;
+	}
+}
+
 /**
  *
  * _setup
@@ -308,6 +317,7 @@ body{
 	//color: @black-light;
 	&.is-loaded{
 		overflow: initial;
+	   overflow-x: hidden;
 	}
 }
 .no-js body{
@@ -320,6 +330,8 @@ body{
 }
 
 .container, .container-fluid {
+	padding-left: 20px;
+	padding-right: 20px;
 
 	@media @min-sm{
 		padding-left: 100px;
@@ -327,6 +339,32 @@ body{
 	}
 
 }
+
+/**
+ *
+ * _page
+ *
+ */
+
+
+.page{
+	background-color: @gold;
+}
+.page--old{
+	position: relative;
+	z-index: 1;
+}
+.page--incoming{
+	position: fixed;
+	left: 100%;
+	top: 0;
+	transition: left 1000ms ease;
+	z-index: 2;
+	width: 100%;
+
+}
+
+
 
 /**
  *
@@ -372,6 +410,20 @@ body{
   padding: 6px 10px 0 10px;
   height: 36px;
   width: 36px;
+}
+
+.btn-view-cta{
+	// text-transform: uppercase;
+	font-size: 1.25em;
+	border: none;
+
+	& > .icon{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: .25em;
+    	padding-top: .2em;
+    	height: 1.5em;
+	}
 }
 
 label{

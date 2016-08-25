@@ -5,11 +5,11 @@
   background-image: url(../img/home/bg-home.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 
-  &.in-view{
-  	color: blue;
-  }
+	.page--active &{
+		background-attachment: fixed;
+	}
 
 	h6{
 		color: @red-light;
@@ -158,7 +158,7 @@
 //
 
 .home-works{
-  margin-bottom: 6em;
+  padding-bottom: 6em;
 }
 
 .home-works__instructions{

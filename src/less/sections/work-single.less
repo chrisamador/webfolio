@@ -25,24 +25,19 @@
 	padding: 0;
 }
 
-.nav-works__viewall{
+.btn--nav-works{
+	width: 100%;
+	padding: 2em;
+	background-color: @gold-dark;
+	transition: background 500ms ease;
 
-	a{
-		width: 100%;
-		padding: 2em;
-		background-color: @gold-dark;
-		transition: background 500ms ease;
+	&:hover,&:focus{
+		background-color: @gold;
 
-		&:hover,&:focus{
-			background-color: @gold;
-
-			.icon--display-all{
-				transform: scale(1.1);
-			}
+		.icon--display-all{
+			transform: scale(1.1);
 		}
 	}
-
-
 }
 
 .icon--display-all{
@@ -55,6 +50,7 @@
 
 .single-work-page{
 	background-color: white;
+    overflow: hidden;
 
 	.nav-brand__text{
 		color: white;
@@ -73,6 +69,23 @@
 	.below-title{
 		opacity: .6;
 	}
+
+}
+
+.single-work-page__inner{
+	.section{
+		margin-bottom: 6em;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+
+.section--view-cta{
+	background-color: @gray-lighter;
+	padding: 6em 0;
+	text-align: center;
 }
 
 .work-intro{
@@ -89,6 +102,35 @@
 .work-content-intro{
 	// margin-top: -6em;
 }
+
+
+.mockup-intro-preview{
+	margin-top: -7em;
+	text-align: center;
+	position: relative;
+	margin-right: -4em;
+	margin-left: -4em;
+
+	@media @min-md{
+		margin-top: -8em;
+		margin-right: -6em;
+		margin-left: -6em;
+	}
+
+	.mockup--iphone{
+		margin-top: 4em;
+		@media @min-sm{
+			position: absolute;
+			bottom: 0em;
+			right: 8em;
+		}
+	}
+
+	&.in-view .mockup__preview{
+		animation: previewScroll 10s ease 3s 1;
+	}
+}
+
 .mockup{
 	display: inline-block;
 	position: relative;
@@ -116,7 +158,8 @@
 
 .mockup__preview{
 	position: absolute;
-	animation: previewScroll 10s ease 2s 1;
+	background-size: 100%;
+	//animation: previewScroll 10s ease 2s 1;
 }
 
 @keyframes previewScroll {
@@ -137,13 +180,122 @@
 	background-image: url('../img/works/@{img}');
 }
 
-.img-preview{
-	padding: 6em 0 3em 0;
-	// background-color: #dddddd;
 
-	&:last-child{
-		padding-bottom: 6em;
+
+.tri-preview{
+	.clearfix();
+	padding: 0 1em;
+	position: relative;
+	text-align: center;
+	margin-bottom: 4em;
+
+	@media @min-sm{
+		margin-top: 6em;
 	}
+}
+
+.tri-preview__item{
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+	margin-bottom: 2em;
+
+	@media @min-sm{
+		display: inline-block;
+		width: 45%;
+	}
+}
+.tri-preview__item--primary{
+	@media @min-sm{
+		position: absolute;
+		top: -4em;
+		left: 50%;
+		margin-left: -22.5%;
+		z-index: 1;
+	}
+}
+.tri-preview__item--secondary{
+
+}
+.tri-preview__item--tri{
+
+}
+
+.color-swatch-list{
+	.clearfix();
+	margin-bottom: 2em;
+
+}
+
+.color-swatch{
+	float: left;
+	width: 50%;
+	padding: 0em .25em;
+	margin-bottom: 1em;
+
+	@media @min-sm{
+		width: 16.66%;
+
+	}
+}
+
+.color-swatch__color{
+	height: 100px;
+	width: 100%;
+}
+
+.color-swatch__label{
+	display: block;
+	background-color: #F3F3F3;
+	border: 2px solid #E5E5E5;
+	text-align: center;
+	padding: .75em;
+	color: @gray-light;
+	border-radius: 0px 0px @border-radius @border-radius;
+}
+
+.brand__title{
+	color: @gray-light;
+	text-transform: uppercase;
+	border-bottom: 2px solid #E5E5E5;
+	margin-bottom: 1.5rem;
+	padding-bottom: .5rem;
+	margin-top: 3rem;
+}
+
+.full-width-img{
+	position: relative;
+	background-repeat: no-repeat;
+}
+
+.full-width-img__caption{
+	position: absolute;
+	right: 3em;
+	bottom: 3em;
+	color: white;
+	opacity: .75;
+
+	h6{
+		max-width: 100%;
+	}
+}
+
+.full-width-img__caption--br{
+	right: 3em;
+	bottom: 3em;
+}
+
+.full-width-img__caption--bl{
+	left: 3em;
+	bottom: 3em;
+}
+
+.full-width-img__caption--tr{
+	right: 3em;
+	top: 3em;
+}
+
+.full-width-img__caption--tl{
+	left: 3em;
+	top: 3em;
 }
 
 /**
@@ -159,29 +311,6 @@
 	background: white;
 }
 
-.mobridge-intro-preview{
-	margin-top: -6em;
-	text-align: center;
-	position: relative;
-	margin-bottom: 6em;
-
-	@media @min-md{
-		margin-top: -8em;
-	}
-
-	.mockup--iphone{
-		margin-top: 4em;
-		@media @min-sm{
-			position: absolute;
-			bottom: 0em;
-			right: 8em;
-		}
-	}
-
-	&.in-view .mockup__preview{
-		animation: previewScroll 10s ease 2s infinite;
-	}
-}
 
 .mockup__preview--mobridge-01{
 	.workbg('mobridge-preview-01.jpg');
@@ -190,15 +319,14 @@
 	.workbg('mobridge-preview-02.jpg');
 }
 
-/**
- *
- * _chi
- *
- */
+.section.mobridge-tri-preview{
 
- .mockup__preview--chi-01{
- 	.workbg('chi-01.jpg');
- }
+
+	@media @min-sm{
+		margin-bottom: 10em;
+	}
+}
+
 
 /**
  *
@@ -212,3 +340,13 @@
  * _ndquits
  *
  */
+
+ /**
+  *
+  * niea
+  *
+  */
+
+ .niea-content-intro{
+ 	background-color: #973a2b;
+ }

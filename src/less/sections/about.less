@@ -18,7 +18,7 @@
 }
 
 .about-content{
-  padding: (@grid-gutter-width / 2);
+  padding: 20px;
   background-color: white;
   margin-top: -12em;
 
@@ -33,9 +33,9 @@
 }
 
 .title--about{
-  margin-top: 0;
-  margin-bottom: 1em;
-  font-size: @font-size-h3 / 1.2;
+  margin-top: 2em;
+  margin-bottom: .75em;
+  font-size: @font-size-h3 / 1.5;
 
   @media @min-sm{
     font-size: @font-size-h3;
@@ -46,11 +46,18 @@
 }
 .profile__image{
   margin-top: -4em;
+  margin-left: -20px;
+  margin-right: -20px;
 
+	@media @min-sm{
+		margin-left: 0;
+		margin-right: 0;
+	}
 
   @media (min-width: 795px){
     margin-top: -5em;
     padding-right: 2.5em;
+
   }
 
   img{
@@ -60,17 +67,19 @@
 
 .profile__image__img{
   width: 100%;
-  min-height: 450px;
+  min-height: 300px;
   background-color: @black;
   background-image: url(../img/about/profile-image.jpg);
   background-position: 20% 50%;
   background-size: 160%;
 
+  @media @min-sm{
+  	min-height: 400px;
+  }
+
 }
 
 .profile__connects{
-
-
 
   @media (min-width: 795px){
     position: absolute;
@@ -104,7 +113,7 @@
 }
 
 .contact-form{
-  padding: (@grid-gutter-width / 2);
+  padding: 20px;
   background-color: #EAEAEA;
   margin-bottom: 6em;
 
