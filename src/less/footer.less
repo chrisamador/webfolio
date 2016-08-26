@@ -7,7 +7,8 @@
 
 .footer{
   .brand-logo{
-
+    display: block;
+    margin-bottom: 2em;
   }
 }
 
@@ -109,49 +110,3 @@
 }
 
 //
-.side-nav{
-	display:none;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: @brand-primary;
-	z-index: 10;
-	color: white;
-
-	@media @min-sm{
-		width: 50%;
-	}
-
-	a{
-		color: inherit;
-	}
-}
-
-.nav-links--side{
-
-	padding: 2em;
-	margin-top: 4em;
-
-	li{
-		float: none;
-		display: block;
-		border-bottom: 1px solid darken(@brand-primary, 5%);
-
-		&:last-child{
-			border: none;
-		}
-	}
-	a{
-		padding: 1em;
-		display: block;
-		font-size: 1.25em;
-		transition: background-color 500ms ease;
-
-		&:hover,&:focus{
-			text-decoration: none;
-			background-color: darken(@brand-primary, 5%);
-		}
-	}
-}

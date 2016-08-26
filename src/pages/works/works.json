@@ -5,7 +5,6 @@
 			"name": "U.S. Army Medicine Civilian Corps",
 			"tags": [ "Website Dev", "Branding", "Prints", "Ads"],
 			"imgName": "medcom.jpg",
-			"extraImg": "",
 			"meta": {
 				"role" : "Lead Developer",
 				"date" : "Aug 2014 - Aug 2016",
@@ -16,25 +15,23 @@
 		{
 			"id": "dmvlambdas",
 			"name": "VAS1 Lambda Theta Phi Latin Fraternity, Inc.",
-			"tags": [ "tag", "tag", "tag"],
+			"tags": [ "Website Dev", "Branding"],
 			"imgName": "dmvlambdas.jpg",
-			"extraImg": "",
 			"meta": {
-				"role" : "Lead Designer",
-				"date" : "Feb 2016",
-				"client" : "Agency Work",
+				"role" : "Designer and Developer",
+				"date" : "Aug 2016",
+				"client" : "DMV Lambdas",
 				"scope" : "Website Design, Branding"
 			}
 		},
 		{
 			"id": "ndquits",
 			"name": "ND Quits - Cessation Programs",
-			"tags": [ "tag", "tag", "tag", "tag", "tag", "tag"],
+			"tags": [ "Web Design","Website Dev", "Branding"],
 			"imgName": "ndquits.jpg",
-			"extraImg": "",
 	    "meta": {
-	      "role" : "Lead Designer",
-	      "date" : "Feb 2016",
+	      "role" : "Designer and Developer",
+	      "date" : "Oct 2015",
 	      "client" : "Agency Work",
 	      "scope" : "Website Design, Branding"
 	    }
@@ -42,24 +39,10 @@
 		{
 			"id": "menhairco",
 			"name": "Men Hair Co.",
-			"tags": [ "tag", "tag", "tag"],
+			"tags": [ "Web Design","Website Dev", "Branding"],
 			"imgName": "menhairco.jpg",
-			"extraImg": "",
 	    "meta": {
-	      "role" : "Lead Designer",
-	      "date" : "Feb 2016",
-	      "client" : "Agency Work",
-	      "scope" : "Website Design, Branding"
-	    }
-		},
-		{
-			"id": "niea",
-			"name": "NIEA",
-			"tags": [ "tag", "tag", "tag"],
-			"imgName": "niea.jpg",
-			"extraImg": "",
-	    "meta": {
-	      "role" : "Lead Designer",
+	      "role" : "Designer and Developerr",
 	      "date" : "Feb 2016",
 	      "client" : "Agency Work",
 	      "scope" : "Website Design, Branding"
@@ -68,12 +51,11 @@
 		{
 			"id": "mobridge",
 			"name": "Mobridge Regional Hospital and Clinics",
-			"tags": [ "tag", "tag", "tag"],
+			"tags": [ "Web Design","Website Dev", "Branding"],
 			"imgName": "mobridge.jpg",
-			"extraImg": "",
 			"meta": {
-				"role" : "Lead Designer",
-				"date" : "Feb 2016",
+				"role" : "Designer and Developer",
+				"date" : "Jan 2016",
 				"client" : "Agency Work",
 				"scope" : "Website Design, Branding"
 			}
@@ -81,27 +63,13 @@
 		{
 			"id": "plnr",
 			"name": "PLNR App",
-			"tags": [ "tag", "tag", "tag"],
+			"tags": [ "App","Web Design","Website Dev"],
 			"imgName": "plnr.jpg",
-			"extraImg": "",
 	    "meta": {
-	      "role" : "Lead Designer",
-	      "date" : "Feb 2016",
-	      "client" : "Agency Work",
+	      "role" : "Designer and Developer",
+	      "date" : "July 2016",
+	      "client" : "Personal Project",
 	      "scope" : "Website Design, Branding"
-	    }
-		},
-		{
-			"id": "misc",
-			"name": "Misc. Projects",
-			"tags": [ "Print", "Website"],
-			"imgName": "sgce.jpg",
-			"extraImg": "",
-	    "meta": {
-	      "role" : "Lead Designer, Lead Developer",
-	      "date" : "2014 - 2016",
-	      "client" : "Agency Work",
-	      "scope" : "Print, Website Design, Ads"
 	    }
 		}
 	]

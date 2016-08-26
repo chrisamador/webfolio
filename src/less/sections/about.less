@@ -7,7 +7,14 @@
 .about-intro{
   background-color: @red;
   color: white;
+  background-image: url(../img/about/bg-about.jpg);
+  background-size: cover;
+  background-position: center;
 
+  .page--active &{
+		background-attachment: fixed;
+	}
+  
   h6{
     color: @red-light;
   }
@@ -70,8 +77,8 @@
   min-height: 300px;
   background-color: @black;
   background-image: url(../img/about/profile-image.jpg);
-  background-position: 20% 50%;
-  background-size: 160%;
+  background-position: 60% 50%;
+  background-size: 150%;
 
   @media @min-sm{
   	min-height: 400px;

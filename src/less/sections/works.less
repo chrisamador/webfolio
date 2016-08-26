@@ -128,7 +128,9 @@
     color: inherit;
 
     .single-work__tags,
-    .single-work__title{
+    .single-work__title,
+    .single-work__next,
+    .single-work__prev{
       transform: translateY(-1rem);
     }
 
@@ -141,7 +143,7 @@
 .single-work__link--full-page{
 
     .single-work__inner{
-    	transform: translateY(25%);
+    transform: translateY(25%);
 		opacity: 0;
 		transition: transform 1000ms ease-out, opacity 1000ms ease 100ms;
     }
@@ -214,6 +216,7 @@
 	top: -2em;
 	text-transform: uppercase;
 	font-weight: bold;
+  transition: transform 800ms @trans, opacity 500ms ease;
 }
 
 .single-work{

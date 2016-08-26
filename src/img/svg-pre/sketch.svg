@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="62px" height="61px" viewBox="0 0 62 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="57px" height="51px" viewBox="0 0 57 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
     <title>sketch</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home" transform="translate(-1298.000000, -912.000000)" stroke-width="2" stroke="#37342D">
-            <g id="sketch" transform="translate(1301.000000, 913.000000)">
-                <polyline id="Stroke-1" points="22.9986 30.3614 5.2356 20.0714 6.8606 58.2194"></polyline>
-                <polyline id="Stroke-3" points="36.2609 7.4672 25.9949 1.5202 13.6449 0.1842 5.2359 20.0722 41.0589 22.1532"></polyline>
-                <polyline id="Stroke-6" points="31.0968 16.3817 21.1348 10.6107 40.7928 40.6697"></polyline>
-                <polyline id="Stroke-7" points="22.9986 30.3614 40.7616 40.6514 6.8606 58.2194"></polyline>
-                <polyline id="Stroke-9" points="41.0591 22.1528 56.5511 37.2158 53.8301 23.4628 41.0591 22.1528 40.7611 40.6508 56.5511 37.2158 6.8611 58.2198 0.3611 4.6648 5.2361 20.0718 21.1341 10.6108 13.6451 0.1838 0.3611 4.6648 21.1341 10.6108"></polyline>
-                <polyline id="Stroke-12" points="36.2609 7.4672 46.5269 13.4142 53.8299 23.4622 40.7609 40.6512 21.1349 10.6112"></polyline>
-                <polyline id="Stroke-13" points="31.0968 16.3817 41.0588 22.1527 5.2038 20.0537"></polyline>
-            </g>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="sketch" transform="translate(1.000000, 1.000000)" stroke-width="2" stroke="#BBBDBF">
+            <polyline id="Stroke-1" points="27.106841 22.0249178 10 22 27.0677427 48.8538643"></polyline>
+            <polyline id="Stroke-3" points="27.3562754 0.0143775636 17.4695114 0 8 4.18165838 10.2179936 22.0383361 36.9381003 8.61391846"></polyline>
+            <polyline id="Stroke-6" points="26.5940376 9.01402717 17 9 43.7115228 22.5023813"></polyline>
+            <polyline id="Stroke-7" points="27.0390983 22 44.1459393 22.0249178 27 48.8289464"></polyline>
+            <polyline id="Stroke-9" points="36.6579182 8.43226008 54.1145562 12.848044 46.4204269 4.05642115 36.6579182 8.43226008 44.1503553 21.9062083 54.1145562 12.848044 27.0055543 48.7105419 0 12.7688832 9.93781154 21.8566777 17.4691214 8.4046224 7.71981789 4 0 12.7688832 17.4691214 8.4046224"></polyline>
+            <polyline id="Stroke-12" points="26.6062502 0 36.4930142 0.0143775636 45.9501671 4.22298028 43.6805121 22.0734892 17 8.57148656"></polyline>
+            <polyline id="Stroke-13" points="27.1566632 9 36.7507007 9.01402717 10 22.4387877"></polyline>
         </g>
     </g>
 </svg>
