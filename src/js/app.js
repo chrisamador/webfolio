@@ -18,12 +18,13 @@ require.config({
 		scrollView : 'module/scrollView',
 		domReady: 'module/domready',
 		rqPageContent: 'module/rqPageContent',
-		utls: 'module/utls'
+		utls: 'module/utls',
+		sls: 'module/simplels'
 	}
 })
 
-require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls'],
-	function(Backbone,init,pageScript,domReady,rqPageContent,scrollView,u_){
+require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls','sls'],
+	function(Backbone,init,pageScript,domReady,rqPageContent,scrollView,u_,sls){
 
 	/**
 	 *
@@ -96,7 +97,7 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 				currentPos = document.location.pathname;
 
 			// Title
-			//$('title').eq(0).text(pageName + ' Chris Amador </> Creative Frontend Developer');
+			$('title').eq(0).text('Chris Amador </> Creative Front-End Developer');
 			// Nav
 			$nav.find('.active').removeClass('active');
 
@@ -145,7 +146,7 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 				bottom: 0,
 				top: 0
 			}, 600, function(){
-
+				sls.add();
 				self.el.scrollTop = 0;
 				Backbone.history.navigate(url , { trigger: true });
 			})
@@ -159,6 +160,9 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 				.addClass('page--old');
 
 			var slideInNewContent = function(){
+				// Remove active class on the nav buttons
+				u_(document.getElementById('mobile-btn')).removeClass('is-active');
+				u_(document.getElementById('side-nav')).removeClass('is-active');
 
 				// Add New page--incoming
 				self.$el.find('#header')
@@ -184,8 +188,8 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 						APP.Stage.Trans = false;
 						pageScript();
 						scrollView();
+						sls.remove();
 					},100)
-
 
 				}, 1100);
 			}

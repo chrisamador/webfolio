@@ -53,20 +53,21 @@
   .mx-ul-brand-line();
   // margin: 0;
   // padding: 0;
-  display: inline-block;
   text-align: left;
   color: @gold;
   font-size: @font-size-h4;
+
+  @media @min-sm{
+    display: inline-block;
+  }
 
   &:before{
     background-color: @gold;
   }
 
   li{
-    @media @min-sm{
-      display: inline-block;
-      margin: 0 .75em;
-    }
+    display: inline-block;
+    margin: 0 .75em;
   }
 
   a{
@@ -87,7 +88,7 @@
   // .row();
 
   .clearfix();
-  margin-top: -16em;
+  margin-top: -10em;
   position: relative;
   z-index: 1;
 

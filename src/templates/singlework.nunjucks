@@ -73,7 +73,7 @@
     <div class="container">
   		<div class="section__inner">
   	    <div data-view-scroll class="nav-brand__text fade-in">
-  	      <h6>Creative Frontend Developer</h6>
+  	      <h6>Creative Front-End Developer</h6>
   	    </div>
         <div class="section__content">
     	    <h1 data-view-scroll class="title slide-in">{{currentName}}</h1>

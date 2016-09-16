@@ -9,6 +9,7 @@ define(['scrollView','utls'], function (scrollView,u_) {
    	u_document = u_(document),
    	u_html = u_(document.documentElement),
    	u_mobileBtn = u_(document.getElementById('mobile-btn')),
+    u_sideNav = u_(document.getElementById('side-nav')),
    	u_body = u_(document.body),
  		u_screen = u_(document.getElementById('loading-screen'));
  		u_footerBtn = u_(document.getElementById('btnToTop'));
@@ -37,19 +38,21 @@ define(['scrollView','utls'], function (scrollView,u_) {
 
    /**
     *
-    * mobile btn
+    *  btn clicks
     *
     */
 
 
-   u_mobileBtn.on('click', function(e) {
-		e.preventDefault();
-		alert('cool');
-   });
+    u_mobileBtn.on('click', function(e) {
+      e.preventDefault();
+      this.blur();
+      u_(this).toggleClass('is-active');
+      u_sideNav.toggleClass('is-active');
+    });
 
    u_footerBtn.on('click', function(e){
-   	e.preventDefault();
-   	u_body.animateScrollTop(0);
+     	e.preventDefault();
+     	u_body.animateScrollTop(0);
    })
 
 

@@ -5,6 +5,7 @@ define(['jquery','page/home','page/works','page/about','page/orphans'],
 
 	return function(){
 		// Run the page functions
+
 		switch (location.pathname) {
 		    case '/': 			home(); break;
 		    case '/works/': 	works(); break;

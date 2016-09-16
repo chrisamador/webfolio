@@ -14,7 +14,7 @@ define(['jquery','utls'],function ($,u_) {
 			$this.css("transition-delay", delay + "ms");
 
 			var elemTop = parseInt($this.offset().top, 10);
-			if (elemTop + 50 <= breakpoint){
+			if (elemTop + 10 <= breakpoint){
 				$this.addClass("in-view");
 			}
 

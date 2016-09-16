@@ -68,6 +68,22 @@ define(function () {
 	 		return output;
 	 	}
 
+		/**
+	 	 *
+	 	 * Toggle class on an element
+	 	 *
+	 	 * @param {string} className - class name that will be toggled
+	 	 *
+	 	 */
+
+	 	UtlsFn.prototype.toggleClass = function(className){
+			if(this.hasClass(className)){
+				this.removeClass(className);
+			}else{
+				this.addClass(className);
+			}
+			return this;
+	 	}
 
 	 	/**
 	 	 *
