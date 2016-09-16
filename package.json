@@ -1,6 +1,6 @@
 {
   "name": "freshstart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A fresh start for a new web(page,app,etc). Simple boilerplate gulp environment",
   "main": "gulpfile.js",
   "scripts": {
