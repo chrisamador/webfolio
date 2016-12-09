@@ -15,16 +15,8 @@
     "test",
     "tests"
   ],
-<<<<<<< HEAD
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "respond": "^1.4.2"
-   },
   "devDependencies": {
-    "modernizer": "^2.8.2"
-   }
-=======
-  "devDependencies": {
+    "modernizer": "^2.8.2",
     "bootstrap": "^3.3.6"
   },
   "dependencies": {
@@ -35,5 +27,4 @@
     "jquery": "^3.0.0",
     "fullpage.js": "^2.8.1"
   }
->>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
 }
