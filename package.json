@@ -1,6 +1,10 @@
 {
   "name": "freshstart",
+<<<<<<< HEAD
+  "version": "1.0.1",
+=======
   "version": "1.0.0",
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
   "description": "A fresh start for a new web(page,app,etc). Simple boilerplate gulp environment",
   "main": "gulpfile.js",
   "scripts": {
@@ -20,22 +24,33 @@
     "connect-livereload": "^0.5.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+<<<<<<< HEAD
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^4.0.0",
+=======
     "gulp-bower-normalize": "^1.0.6",
     "gulp-concat": "^2.6.0",
     "gulp-data": "^1.2.1",
     "gulp-filter": "^4.0.0",
     "gulp-flatten": "^0.2.0",
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
     "gulp-jshint": "^2.0.1",
     "gulp-less": "^3.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-main-bower-files": "^1.5.1",
     "gulp-minify-css": "^1.2.4",
+<<<<<<< HEAD
+=======
     "gulp-nunjucks-render": "^2.0.0",
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
     "gulp-open": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0",
+<<<<<<< HEAD
+=======
     "gulp-svgmin": "^1.2.2",
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
     "gulp-uglify": "^1.5.3",
     "jshint": "^2.9.2"
   },
