@@ -1,0 +1,25 @@
+{% macro printSingleWork(data,extraClass="") %}
+	{% set bgImg = '' %}
+	{% if data.img %}
+		{% set bgImg = "style=background-image:url(/assets/img/works/" + data.img + ")" %}
+	{% endif %}
+
+	<div class="single-work__inner">
+		<div class="slide__block {{extraClass}}" {{bgImg}}>
+			<h6 class="single-work__title">{{data.name}}</h6>
+			{%if data.tags%}
+				<strong>Tags</strong>
+				<ul>
+				{% for tag in data.tags %}
+					<li> {{tag}} </li>
+				{% endfor %}
+				</ul>
+				<div class="nav-links">
+					<a href="{{data.url}}" data-href="{{data.url}}"> Hello my friend </a>
+				</div>
+
+			{%endif%}
+		</div>
+	</div>
+
+{% endmacro %}

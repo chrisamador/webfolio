@@ -1,0 +1,176 @@
+.home-welcome{
+
+  background-color: @red;
+  color: white;
+  background-image: url(../img/home/bg-home.jpg);
+  background-size: cover;
+  background-position: center;
+  // background-attachment: fixed;
+
+	.page--active &{
+		//background-attachment: fixed;
+	}
+
+	h6{
+		color: @red-light;
+	}
+
+  .brand-line:before{
+    background-color: @red-light;
+  }
+
+  a{
+    color: white;
+    position: relative;
+    display: inline-block;
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      top:0;
+      left: -3px;
+      right: -3px;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, .25);
+    }
+  }
+}
+.title--home-welcome{
+  font-size: 7.625em;
+  font-weight: bold;
+  margin-bottom: 0;
+  line-height: 1em;
+
+  @media @min-sm{
+    font-size: 9.625em;
+  }
+}
+
+
+.home-welcome__sfx{
+  position: fixed;
+}
+
+//
+
+.home-intro{
+  text-align: center;
+  background-color: @black;
+  padding: 6em 0 19em 0;
+  overflow: hidden;
+  user-select: none;
+  cursor: url(../img/png/chalk.png) 0 45, auto;
+
+  @media @min-sm{
+    padding-bottom: 22em;
+  }
+
+  & > .container{
+    position: relative;
+  }
+
+  h6{
+    display: block;
+    max-width: initial;
+    color: @gold-dark;
+  }
+
+  h1{
+    color: white;
+    font-size: 3.75em;
+    @media @min-sm{
+      font-size: @font-size-h1;
+    }
+  }
+}
+
+.home-intro__inner{
+  position: relative;
+  z-index: 1;
+}
+
+.home-intro__elements{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.element__single{
+  position: absolute;
+
+  &.chrome{
+    top: -8em;
+    right: 12em;
+  }
+  &.laptop{
+    top: -15em;
+    left: -10em;
+  }
+  &.mouse{
+    right: -2em;
+    top: -7em;
+  }
+  &.backbone {
+    right: -3em;
+    top: 9em;
+  }
+  &.glasses {
+    right: -9em;
+    top: 21em;
+  }
+  &.graph {
+    right: 5em;
+    top: 13em;
+  }
+  &.iphone {
+    top: 19em;
+    left: -7em;
+  }
+  &.pens {
+    top: 16em;
+    left: 2em;
+  }
+  &.sketch {
+    top: -5em;
+    left: 17em;
+  }
+  &.wacom {
+    top: 12em;
+    left: 5em;
+  }
+}
+
+.home-canvas{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.home-canvas__button{
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  margin-left: -90px;
+}
+
+.home-canvas__canvas{
+  // border: 1px solid red;
+}
+//
+
+.home-works{
+  padding-bottom: 6em;
+}
+
+.home-works__instructions{
+  text-align: right;
+  padding: 1em 0;
+
+  h6{
+    margin: 0;
+    display: inline-block;
+  }
+}

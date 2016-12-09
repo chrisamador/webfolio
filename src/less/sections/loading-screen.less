@@ -1,0 +1,199 @@
+
+.loading-screen {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	z-index: 999;
+	background: @brand-primary;
+	//border: 50vh solid @brand-primary;
+	transition: opacity 1000ms @trans 1000ms;
+
+	.is-loaded &{
+		// border-width: 0vh;
+		opacity: 0;
+	}
+}
+
+.loading-screen__inner{
+	display: block;
+	margin: 0 auto;
+}
+
+.loading-logo{
+	text-align: center;
+	// padding-bottom: 2em;
+	overflow: hidden;
+}
+
+.loading-logo__logo{
+	display: inline-block;
+	transition: transform 1500ms @trans , opacity 500ms @trans 500ms;
+
+	.is-loaded &{
+		transform: translateY(155px);
+		opacity: 0;
+  }
+}
+
+.loading-dots{
+	padding-top: 3em;
+	padding-bottom: 2em;
+	overflow: hidden;
+}
+
+.dots {
+  margin: 0 auto;
+  height: 12px;
+  text-align: center;
+  transition: transform 1200ms @trans , opacity 800ms @trans 500ms;
+
+	.is-loaded &{
+		transform: translateY(45px);
+		opacity: 0;
+	}
+}
+
+.dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin: 0 2px;
+  display: inline-block;
+
+
+	&:first-child:before {
+	  animation-delay: 0ms;
+	}
+
+	&:first-child:after {
+	  animation-delay: 0ms;
+	}
+
+	&:last-child:before {
+	  animation-delay: 200ms;
+	}
+
+	&:last-child:after {
+	  animation-delay: 200ms;
+	}
+
+	&:before{
+	  content: "";
+	  position: absolute;
+	  left: 0;
+	  width: 12px;
+	  height: 12px;
+	  animation-name: dotHover;
+	  animation-duration: 900ms;
+	  animation-timing-function: cubic-bezier(.82,0,.26,1);
+	  animation-iteration-count: infinite;
+	  animation-delay: 100ms;
+	  background: white;
+	  border-radius: 100%;
+
+		.is-loaded &{
+			animation-iteration-count: 1;
+		}
+
+	}
+
+	&:after {
+	  content: "";
+	  position: absolute;
+	  z-index: -1;
+	  background: black;
+	  box-shadow: 0px 0px 1px black;
+	  opacity: .20;
+	  width: 100%;
+	  height: 3px;
+	  left: 0;
+	  bottom: -2px;
+	  border-radius: 100%;
+	  animation-name: dotShadow;
+	  animation-duration: 900ms;
+	  animation-timing-function: cubic-bezier(.82,0,.26,1);
+	  animation-iteration-count: infinite;
+	  animation-delay: 100ms;
+	}
+}
+
+@keyframes dotShadow {
+  0% {
+	transform: scaleX(1);
+  }
+  50% {
+	opacity: 0;
+	transform: scaleX(.6);
+  }
+  100% {
+	transform: scaleX(1);
+  }
+}
+
+@keyframes dotHover {
+  0% {
+	top: 0px;
+  }
+  50% {
+	top: -50px;
+  }
+  100% {
+	top: 0;
+  }
+}
+
+/**
+ *
+ * simple loading screen
+ *
+ */
+
+
+.simple-loading-screen{
+	.loading-screen();
+	background: @black;
+	background: rgba(37, 34, 34, 0.25);
+	z-index: 10;
+	transition: opacity 500ms @trans;
+
+	.is-loaded &{
+		// opacity: 1;
+	}
+	&.is-active{
+		opacity: 1;
+	}
+}
+.simple-loading-screen__inner{
+	.loading-screen__inner();
+}
+.simple-loading-screen-dots{
+	.loading-dots();
+}
+.simple-dots{
+	.dots();
+	.is-loaded &{
+		// transform: translateY(0);
+		// opacity: 1;
+	}
+	.is-active &{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.simple-dot{
+	.dot();
+}
+
+.simple-dot:before{
+	.is-loaded &{
+		// animation-iteration-count: infinite;;
+	}
+	.is-active &{
+		animation-iteration-count: infinite;;
+	}
+}

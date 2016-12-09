@@ -1,0 +1,76 @@
+{
+	"worksData": [
+		{
+			"id": "medcom",
+			"name": "U.S. Army Medicine Civilian Corps",
+			"tags": [ "Website Dev", "Branding", "Prints", "Ads"],
+			"imgName": "medcom.jpg",
+			"meta": {
+				"role" : "Lead Developer",
+				"date" : "Aug 2014 - Aug 2016",
+				"client" : "Agency Work",
+				"scope" : "Website Dev, Branding, Prints, Ads"
+			}
+		},
+		{
+			"id": "dmvlambdas",
+			"name": "VAS1 Lambda Theta Phi Latin Fraternity, Inc.",
+			"tags": [ "Website Dev", "Branding"],
+			"imgName": "dmvlambdas.jpg",
+			"meta": {
+				"role" : "Designer and Developer",
+				"date" : "Aug 2016",
+				"client" : "DMV Lambdas",
+				"scope" : "Website Design, Branding"
+			}
+		},
+		{
+			"id": "ndquits",
+			"name": "ND Quits - Cessation Programs",
+			"tags": [ "Web Design","Website Dev", "Branding"],
+			"imgName": "ndquits.jpg",
+	    "meta": {
+	      "role" : "Designer and Developer",
+	      "date" : "Oct 2015",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
+		},
+		{
+			"id": "menhairco",
+			"name": "Men Hair Co.",
+			"tags": [ "Web Design","Website Dev", "Branding"],
+			"imgName": "menhairco.jpg",
+	    "meta": {
+	      "role" : "Designer and Developer",
+	      "date" : "Feb 2016",
+	      "client" : "Agency Work",
+	      "scope" : "Website Design, Branding"
+	    }
+		},
+		{
+			"id": "mobridge",
+			"name": "Mobridge Regional Hospital and Clinics",
+			"tags": [ "Web Design","Website Dev", "Branding"],
+			"imgName": "mobridge.jpg",
+			"meta": {
+				"role" : "Designer and Developer",
+				"date" : "Jan 2016",
+				"client" : "Agency Work",
+				"scope" : "Website Design, Branding"
+			}
+		},
+		{
+			"id": "plnr",
+			"name": "PLNR App",
+			"tags": [ "App","Web Design","Website Dev"],
+			"imgName": "plnr.jpg",
+	    "meta": {
+	      "role" : "Designer and Developer",
+	      "date" : "July 2016",
+	      "client" : "Personal Project",
+	      "scope" : "Website Design, Branding"
+	    }
+		}
+	]
+}

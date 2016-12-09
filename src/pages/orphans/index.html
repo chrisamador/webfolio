@@ -1,0 +1,62 @@
+{% extends "layout.nunjucks" %}
+{% set pageName = 'orphans' %}
+{% set pageTitle = "Orphans | "%}
+{% set orphans = [
+	'01.jpg'
+] %}
+
+{% set amountInLi = (orphans.length / 2) | round(0, 'ceil') %}
+
+{% set count = 1 %}
+
+{% block content %}
+<section class="section orphans-intro section--intro">
+  <div class="container">
+		<div class="section__inner">
+	    <div class="nav-brand__text">
+	      <h6>Creative Front-End Developer</h6>
+	    </div>
+	    <h1 class="title">Orphans</h1>
+	    <div class="below-title">
+	      <div class="row">
+	        <div class="col-sm-8">
+	          <h4 class="brand-line">A collection of random doodles and fun experiments.</h4>
+	        </div>
+	        <div class="col-sm-4">
+	          <h6>Projects without a proper home.</h6>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+  </div>
+</section>
+<section class="section orphans-listing">
+	<div class="container">
+		<ul class="orphans-listing">
+
+			{% for orphan in orphans %}
+
+				{% if count == 1 %}
+					<li>
+				{% endif %}
+
+				{% set count = count + 1 %}
+
+				<div data-view-scroll class="single-orphan">
+					<div class="single-orphan__inner">
+						<img class="slide-in" data-view-scroll src="/assets/img/orphans/{{orphan}}" alt="">
+					</div>
+				</div>
+
+				{% if count > amountInLi%}
+					</li>
+					{% set count = 1 %}
+				{% endif %}
+
+			{% endfor %}
+
+		</ul>
+
+	</div>
+</section>
+{% endblock %}

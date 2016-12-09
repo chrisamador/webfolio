@@ -1,0 +1,55 @@
+{% extends "layout.nunjucks" %}
+
+{% set pageName = 'works' %}
+{% set pageTitle = "Works | "%}
+
+{% block content %}
+<section class="section works-intro section--intro">
+  <div class="container">
+		<div class="section__inner">
+	    <div class="nav-brand__text">
+	      <h6>Creative Front-End Developer</h6>
+	    </div>
+	    <h1 class="title">Works</h1>
+	    <div class="below-title">
+	      <div class="row">
+	        <div class="col-sm-8">
+	          <h4 class="brand-line"> c. 2013 - 2014</h4>
+	        </div>
+	        <div class="col-sm-4">
+	          <h6>Love what you do, do what you love</h6>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+  </div>
+</section>
+
+<section class="section works-listing">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="work-listing">
+          <!-- <div class="works-listing__types-selectors">
+            <ul class="work-types-selectors-listing">
+              <li class="active"> <a href="#"> All   </a> </li>
+              <li> Websites <span class="item-count">7</span>  </li>
+              <li> Brands <span class="item-count">7</span>  </li>
+              <li> Apps <span class="item-count">1</span>  </li>
+              <li> Prints <span class="item-count">2</span> </li>
+            </ul>
+          </div> -->
+
+          {% include "partials/works-list.html" %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+{% endblock %}
