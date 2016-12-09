@@ -1,0 +1,77 @@
+{% set amountInLi = (worksData.length / 2) | round(0, 'ceil') %}
+
+{% set count = 1 %}
+
+{% set bgImg = '' %}
+
+
+<div class="work-listing__list">
+
+  {% for work in worksData %}
+
+    {% if count == 1 %}
+      <section class="work-listing__col">
+    {% endif %}
+
+
+      {# Single Item #}
+
+      {% if work.imgName %}
+        {% set bgImg = "style=background-image:url(/assets/img/works/" + work.imgName + ")" %}
+      {% endif %}
+
+      <aside data-view-scroll class="single-work single-work--listing {{work.id}}"
+      {# data-tags #}
+      {% if work.tags %}
+        data-tag="{{ work.tags|join(',') }}"
+      {% endif %}
+      >
+        <a href="/works/{{work.id}}" class="single-work__link">
+          <div class="single-work__inner">
+            {# Tags #}
+            {% if work.tags %}
+              <ul class="single-work__tags">
+
+                {% for tag in work.tags %}
+                <li>#{{tag}}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+              <h3 class="single-work__title">
+                {{work.name}}
+              </h3>
+          </div>
+          <div class="single-work__bg" {{bgImg}}></div>
+        </a>
+
+      </aside>
+
+    {% set count = count + 1 %}
+
+    {% if count > amountInLi%}
+      </section>
+      {% set count = 1 %}
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+{#
+
+  {
+  	"id": "name",
+  	"name": "full_name",
+  	"tags": [ "tag", "tag", "tag"],
+  	"imgName": "name.jpg",
+  	"extraImg": "",
+    "meta": {
+      "role" : "Lead Designer",
+      "date" : "Feb 2016",
+      "client" : "Agency Work",
+      "scope" : "Website Design, Branding"
+    }
+  },
+
+#}

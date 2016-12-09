@@ -1,0 +1,112 @@
+{% extends "singlework.nunjucks" %}
+{% set pageName = 'plnr' %}
+
+{% block workcontent %}
+<section data-view-scroll class="section work-content-intro slide-in {{currentId}}-content-intro">
+  <div class="container">
+    <div class="row">
+      <div data-view-scroll class="mockup-intro-preview">
+        <div class="mockup mockup--laptop">
+          <div class="mockup__preview" style="background-image:url(/assets/img/works/plnr/plnr-001.png)"></div>
+          <img src="/assets/img/works/macbook.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section text text--center">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="text text--center">
+          <h2>"Just what the world needed, another calender app."</h2>
+          <h5><em>- Said No One</em></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <h3>So why make another one?</h3>
+        <p>I wanted to solve a missing feature all of the calendar apps I have use <em>(it's been many)</em> have.</p>
+        <p>Current calendar apps do a great job of placing boxes on your screen that designate  your day's activities but none seem to know how those boxes connect to each other. That is where PLNR <em>(pronounced planner)</em> comes in.</p>
+      </div>
+      <div class="col-sm-7">
+        <div class="text text--center">
+          <img src="/assets/img/works/plnr/plnr-003.png" alt="PLNR preview">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="text text--center">
+          <img src="/assets/img/works/plnr/plnr-002.png" alt="PLNR preview">
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <h3>What is PLNR?</h3>
+        <p>PLNR is a side project I designed and development to practice functional front end programing. Using UX, UI, and modern JS techiques I created a working prototype. </p>
+        <h5>Who's it for?</h5>
+        <p>PLNR is meant for those who see their time as a limited resource, one that needs to be allocated and managed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+	<div class="container">
+		<h3 class="brand__title">
+			Powered By
+		</h3>
+		<div class="powerby">
+      <div class="powerby__item">
+         <img src="/assets/img/icons/backbone.svg" alt="Icon">
+        <h5>Backbone</h5>
+      </div>
+      <div class="powerby__item">
+         <img src="/assets/img/icons/requirejs.svg" alt="Icon">
+        <h5>Require.js</h5>
+      </div>
+			<div class="powerby__item">
+				 <img src="/assets/img/icons/bootstrap.svg" alt="Icon">
+				<h5>Bootstrap</h5>
+			</div>
+			<div class="powerby__item">
+				 <img src="/assets/img/icons/html5.svg" alt="Icon">
+				<h5>HTML5</h5>
+			</div>
+      <div class="powerby__item">
+         <img src="/assets/img/icons/css3.svg" alt="Icon">
+        <h5>CSS3</h5>
+      </div>
+			<div class="powerby__item">
+				 <img src="/assets/img/icons/less.svg" alt="Icon">
+				<h5>Less</h5>
+			</div>
+			<div class="powerby__item">
+				<img src="/assets/img/icons/gulp.svg" alt="Icon">
+				<h5>Gulp</h5>
+			</div>
+      <div class="powerby__item">
+				<img src="/assets/img/icons/bower.svg" alt="Icon">
+				<h5>Bower</h5>
+			</div>
+      <div class="powerby__item">
+        <img src="/assets/img/icons/sketch.svg" alt="Icon">
+        <h5>Sketch</h5>
+      </div>
+		</div>
+	</div>
+</section>
+<section class="section section--view-cta">
+	<a target="_blank" href="http://plnr.chrisamador.me" class="btn btn-primary btn-view-cta">
+		View Beta Version <span class="icon"> <svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>view-site</title><defs><path d="M7.5 3a7.5 7.5 0 1 0 7.5 7.5" id="a"/><mask id="c" x="0" y="0" width="15" height="15" fill="#fff"><use xlink:href="#a"/></mask><path id="b" d="M8 0h10v10"/><mask id="d" x="0" y="0" width="10" height="10" fill="#fff"><use xlink:href="#b"/></mask></defs><g transform="translate(0 1)" stroke="#DAB0B6" fill="none" fill-rule="evenodd"><use mask="url(#c)" stroke-width="4" xlink:href="#a"/><path d="M8 10l8.68-8.68" stroke-width="2" stroke-linecap="square"/><use mask="url(#d)" stroke-width="4" xlink:href="#b"/></g></svg> </span>
+	</a>
+</section>
+{% endblock %}

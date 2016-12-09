@@ -1,22 +1,196 @@
+<<<<<<< HEAD
 // @import "reset";
 @import "../../bower_components/bootstrap/less/bootstrap";
+=======
+/*
+
+	Table of Contents
+
+	_frameworks
+	_colors
+	_variables
+	_mixins
+	_setup
+	_type
+	_page
+	_helpers
+
+*/
+
+/**
+ *
+ * _frameworks
+ *
+ */
+
+@import 'framework/bootstrap.less';
+
+/**
+ *
+ * _colors
+ *
+ */
+
+@red: #851826;
+@red-light: #B2727B;
+@red-lighter: #D9B0B6;
+
+@white: #FAFAFA;
+@white-dark: #DCDCDC;
+
+@iron-light: #9B9B9B;
+@iron: #7D7D7D;
+@iron-dark: #4A4A4A;
+
+@black: #252222;
+@black-light: #37342E;
+@gold-dark: #737067;
+@gold: #B7AE9D;
+
+/**
+ *
+ * _variables
+ *
+ */
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
 
 @gray-base:              #000;
 @gray-darker:            lighten(@gray-base, 13.5%); // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
+<<<<<<< HEAD
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
 @brand-primary:         darken(#428bca, 6.5%); // #337ab7
+=======
+@gray-light:             #B3B3B3;
+@gray-lighter:           lighten(@gray-base, 93.5%); // #eee
+
+@brand-primary:         @red;
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
+<<<<<<< HEAD
 /* --------------------------------
 	_MediaQuerysReference
 ----------------------------------*/
+=======
+@btn-border-radius-base: 0;
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+@body-bg:               white;
+//** Global text color on `<body>`.
+@text-color:            @black-light;
+
+//** Global textual link color.
+@link-color:            @brand-primary;
+//** Link hover color set via `darken()` function.
+@link-hover-color:      @brand-primary;
+//** Link hover decoration.
+// @link-hover-decoration: none;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// @font-family-sans-serif:  "freight-sans-pro", sans-serif;
+@font-family-sans-serif:  "proxima-nova", sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:     16px;
+@font-size-large:    ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:    ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:       4.5em; // 72px
+@font-size-h2:       2.625em; //42px
+@font-size-h3:       2.25em; // 36px
+@font-size-h4:       1.5em; // 24px
+@font-size-h5:       0.875em; // 14px
+@font-size-h6:       0.625em; // 10px
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.428571429; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+// @headings-font-family:    "adelle-sans",sans-serif;
+@headings-font-weight:    400;
+@headings-line-height:    1.15;
+@headings-color:       inherit;
+
+@grid-gutter-width: 60px;
+// @line-height-computed:;
+@text-color: @iron-dark;
+
+h1,.h1{
+	font-weight: bold;
+
+}
+h2,.h2{
+	font-weight: bold;
+}
+h3,.h3{
+	font-weight: bold;
+
+}
+h4,.h4{
+	//font-weight: bold;
+}
+h5, .h5{
+	font-weight: bold;
+	// font-style: italic;
+}
+h6, .h6{
+	text-transform: uppercase;
+	max-width: 10em;
+	font-weight: bold;
+	line-height: 1.35;
+}
+
+.brand-line{
+	position: relative;
+	padding-left: 3em;
+
+	&:before{
+		content: "";
+    width: 2em;
+    height: 2px;
+    margin-right: .5em;
+    background-color: @black;
+		position: absolute;
+		left: 0;
+		top: .5em;
+	}
+}
+
+.title{
+	margin-bottom: .5em;
+	max-width: 12em;
+}
+
+//
+@screen-sm:     700px;
+@screen-md:     850px;
+@screen-lg:     1200px;
+
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153
 
 // Less than the Grid Float Breakpoint
 @max-breakpoint: ~"(max-width: @{grid-float-breakpoint-max})";
@@ -43,7 +217,263 @@
 // Only Large
 @only-lg: ~"(min-width: @{screen-lg-min})";
 
+<<<<<<< HEAD
 input:focus{
 	outline: none;
 }
 
+=======
+
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) { // initial
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), @item);
+  }
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  }
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      position: inherit;
+      // Prevent columns from collapsing when empty
+      min-height: 1px;
+      // Inner gutter via padding
+      padding-left:  ceil((@grid-gutter-width / 2));
+      padding-right: floor((@grid-gutter-width / 2));
+    }
+  }
+  .col(1); // kickstart it
+}
+
+
+
+/**
+ *
+ * _misc
+ *
+ */
+@trans : cubic-bezier(0.82, 0, 0.26, 1);
+
+@border-radius: 4px;
+
+/**
+ *
+ * _mixins
+ *
+ */
+
+.mx-ul-brand-line{
+	margin: 0;
+	padding: 0;
+	// font-size: 1.14em;
+	padding-left: 64px;
+	position: relative;
+
+	&:before{
+		content: '';
+		position: absolute;
+		display: block;
+		width: 48px;
+		top: .70em;
+		left: 0;
+		height: 2px;
+		background-color: white;
+
+	}
+
+	li{
+		list-style: none;
+		margin-bottom: .5em;
+
+		@media @min-sm{
+			display: inline-block;
+		}
+	}
+
+	a{
+		text-decoration: none;
+		padding: .75em;
+
+		&:hover{
+			color: @red;
+		}
+	}
+	.active a{
+		color: @red;
+	}
+}
+
+.mx-ul-reset{
+	padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.slide-in{
+	transform: translateY(25%);
+	opacity: 0;
+	transition: transform 1000ms ease-out, opacity 1000ms ease 100ms;
+
+	&.in-view{
+		transform: translateY(0%);
+		opacity: 1;
+	}
+
+}
+
+.fade-in{
+	opacity: 0;
+	transition: opacity 1000ms ease 100ms;
+
+	&.in-view{
+		opacity: 1;
+	}
+}
+
+/**
+ *
+ * _setup
+ *
+ */
+body{
+	//color: @black-light;
+	&.is-loaded{
+		overflow: initial;
+	   overflow-x: hidden;
+	}
+}
+
+.body{
+	overflow: hidden;
+}
+
+.no-js body{
+	overflow: initial;
+}
+
+.container{
+	width: 100%;
+	max-width: 1140px;
+}
+
+.container, .container-fluid {
+	padding-left: 20px;
+	padding-right: 20px;
+
+	@media @min-sm{
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+
+}
+
+/**
+ *
+ * _page
+ *
+ */
+
+
+.page{
+	background-color: @gold;
+}
+.page--old{
+	position: relative;
+	z-index: 1;
+}
+.page--incoming{
+	position: fixed;
+	left: 100%;
+	top: 0;
+	transition: left 1000ms ease;
+	z-index: 2;
+	width: 100%;
+
+}
+
+
+
+/**
+ *
+ * _helpers
+ *
+ */
+
+
+.text-no-break{
+	white-space: nowrap;
+}
+
+.col-right{
+	@media @min-sm{
+		text-align: right;
+	}
+}
+.col-left{
+	@media @min-sm{
+		text-align: left;
+	}
+}
+
+.brand-logo{
+	path{
+		fill: white;
+	}
+}
+
+.item-count{
+	font-size: @font-size-h6;
+	display: inline-block;
+	vertical-align: super;
+	opacity: .6;
+}
+.btn{
+	padding: .5em 2.5em;
+}
+
+.btn-circle{
+	border-radius: 100%;
+	border: 1px solid;
+  padding: 6px 10px 0 10px;
+  height: 36px;
+  width: 36px;
+}
+
+.btn-view-cta{
+	// text-transform: uppercase;
+	font-size: 1.25em;
+	border: none;
+
+	& > .icon{
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: .25em;
+    	padding-top: .2em;
+    	height: 1.5em;
+	}
+}
+
+label{
+	color: @gold-dark;
+	padding: .75em .25em;
+}
+
+@import 'sections/loading-screen';
+@import 'sections/transition-screen';
+
+@import 'header';
+@import 'footer';
+@import 'nav';
+
+@import "sections/home";
+
+@import 'sections/content';
+
+@import 'sections/works';
+@import 'sections/work-single';
+
+@import 'sections/orphans';
+@import 'sections/about';
+>>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153

@@ -1,0 +1,66 @@
+//
+
+
+.orphans-intro{
+	background-color: @black-light;
+	background-image: url(../img/pattern-black.png);
+	color: white;
+
+	.nav-brand__text,h6{
+		color: @gold;
+	}
+	.brand-line:before{
+		background-color: @gold;
+	}
+}
+
+
+.orphans-listing{
+	.clearfix();
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-top: -6em;
+	text-align: center;
+	padding-bottom: 2em;
+
+	@media @min-sm{
+
+		li{
+			float: left;
+			width: 50%;
+		}
+
+	}
+}
+
+.single-orphan{
+	.slide-in();
+
+	 img{
+		 max-width: 100%;
+	 }
+}
+
+.single-orphan__inner{
+	//border: 2px solid black;
+
+}
+
+.quote{
+	text-align: center;
+	margin: 8em 0;
+	color: @iron-light;
+}
+.quote__inner{
+	max-width: 40em;
+	display: inline-block;
+}
+.quote__quote{
+	font-style: italic;
+}
+.quote__byline{
+	text-align: right;
+	font-weight: bold;
+	display: block;
+}

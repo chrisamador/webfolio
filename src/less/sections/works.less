@@ -1,0 +1,302 @@
+/**
+ *
+ * Works
+ *
+ */
+
+
+ .works-intro{
+   background-color: @red;
+   background-image: url(../img/pattern-red.png);
+   color: white;
+
+   h6{
+     color: @red-light;
+   }
+   .brand-line:before{
+     background-color: @red-light;
+   }
+ }
+
+.works-listing{
+  padding-bottom: 6em;
+}
+
+/* Selector listings */
+.works-listing__types-selectors{
+  padding: 1em;
+}
+.work-types-selectors-listing{
+  .mx-ul-reset();
+  color: white;
+
+  li{
+    display: inline-block;
+    margin-right: 1em;
+
+    &.active,&:hover{
+      //border-bottom: 2px solid;
+    }
+  }
+
+  a{
+    color: white;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+
+.work-types-listing{
+  .mx-ul-brand-line();
+  // margin: 0;
+  // padding: 0;
+  text-align: left;
+  color: @gold;
+  font-size: @font-size-h4;
+
+  @media @min-sm{
+    display: inline-block;
+  }
+
+  &:before{
+    background-color: @gold;
+  }
+
+  li{
+    display: inline-block;
+    margin: 0 .75em;
+  }
+
+  a{
+    .btn();
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+
+    &:hover{
+      color: @red;
+    }
+  }
+}
+
+//
+.work-listing{
+  // .mx-ul-reset();
+  // .row();
+
+  .clearfix();
+  margin-top: -10em;
+  position: relative;
+  z-index: 1;
+
+}
+.work-listing__col{
+  .make-sm-column(6);
+  padding: 0;
+
+
+}
+
+.single-work--listing{
+	.slide-in();
+}
+
+.single-work{
+	position: relative;
+	overflow: hidden;
+	color: white;
+	display: block;
+
+  ul{
+    .mx-ul-reset();
+  }
+
+}
+
+.single-work__link{
+  display: block;
+  position: relative;
+  z-index: 2;
+  min-height: 20em;
+  color: white;
+  text-decoration: none;
+
+
+  &:hover, &:focus{
+    color: inherit;
+
+    .single-work__tags,
+    .single-work__title,
+    .single-work__next,
+    .single-work__prev{
+      transform: translateY(-1rem);
+    }
+
+    .single-work__bg{
+      transform: scale(1.1);
+    }
+  }
+}
+
+.single-work__link--full-page{
+
+    .single-work__inner{
+    transform: translateY(25%);
+		opacity: 0;
+		transition: transform 1000ms ease-out, opacity 1000ms ease 100ms;
+    }
+
+  &:hover, &:focus{
+    color: inherit;
+
+    .single-work__tags,
+    .single-work__title{
+      transform: translateY(0rem);
+    }
+
+    .single-work__bg{
+      transform: scale(1);
+    }
+  }
+}
+
+.single-work__inner{
+  left: 1em;
+  right: 1em;
+  bottom: 1em;
+  position: absolute;;
+  z-index: 2;
+  max-width: 22em;
+
+  @media @min-sm{
+	  left: 2em;
+	  right: 2em;
+	  bottom: 2em;
+  }
+}
+
+.single-work__bg{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: @black-light;
+  background-image: url(../img/pattern-black.png);
+  background-position: center;
+  background-size: cover;
+  transition: transform 2s ease;
+}
+
+.single-work__title{
+  margin: 0;
+  margin-top: .25em;
+  transition: transform 500ms @trans, opacity 500ms ease;
+}
+.single-work__tags{
+  .mx-ul-reset();
+  transition: transform 800ms @trans, opacity 500ms ease;
+  opacity: .5;
+
+  li{
+    .h6();
+    display: inline-block;
+    margin-right: .5em;
+    margin-bottom: 0;
+
+  }
+}
+
+.single-work__next,
+.single-work__prev{
+	position: absolute;
+	top: -2em;
+	text-transform: uppercase;
+	font-weight: bold;
+  transition: transform 800ms @trans, opacity 500ms ease;
+}
+
+.single-work{
+  /*----------- CHI -----------*/
+
+
+  &.chi{
+    .single-work__bg{
+      background-color: #4992ff;
+    }
+  }
+
+
+  /*----------- Mobridge -----------*/
+  &.mobridge{
+    .single-work__bg{
+      background-color: rgb(97, 56, 27);
+    }
+  }
+
+  /*----------- dmvlambdas -----------*/
+
+  &.dmvlambdas{
+    // color: @black-light;
+
+    .single-work__bg{
+      background-color: rgb(97, 56, 27);
+    }
+
+    .single-work__inner{
+
+    }
+  }
+
+  /*----------- sgce -----------*/
+  &.sgce{
+    // color: @black-light;
+  }
+
+  /*----------- ndquits -----------*/
+
+  &.ndquits{
+    // color: @black-light;
+  }
+
+  /*----------- menhairco -----------*/
+
+  &.menhairco{
+    .single-work__bg{
+      background-position: 75% center;
+    }
+  }
+
+  /*----------- medcom -----------*/
+
+  &.medcom{
+    .single-work__bg{
+      background-position: 65% center;
+    }
+  }
+
+  /*----------- end of parent -----------*/
+
+
+}
+
+.work-listing{
+  .menhairco,
+  .medcom,
+  .mobridge,
+  .plnr,
+  .niea {
+    .single-work__link{
+      // min-height: 30em;
+
+      @media @min-sm{
+        // min-height: 40em;
+      }
+    }
+  }
+
+}
