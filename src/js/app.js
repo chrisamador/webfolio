@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-/**
- *
- * App.js file
- *
- */
-
-
-var docEl = document.documentElement;
-docEl.className = docEl.className.replace('no-js','js');
-=======
 /* Steps
 
 * Page loads with loading screen if js is on
@@ -306,4 +295,3 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 // 			top: 0
 // 		}, 1000)
 // 	}
->>>>>>> 4ec0fbcd85b0c1ea60a9c6a95be278d6cb413153

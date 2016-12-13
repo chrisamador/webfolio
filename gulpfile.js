@@ -14,10 +14,6 @@ var gulp = require('gulp'),
    jshint = require('gulp-jshint'),
    uglify = require('gulp-uglify'),
    mainBowerFiles = require('gulp-main-bower-files'),
-<<<<<<< HEAD
-   open = require('gulp-open'),
-   filter = require('gulp-filter');
-=======
    flatten = require('gulp-flatten'),
    open = require('gulp-open'),
    nunjucksRender = require('gulp-nunjucks-render'),
