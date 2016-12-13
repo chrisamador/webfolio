@@ -1,0 +1,1 @@
+define(function(){return function(e,n){var t,s=new XMLHttpRequest;s.open("GET","/"+e,!0),s.onload=function(){if(s.status>=200&&s.status<400){var e="<!-- ##Start## -->",r="<!-- ##End## -->";t=s.responseText.substr(s.responseText.indexOf(e)+e.length),t=t.substr(0,t.indexOf(r)),n(!1,t)}else n(!0,t)},s.send()}});

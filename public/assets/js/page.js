@@ -1,0 +1,1 @@
+define(["jquery","page/home","page/works","page/about","page/orphans"],function(a,e,o,n,c){return function(){switch(location.pathname){case"/":e();break;case"/works/":o();break;case"/about-contact/":n();break;case"/orphans/":c()}}});

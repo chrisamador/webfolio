@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>chrome</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Home" transform="translate(-872.000000, -699.000000)" stroke="#37342D" stroke-width="2">
+            <g id="chrome" transform="translate(873.000000, 700.000000)">
+                <path d="M81.7987,40.8993 C81.7987,63.4873 63.4877,81.7983 40.8997,81.7983 C18.3117,81.7983 -0.0003,63.4873 -0.0003,40.8993 C-0.0003,18.3113 18.3117,0.0003 40.8997,0.0003 C63.4877,0.0003 81.7987,18.3113 81.7987,40.8993 L81.7987,40.8993 Z" id="Stroke-1"></path>
+                <path d="M55.6231,40.8993 C55.6231,49.0313 49.0311,55.6233 40.8991,55.6233 C32.7681,55.6233 26.1751,49.0313 26.1751,40.8993 C26.1751,32.7673 32.7681,26.1753 40.8991,26.1753 C49.0311,26.1753 55.6231,32.7673 55.6231,40.8993 L55.6231,40.8993 Z" id="Stroke-3"></path>
+                <path d="M31.6498,56.92 C22.8018,51.812 19.7698,40.498 24.8788,31.65 C29.9868,22.802 41.3008,19.77 50.1488,24.879 C58.9968,29.987 62.0288,41.301 56.9198,50.149 C51.8118,58.997 40.4978,62.028 31.6498,56.92 L31.6498,56.92 Z" id="Stroke-5"></path>
+                <path d="M24.8787,50.1489 L6.6367,18.5519" id="Stroke-7"></path>
+                <path d="M56.9201,50.1489 L38.6821,81.7379" id="Stroke-9"></path>
+                <path d="M40.5529,22.3971 L77.3829,22.3971" id="Stroke-11"></path>
+            </g>
+        </g>
+    </g>
+</svg>

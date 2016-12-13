@@ -44,7 +44,6 @@ __MACOSX/*
 *.swp
 *.codekit
 *.sublime
-/public/
 /dist/
 node_modules/
 bower_components/

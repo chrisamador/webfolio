@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="68px" height="102px" viewBox="0 0 68 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>pattern-black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pattern-black" fill="#3B3731">
+            <polygon id="Fill-1" points="64 98 64 102 65.6003201 102 65.6003201 99.6008 68 99.6008 68 98"></polygon>
+            <polygon id="Fill-2" points="62 69.9995757 68 76 68 73.6001697 64.4 69.9995757 68 66.3989817 68 64"></polygon>
+            <polygon id="Fill-3" points="0 98 0 99.6008 2.4 99.6008 2.4 102 4 102 4 98"></polygon>
+            <polygon id="Fill-4" points="0 66.3996606 3.60033941 70 0 73.5994909 0 76 6 70 0 64"></polygon>
+            <path d="M31.8,54.2 L37.2,54.2 L37.2,48.8 L31.8,48.8 L31.8,54.2 L31.8,54.2 Z M30,56 L39,56 L39,47 L30,47 L30,56 L30,56 Z" id="Fill-5"></path>
+            <path d="M33,21.6003394 L29.3996606,18 L33,14.4005091 L36.6003394,18 L33,21.6003394 L33,21.6003394 Z M27,18 L33,24 L39,18 L33,12 L27,18 L27,18 Z" id="Fill-6"></path>
+            <path d="M33,87.6003394 L29.3996606,84 L33,80.4005091 L36.6003394,84 L33,87.6003394 L33,87.6003394 Z M27,84 L33,90 L39,84 L33,78 L27,84 L27,84 Z" id="Fill-7"></path>
+            <polygon id="Fill-8" points="64 0 64 4 68 4 68 2.4 65.6003201 2.4 65.6003201 0"></polygon>
+            <polygon id="Fill-9" points="62 33.0004243 68 39 68 36.6010183 64.4 33.0004243 68 29.3998303 68 27"></polygon>
+            <polygon id="Fill-10" points="2.3995201 0 2.3995201 2.4 0 2.4 0 4 4 4 4 0"></polygon>
+            <polygon id="Fill-11" points="0 29.4005091 3.60033941 33.0008485 0 36.6003394 0 39 6 33.0008485 0 27"></polygon>
+        </g>
+    </g>
+</svg>
