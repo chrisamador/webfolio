@@ -1,21 +1,30 @@
-define(['jquery'],function () {
+define(['jquery','utls'],function ($,u_) {
 	return function(){
 
-		console.log('home script run')
-
 		var clickX = [],
-				clickY = [],
-				clickDrag = [],
-				paint;
+			clickY = [],
+			clickDrag = [],
+			paint;
 
 		var context = document.getElementById('canvas').getContext('2d'),
-				homeIntro = document.getElementById('home-intro'),
-				$homeIntro = $(homeIntro),
-				$btn = $homeIntro.find('.home-canvas__button'),
-				$canvas = $(context.canvas);
+			homeIntro = document.getElementById('home-intro'),
+			$homeIntro = $(homeIntro),
+			$btn = $homeIntro.find('.home-canvas__button'),
+			$canvas = $(context.canvas);
 
+		u_(document.getElementById('arrow-down')).on('click', function(){
+			console.log($homeIntro.offset().top);
+			u_(document.body).animateScrollTop($homeIntro.offset().top);
+		});
+
+		/**
+		 *
+		 * Canvas
+		 *
+		 */
+	
 		$canvas.attr('height',  $homeIntro.outerHeight() + 'px');
-  	$canvas.attr('width',  $homeIntro.width() + 'px');
+  		$canvas.attr('width',  $homeIntro.width() + 'px');
 
 		$(window).on('load resize', function () {
 			$canvas.attr('height',  $homeIntro.outerHeight() + 'px');

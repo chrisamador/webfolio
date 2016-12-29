@@ -206,7 +206,9 @@ define(function () {
 	 		var direction = (position - self.el[propToUse]) < 0 ? -60 : 60;
 
 	 		var animate = function(){
-	 			if (self.el[propToUse] == position){
+	 			var end = Math.max(self.el[propToUse], position);
+
+	 			if (self.el[propToUse] == end){
 	 				// Done
 	 				if(cb) cb();
 	 				return self;

@@ -71,6 +71,7 @@
 
 	<div class="page page--active">
 		<!-- ##Start## -->
+            <span class="hidden" data-page-title="{{pageTitle}}" id="page-title"></span>
 			{% block content %} {% endblock %}
 		<!-- ##End## -->
 	</div>

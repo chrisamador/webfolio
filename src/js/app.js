@@ -71,8 +71,8 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 
 			// ei: works/
 			var cleanUrl = function(url){
-		   	var index = url.replace('http://','').replace('https://','').indexOf('/');
-		   	return (url.replace('http://','').replace('https://','').substr(index) + '/').replace('//','/');
+		   		var index = url.replace('http://','').replace('https://','').indexOf('/');
+		   		return (url.replace('http://','').replace('https://','').substr(index) + '/').replace('//','/');
 		   }
 
 			if(isExternalUrl(anchorUrl)){
@@ -92,12 +92,12 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 			}
 		},
 		updateSiteMeta: function(){
-			var pageName = 'bruh',
+			var pageName = $('#page-title').attr('data-page-title'),
 				$nav = $('.nav-links'),
 				currentPos = document.location.pathname;
 
 			// Title
-			$('title').eq(0).text('Chris Amador </> Creative Front-End Developer');
+			$('title').text(pageName + 'Chris Amador </> Creative Front-End Developer');
 			// Nav
 			$nav.find('.active').removeClass('active');
 
