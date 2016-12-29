@@ -13,7 +13,7 @@ define(['jquery','utls'],function ($,u_) {
 			$canvas = $(context.canvas);
 
 		u_(document.getElementById('arrow-down')).on('click', function(){
-			console.log($homeIntro.offset().top);
+			// console.log($homeIntro.offset().top);
 			u_(document.body).animateScrollTop($homeIntro.offset().top);
 		});
 

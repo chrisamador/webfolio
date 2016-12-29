@@ -51,6 +51,7 @@ define(['scrollView','utls'], function (scrollView,u_) {
     });
 
    u_footerBtn.on('click', function(e){
+      // console.log('footer btn click');
      	e.preventDefault();
      	u_body.animateScrollTop(0);
    })

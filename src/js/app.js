@@ -92,7 +92,8 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 			}
 		},
 		updateSiteMeta: function(){
-			var pageName = $('#page-title').attr('data-page-title'),
+			var pageName = $('#page-meta').attr('data-page-title'),
+				pageClass = $('#page-meta').attr('data-page-class'),
 				$nav = $('.nav-links'),
 				currentPos = document.location.pathname;
 
@@ -117,7 +118,9 @@ require(['backbone','init','page', 'domReady','rqPageContent','scrollView','utls
 			})
 
 			// Body class
-
+			$('#body').removeClass(function(i,css){
+				return (css.match (/(^|\s)page-\S+/g) || []).join(' ');
+			}).addClass('page-' + pageClass);
 		},
 		pageChange: function(cleanAnchorUrl){
 			Backbone.history.navigate(cleanAnchorUrl , { trigger: true });
